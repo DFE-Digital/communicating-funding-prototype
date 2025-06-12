@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Payments" %}
+
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Payments
+    </h1>
+<div class="govuk-grid-row rowBorders govuk-!-padding-top-3">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-s">General annual grant (GAG): academic year 2025 to 2026</h2>
+    <p class="govuk-body-s">Payments due from 1 September 2024 to 30 April 2025</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p class="govuk-heading-s govuk-table__cell--numeric">£1,255,000.44</p>
+    </div>
+</div>
+<div class="govuk-grid-row rowBorders govuk-!-padding-top-3 govuk-!-margin-bottom-9">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-s">High value courses premium funding</h2>
+    <p class="govuk-body-s">Payments due from 1 September 2024 to 30 April 2025</p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p class="govuk-heading-s govuk-table__cell--numeric">£1,066.67</p>
+    </div>
+</div>
+<a href="#" class="govuk-link">Analyse your allocations data (PowerBI, opens in new tab)</a>
+</div>
+</div>
+{% endblock %}
