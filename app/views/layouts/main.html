@@ -5,15 +5,41 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
 {% set govukRebrand = true %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% block header %}
 
-{% block beforeContent %}
+{% set providerName %}
+  <li class="govuk-service-navigation__item" style="margin-left: auto;">
+    <a class="govuk-service-navigation__link" href="#">Sign out</a>
+  </li>
+{% endset %}
+
+{{ govukHeader({
+  rebrand: true,
+  serviceName: "My Education and Skills Funding (Allocations)"
+}) }}
+
+{{ govukServiceNavigation({
+  navigation: [
+    {
+      href: "/../index.html",
+      text: "Home"
+    }
+  ]
+}) }}
+
+<div class="govuk-width-container">
 {{ govukPhaseBanner({
   tag: {
     text: "Alpha"
   },
-  html: 'This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback by email</a>.'
+  html: 'This service is a place to rapidly experiment and should not be shared more widely outside of user research.'
 }) }}
+</div>
 {% endblock %}
+
