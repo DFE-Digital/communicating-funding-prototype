@@ -17,7 +17,10 @@
     background-color: #E8F1F8;
 }
 
-.rowBorders {
-    border-top: 1px solid #B1B4B6;
+.rowBorderList .rowBorders {
     border-bottom: 1px solid #B1B4B6;
+}
+
+.rowBorderList .rowBorders:first-of-type {
+  border-top: 1px solid #B1B4B6;
 }
