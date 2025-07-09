@@ -1,45 +1,36 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
-
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-
-{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-
-{% set govukRebrand = true %}
-
-{% block header %}
-
-{% set providerName %}
-  <li class="govuk-service-navigation__item" style="margin-left: auto;">
-    <a class="govuk-service-navigation__link" href="#">Sign out</a>
-  </li>
+{# For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts #} {% extends
+"govuk-prototype-kit/layouts/govuk-branded.njk" %} {% from
+"govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %} {%
+from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} {% set
+govukRebrand = true %} {% block header %} {% set providerName %}
+<li class="govuk-service-navigation__item" style="margin-left: auto">
+  <a class="govuk-service-navigation__link" href="#">Sign out</a>
+</li>
 {% endset %}
 
-{{ govukHeader({
-  rebrand: true,
-  serviceName: "My Education and Skills Funding (Allocations)"
-}) }}
+<div class="top-bar">
+  <div class="govuk-width-container">
+    <div class="top-bar__inner">
+      <div>Viewing as Shaftesbury Technical College (UKPRN: 10001234)</div>
+      <div>
+        <span class="top-bar__divider"></span>
+        <a href="#">Change Provider</a>
+        <a href="#">Sign out</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-{{ govukServiceNavigation({
-  navigation: [
-    {
-      href: "/../index.html",
-      text: "Home"
-    }
-  ]
-}) }}
+{{ govukHeader({ rebrand: true, serviceName: "My Education and Skills Funding
+(Allocations)" }) }} {{ govukServiceNavigation({ navigation: [ { href:
+"/../index.html", text: "Home" },{ href: "/../index.html", text: "View your
+sub-services" } ] }) }}
 
 <div class="govuk-width-container">
-{{ govukPhaseBanner({
-  tag: {
-    text: "Alpha"
-  },
-  html: 'This service is a place to rapidly experiment and should not be shared more widely outside of user research.'
-}) }}
+  {{ govukPhaseBanner({ tag: { text: "Alpha" }, html: 'This service is a place
+  to rapidly experiment and should not be shared more widely outside of user
+  research.' }) }}
 </div>
 {% endblock %}
-

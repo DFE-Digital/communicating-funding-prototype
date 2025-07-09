@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %} {% set pageName="Home" %} {% block
+beforeContent %} {% from "govuk/components/breadcrumbs/macro.njk" import
+govukBreadcrumbs %} {{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" },
+{ text: "Allocation statements", href: "#" } ] }) }} {% endblock %} {% block
+content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Adult skills fund (grant) for 2526</h1>
+    <h2 class="govuk-caption-l">Total 2526 allocation</h2>
+    <span class="govuk-heading-l">£4267671.00</span>
+    <table class="govuk-table govuk-!-margin-bottom-9">
+      <caption class="govuk-table__caption govuk-table__caption--m">
+        Summary allocation - Adult skills fund (grant)
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Allocation</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Aug_Mar</th>
+          <td class="govuk-table__cell">£2845256.23</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Apr_Jul</th>
+          <td class="govuk-table__cell">£1422414.77</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total</th>
+          <td class="govuk-table__cell govuk-!-font-weight-bold">
+            £4267671.00
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="govuk-table govuk-!-margin-bottom-9">
+      <caption class="govuk-table__caption govuk-table__caption--m">
+        Detailed allocation - Adult skills fund (grant)
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Funding type</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            adult skills core aug_mar
+          </th>
+          <td class="govuk-table__cell">£1305059.89</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            adult skills core apr_jul
+          </th>
+          <td class="govuk-table__cell">£652432.11</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            tailored learning total aug_mar
+          </th>
+          <td class="govuk-table__cell">£1460970.37</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            tailored learning total apr_jul
+          </th>
+          <td class="govuk-table__cell">£730375.63</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            free courses for jobs aug_mar
+          </th>
+          <td class="govuk-table__cell">£79225.97</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            free courses for jobs apr_jul
+          </th>
+          <td class="govuk-table__cell">£39607.03</td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-8"
+    >
+      <button
+        class="govuk-link govuk-body-s gem-c-print-link__button"
+        data-module="print-link"
+        data-print-link-module-started="true"
+      >
+        Save or print this statement
+      </button>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="gem-c-contextual-sidebar govuk-!-display-none-print">
+      <div
+        data-module="ga4-link-tracker"
+        class="gem-c-related-navigation govuk-!-display-none-print"
+        data-ga4-link-tracker-module-started="true"
+      >
+        <h2
+          id="related-nav-related_items-f0df1d9f"
+          class="gem-c-related-navigation__main-heading"
+        >
+          Related content
+        </h2>
+        <nav
+          class="gem-c-related-navigation__nav-section"
+          aria-labelledby="related-nav-related_items-f0df1d9f"
+          data-module="gem-toggle"
+          data-gem-toggle-module-started="true"
+        >
+          <ul class="gem-c-related-navigation__link-list">
+            <li class="gem-c-related-navigation__link">
+              <a
+                class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar govuk-link gem-c-related-navigation__section-link--other"
+                data-ga4-link='{"event_name":"navigation","type":"related content","index_section":"1","index_link":"1","index_section_count":"1","index_total":"2","section":"Related content"}'
+                href="#"
+                >Funding and performance management rules</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
