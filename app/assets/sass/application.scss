@@ -427,3 +427,30 @@
 .govuk-frontend-supported .gem-c-related-navigation__toggle-more.js-hidden {
   display: none;
 }
+
+// custom provider heading
+.top-bar {
+  background-color: #10416a; /* Updated darker blue */
+  color: #ffffff;
+  font-size: 16px;
+  padding: 20px 30px; /* Increased padding for height */
+}
+.top-bar__inner {
+  font-family: "GDS Transport", "Arial", sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.top-bar__inner > * {
+  display: flex;
+  align-items: center;
+}
+.top-bar__inner a {
+  color: #ffffff;
+  text-decoration: underline;
+  margin-left: 15px;
+  white-space: nowrap;
+}
