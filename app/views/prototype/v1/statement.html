@@ -5,86 +5,120 @@ govukBreadcrumbs %} {{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" },
 content %}
 
 <div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
   <div class="govuk-grid-column-two-thirds">
+    <!-- Heading with caption -->
     <h1 class="govuk-heading-xl">Adult skills fund (grant) for 2526</h1>
     <h2 class="govuk-caption-l">Total 2526 allocation</h2>
     <span class="govuk-heading-l">£4267671.00</span>
-    <table class="govuk-table govuk-!-margin-bottom-9">
-      <caption class="govuk-table__caption govuk-table__caption--m">
-        Summary allocation - Adult skills fund (grant)
-      </caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Allocation</th>
-          <th scope="col" class="govuk-table__header">Amount</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Aug_Mar</th>
-          <td class="govuk-table__cell">£2845256.23</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Apr_Jul</th>
-          <td class="govuk-table__cell">£1422414.77</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Total</th>
-          <td class="govuk-table__cell govuk-!-font-weight-bold">
-            £4267671.00
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="govuk-table govuk-!-margin-bottom-9">
-      <caption class="govuk-table__caption govuk-table__caption--m">
-        Detailed allocation - Adult skills fund (grant)
-      </caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Funding type</th>
-          <th scope="col" class="govuk-table__header">Amount</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            adult skills core aug_mar
-          </th>
-          <td class="govuk-table__cell">£1305059.89</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            adult skills core apr_jul
-          </th>
-          <td class="govuk-table__cell">£652432.11</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            tailored learning total aug_mar
-          </th>
-          <td class="govuk-table__cell">£1460970.37</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            tailored learning total apr_jul
-          </th>
-          <td class="govuk-table__cell">£730375.63</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            free courses for jobs aug_mar
-          </th>
-          <td class="govuk-table__cell">£79225.97</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            free courses for jobs apr_jul
-          </th>
-          <td class="govuk-table__cell">£39607.03</td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation - Adult skills fund (grant)",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Allocation"
+        },
+        {
+          text: "	Amount"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Aug_Mar"
+          },
+          {
+            text: "£2845256.23"
+          }
+        ],
+        [
+          {
+            text: "Apr_Jul"
+          },
+          {
+            text: "£1422414.77"
+          }
+        ],
+        [
+          {
+            text: "Total"
+          },
+          {
+            text: "£4267671.00",
+            classes: "govuk-!-font-weight-bold"
+          }
+        ]
+      ]
+    }) }}
+    <!-- Table 2 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Detailed allocation - Adult skills fund (grant)",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Funding type"
+          },
+          {
+            text: "Amount"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "adult skills core aug_mar"
+            },
+            {
+              text: "£1305059.89"
+            }
+          ],
+          [
+            {
+              text: "adult skills core apr_jul"
+            },
+            {
+              text: "£652432.11"
+            }
+          ],
+          [
+            {
+              text: "tailored learning total aug_mar"
+            },
+            {
+              text: "£1460970.37"
+            }
+          ],
+          [
+            {
+              text: "tailored learning total apr_jul"
+            },
+            {
+              text: "£730375.63"
+            }
+          ],
+          [
+            {
+              text: "free courses for jobs aug_mar"
+            },
+            {
+              text: "£79225.97"
+            }
+          ],
+          [
+            {
+              text: "free courses for jobs apr_jul"
+            },
+            {
+              text: "£39607.03"
+            }
+          ]
+        ]
+    }) }}
+    <!-- Custom save or print this statement 'component' (taken from live site) -->
     <div
       class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-8"
     >
@@ -97,12 +131,12 @@ content %}
       </button>
     </div>
   </div>
+  <!-- RIGHT-HAND COLUMN-->
   <div class="govuk-grid-column-one-third">
+    <!-- Custom related links 'component' (taken from live site) -->
     <div class="gem-c-contextual-sidebar govuk-!-display-none-print">
       <div
-        data-module="ga4-link-tracker"
         class="gem-c-related-navigation govuk-!-display-none-print"
-        data-ga4-link-tracker-module-started="true"
       >
         <h2
           id="related-nav-related_items-f0df1d9f"
