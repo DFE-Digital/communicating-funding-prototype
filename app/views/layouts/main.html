@@ -22,9 +22,8 @@ govukRebrand = true %} {% block header %} {% set providerName %}
   </div>
 </div>
 
-{{ govukHeader({ rebrand: true, serviceName: "Manage your education and skills funding
-(allocations)" }) }} {{ govukServiceNavigation({ navigation: [ { href:
-"/../index.html", text: "Home" },{ href: "/../index.html", text: "View your
+{{ govukHeader({ rebrand: true }) }} {{ govukServiceNavigation({ serviceName: "Manage your education and skills funding
+", serviceUrl: "/../index.html", navigation: [{ href: "/../index.html", text: "View your
 sub-services" },{ href: "/../index.html", text: "Sign out" } ] }) }}
 
 <div class="govuk-width-container">
