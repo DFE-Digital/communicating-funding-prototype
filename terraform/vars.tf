@@ -1,6 +1,3 @@
-# vars.tf
-# Defines variables to be used throughout the Terraform config.
-
 variable "subscription_id" {
   type        = string
   description = "Azure subscription Id for the environment."

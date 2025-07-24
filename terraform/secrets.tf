@@ -1,6 +1,3 @@
-# secrets.tf
-# Defines secrets and associated resources.
-
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "kv-default" {

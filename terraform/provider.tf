@@ -1,6 +1,3 @@
-# provider.tf
-# Defines and configures the Azure Terraform provider.
-
 provider "azurerm" {
   features {
   }
