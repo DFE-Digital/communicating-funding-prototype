@@ -1,0 +1,6 @@
+{
+    "appService.zipIgnorePattern": [
+        "prototype/node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
+}

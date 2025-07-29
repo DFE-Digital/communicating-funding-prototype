@@ -1,0 +1,6 @@
+.terraform
+*.backup
+*.tfstate
+*.lock.hcl
+aztfexportResourceMapping.json
+*.bak
