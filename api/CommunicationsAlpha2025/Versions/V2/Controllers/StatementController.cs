@@ -14,16 +14,9 @@ public class StatementController(IStaticDataProvider staticDataProvider) : Contr
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public IActionResult Get(string fundingStreamId)
     {
-        try
-        {
-            JsonElement publishedProviderFundingStream 
-                = staticDataProvider.GetPublishedProviderFundingStreamById(fundingStreamId);
-            Statement statement = Statement.FromCfsDataDocument(publishedProviderFundingStream);
-            return Ok(statement);
-        }
-        catch (NotSupportedException)
-        {
-            return StatusCode(StatusCodes.Status501NotImplemented, "The given statement type is not supported.");
-        }
+        JsonElement publishedProviderFundingStream 
+            = staticDataProvider.GetPublishedProviderFundingStreamById(fundingStreamId);
+        Statement statement = Statement.FromCfsDataDocument(publishedProviderFundingStream);
+        return Ok(statement);
     }
 }

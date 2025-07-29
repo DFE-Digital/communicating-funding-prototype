@@ -16,7 +16,7 @@ public static class Transformations
         string yearType = parts[0];
         string periodSpan = parts[1];
 
-        yearType = yearType switch
+        string yearTypeFormatted = yearType switch
         {
             "AY" => "academic year (AY)",
             "FY" => "financial year (FY)",
@@ -26,6 +26,6 @@ public static class Transformations
         int yearStart = int.Parse(periodSpan[..2]);
         int yearEnd = int.Parse(periodSpan[^2..]);
         
-        return $"{yearType} 20{yearStart} to 20{yearEnd}";
+        return $"{yearTypeFormatted} 20{yearStart} to 20{yearEnd}";
     }
 }
