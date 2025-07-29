@@ -1,5 +1,5 @@
 # Communicating Funding Alpha
-This repoistory contains the source code for the communicating funding alpha, including the prototype, infrastructure definitions and related source code.
+This repository contains the source code for the communicating funding alpha, including the prototype, infrastructure definitions and related source code.
 
 ## Using the prototype
 
@@ -17,3 +17,7 @@ npm run dev
 
 ## Design histories
 We are [documenting our design decisions and experiences in a design history](https://design-histories.education.gov.uk/communicating-funding-alpha).
+
+## Infrastructure
+
+This repo uses Terraform to define its infrastructure on Azure. See [terraform/README.md](./terraform/README.md) for more information.

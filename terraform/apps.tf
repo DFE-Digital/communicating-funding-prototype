@@ -34,10 +34,13 @@ resource "azurerm_linux_web_app" "wa-prototype" {
     ApplicationInsightsAgent_EXTENSION_VERSION = "~3"
 
     // Password auth (requires a password to access the prototype)
-    PASSWORD = data.azurerm_key_vault_secret.kv-default-prototype-pass.value
+    PASSWORD = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault_secret.kv-default-prototype-pass.versionless_id})"
     // Other bits
-
     NODE_ENV = "production"
+  }
+
+  identity {
+    type = "SystemAssigned"
   }
 
   // We do not publish using basic auth, so we can disable this as a
@@ -54,15 +57,4 @@ resource "azurerm_linux_web_app" "wa-prototype" {
     "Service Offering" = var.tag_service_offering
     # "hidden-link: /app-insights-resource-id" = "/subscriptions/51199e9b-8fa9-4269-825e-fa5d7cc2b857/resourceGroups/s255d01rg-uks-cfp-default/providers/microsoft.insights/components/s225d01as-cfp-prototype"
   }
-}
-
-
-resource "azurerm_app_service_custom_hostname_binding" "wa-prototype-hostname-binding" {
-  app_service_name    = azurerm_linux_web_app.wa-prototype.name
-  resource_group_name = azurerm_resource_group.rg-default.name
-  hostname            = var.prototype_hostname
-
-  depends_on = [
-    azurerm_linux_web_app.wa-prototype
-  ]
 }

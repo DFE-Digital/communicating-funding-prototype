@@ -11,6 +11,7 @@ The following files contain resource definitions:
 - [provider.tf](./provider.tf): for the Terraform provider
 - [secrets.tf](./secrets.tf): for resources relating to secrets, such as key vaults and secret definitions
 - [terraform.tf](./terraform.tf): for general Terraform configuration
+- [data.tf](./data.tf): for reusable data definitions
 - [vars.tf](./vars.tf): for variable definitions used throughout the other config files
 
 ## Environments
