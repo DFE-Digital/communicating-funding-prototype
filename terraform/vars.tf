@@ -14,11 +14,6 @@ variable "prefix" {
   description = "The resource prefix such as s181t02."
 }
 
-variable "prototype_hostname" {
-  type        = string
-  description = "The hostname for the prototype."
-}
-
 /* Tags required by the DfE's Azure policies. */
 
 variable "tag_environment" {
