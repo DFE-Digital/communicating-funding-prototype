@@ -10,12 +10,12 @@
 
 <div class="govuk-grid-row">
   <!-- LEFT HAND COLUMN -->
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <!-- Heading with caption -->
-    <span class="govuk-caption-l">Published: [updatedAt]. <span><strong>Version [content.version]</strong></span></span>
-    <h1 class="govuk-heading-xl">[content.fundingStreamId] for [content.fundingPeriodId</h1>
+    <span class="govuk-caption-l">Published: 6 December 2024. <span><strong>Version 3</strong></span></span>
+    <h1 class="govuk-heading-xl">Adult skills fund for academic year 2024 to 2025</h1>
     <h2 class="govuk-caption-l">Total allocation</h2>
-    <span class="govuk-heading-l">£[content.totalFunding]</span>
+    <span class="govuk-heading-l">£398,131.00</span>
     <!-- Table 1 -->
     {% from "govuk/components/table/macro.njk" import govukTable %}
     {{ govukTable({
@@ -35,19 +35,19 @@
       rows: [
         [
           {
-            text: "[type.Value (first)] [year (first)] to [type.Value (last)] [year (last)]"
+            text: "August 2025 to March 2026"
           },
           {
-            text: "[(sum)distributionPeriods.value]",
+            text: "£265,473.75",
             format: "numeric"
           }
         ],
         [
           {
-            text: "[type.Value (first)] [year (first)] to [type.Value (last)] [year (last)]"
+            text: "April 2026 to July 2026"
           },
           {
-            text: "[(sum)distributionPeriods.value]",
+            text: "£132,657.25",
             format: "numeric"
           }
         ],
@@ -56,7 +56,7 @@
             text: "Total"
           },
           {
-            text: "[content.totalFunding]",
+            text: "£398,131.00",
             classes: "govuk-!-font-weight-bold",
             format: "numeric"
           }
@@ -77,11 +77,11 @@
             text: "Description"
           },
           {
-            text: "[[type.Value (first)] [year (first)] to [type.Value (last)] [year (last)]]",
+            text: "August 2025 to March 2026",
             format: "numeric"
           },
           {
-            text: "[[type.Value (first)] [year (first)] to [type.Value (last)] [year (last)]]",
+            text: "April 2026 to July 2026",
             format: "numeric"
           },
           {
@@ -92,52 +92,103 @@
         rows: [
           [
             {
-              text: "[fundingLines.name]"
+              text: "Of which ASF adult skills"
             },
             {
-              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              text: "£213,208.63",
               format: "numeric"
             },
             {
-              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              text: "£106,540.37",
               format: "numeric"
             },            
             {
-              text: "[fundingLines.value]",
+              text: "£319,749.00",
               format: "numeric"
             }
           ],
           [
             {
-              text: "[fundingLines.name]"
+              text: "Of which ASF tailored learning"
             },
             {
-              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              text: "£39,988.64",
               format: "numeric"
             },
             {
-              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              text: "£19,982.36",
               format: "numeric"
             },            
             {
-              text: "[fundingLines.value]",
+              text: "£59,971",
               format: "numeric"
             }
           ],
           [
             {
-              text: "[fundingLines.name]"
+              text: "Of which ASF innovative funding"
             },
             {
-              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              text: "£7,830.93",
               format: "numeric"
             },
             {
-              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              text: "£3,913.07",
               format: "numeric"
             },            
             {
-              text: "[fundingLines.value]",
+              text: "£11,744",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Free courses for jobs"
+            },
+            {
+              text: "£4,445.55",
+              format: "numeric"
+            },
+            {
+              text: "£2,221.45",
+              format: "numeric"
+            },            
+            {
+              text: "£6,667.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Adult skills contract"
+            },
+            {
+              text: "£0",
+              format: "numeric"
+            },
+            {
+              text: "£0",
+              format: "numeric"
+            },            
+            {
+              text: "£0",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Adult skills learner support contract"
+            },
+            {
+              text: "£0",
+              format: "numeric"
+            },
+            {
+              text: "£0",
+              format: "numeric"
+            },            
+            {
+              text: "£0",
               format: "numeric"
             }
           ],
@@ -146,15 +197,15 @@
               text: "Total"
             },
             {
-              text: "[(sum)distributionPeriods.value](by distributionPeriodsId)",
+              text: "£213,208.63",
               format: "numeric"
             },
             {
-              text: "[(sum)distributionPeriods.value](by distributionPeriodsId)",
+              text: "£132,657.25",
               format: "numeric"
             },            
             {
-              text: "[content.totalFunding]",
+              text: "£398,131.00",
               format: "numeric"
             }
           ]
@@ -164,17 +215,17 @@
     </div>
     <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-    <p class="govuk-heading-l">Total [content.fundingPeriodId] allocation</p>
+    <p class="govuk-heading-l">Total academic year 2024 to 2025 allocation</p>
   </div>
   <div class="govuk-grid-column-one-half">
-    <p class="govuk-heading-l right-align">[content.totalFunding]</p>
+    <p class="govuk-heading-l right-align">£398,131.00</p>
   </div>
 </div>
     <!-- Custom save or print this statement 'component' (taken from live site) -->
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <p>
-        To find out more about [content.fundingStreamId] and how allocations are calculated, visit the Gov.uk website.
+        To find out more about Adult skills fund and how allocations are calculated, visit the GOV.UK website.
       </p>
     <h3 class="govuk-heading-m">
       Submit a business case
