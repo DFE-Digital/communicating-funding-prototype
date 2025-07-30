@@ -26,7 +26,7 @@ resource "azurerm_key_vault_access_policy" "kv-default-access-policy-general" {
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = data.azurerm_client_config.current.object_id
 
-  secret_permissions = ["Get", "List", "Set", "Delete", "Purge", "Restore"]
+  secret_permissions = ["Get", "List", "Set", "Delete", "Purge", "Restore", "Recover"]
 }
 
 # Creates an access policy that app services can use to read keys
