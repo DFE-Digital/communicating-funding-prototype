@@ -12,4 +12,12 @@
         <PackageReference Include="NSwag.AspNetCore" Version="14.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Test\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="appsettings.Test.json" />
+    </ItemGroup>
+
 </Project>

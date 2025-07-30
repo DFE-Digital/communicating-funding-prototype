@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace CommunicationsAlpha2025.Test;
+namespace CommunicationsAlpha2025;
 
 public static class Helpers
 {

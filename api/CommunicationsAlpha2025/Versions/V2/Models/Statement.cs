@@ -21,6 +21,7 @@ public class Statement
     public static Statement FromCfsDataDocument(JsonElement element)
     {
         JsonElement currentNode = element.GetProperty("content").GetProperty("current");
+
         // Get 'content.current' nodes
         string fundingStreamId = currentNode.GetProperty("fundingStreamId").GetString()!;
         string fundingStreamName = Augmentations.FundingStreamIdToName.GetValueOrDefault(fundingStreamId)
@@ -28,20 +29,60 @@ public class Statement
         string fundingPeriodId = currentNode.GetProperty("fundingPeriodId").GetString()!;
         string fundingPeriodName = Transformations.FormatFundingPeriodIdAsName(fundingPeriodId);
         decimal totalFunding = currentNode.GetProperty("totalFunding").GetDecimal();
+
         // Get 'content.current.provider' nodes
         JsonElement providerNode = currentNode.GetProperty("provider");
         string providerName = providerNode.GetProperty("name").GetString()!;
         string providerUkprn = providerNode.GetProperty("ukprn").GetString()!;
+
         // Get 'content.current.fundingLines' nodes
         JsonElement fundingLineNode = currentNode.GetProperty("fundingLines");
         JsonElement.ArrayEnumerator fundingLineNodeEnumerator = fundingLineNode.EnumerateArray();
         IEnumerable<FundingLine> fundingLines = fundingLineNodeEnumerator
-            // We don't want to surface funding lives with value 'null'
-            .Where(fl => fl.GetProperty("value").ValueKind !=  JsonValueKind.Null)
-            .Select(fl => new FundingLine
+            // We don't want to surface funding lives with a null fundingLineCode,
+            // or lines that don't have a fundingLineCode at all
+            .Where(fl =>
+                fl.TryGetProperty("fundingLineCode", out JsonElement fundingLineCodeElement) &&
+                fundingLineCodeElement.ValueKind != JsonValueKind.Null)
+            .Select(fl =>
             {
-                Name = fl.GetProperty("name").GetString()!,
-                Value = fl.GetProperty("value").GetDecimal(),
+                // Get 'content.current.fundingLines.distributionPeriods' nodes
+                IEnumerable<DistributionPeriod>? distributionPeriods = null;
+                // Not all funding lines have distribution periods, so handle that
+                if (fl.TryGetProperty("distributionPeriods", out JsonElement distributionPeriodsNode)
+                    && distributionPeriodsNode.ValueKind != JsonValueKind.Null)
+                {
+                    JsonElement.ArrayEnumerator distributionPeriodsEnumerator =
+                        distributionPeriodsNode.EnumerateArray();
+                    distributionPeriods = distributionPeriodsEnumerator
+                        .Select(dp =>
+                        {
+                            // Get 'content.current.fundingLines.distributionPeriods.profilePeriods' nodes
+                            JsonElement profilePeriodsNode = dp.GetProperty("profilePeriods");
+                            JsonElement.ArrayEnumerator profilePeriodsEnumerator = profilePeriodsNode.EnumerateArray();
+                            IEnumerable<ProfilePeriod> profilePeriods = profilePeriodsEnumerator
+                                .Select(pp => new ProfilePeriod
+                                {
+                                    Year = pp.GetProperty("year").GetInt32(),
+                                    TypeValue = pp.GetProperty("typeValue").GetString()!,
+                                });
+
+                            return new DistributionPeriod
+                            {
+                                Value = dp.GetProperty("value").GetDecimal(),
+                                ProfilePeriods = profilePeriods
+                            };
+                        });
+                }
+
+                return new FundingLine
+                {
+                    Name = fl.GetProperty("name").GetString()!,
+                    Value = fl.GetProperty("value").ValueKind == JsonValueKind.Null
+                        ? 0
+                        : fl.GetProperty("value").GetDecimal(),
+                    DistributionPeriods = distributionPeriods
+                };
             });
 
         return new Statement
