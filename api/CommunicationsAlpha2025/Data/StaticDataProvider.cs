@@ -1,4 +1,6 @@
 using System.Text.Json;
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 
 namespace CommunicationsAlpha2025.Data;
 
@@ -13,29 +15,52 @@ public interface IStaticDataProvider
 /// <inheritdoc cref="IStaticDataProvider"/>
 public class StaticDataProvider : IStaticDataProvider
 { 
-    private readonly JsonDocument _statementsDocument;
-
-    public StaticDataProvider(IConfiguration configuration)
+    private JsonDocument? _publishedProviderFunding;
+    
+    private readonly IConfiguration _configuration;
+    private readonly BlobServiceClient _blobServiceClient;
+    
+    public StaticDataProvider(
+        IConfiguration configuration,
+        BlobServiceClient blobServiceClient)
     {
-        string path = configuration["DataPaths:PublishedFundingStreams"]!
-                      ?? throw new InvalidOperationException(
-                          "DataPaths:PublishedFundingStreams has not been populated");
+        _configuration = configuration;
+        _blobServiceClient = blobServiceClient;
         
-        using FileStream fs = File.OpenRead(path);
+        FetchPublishedProviderFundingStreams();
+    }
+
+    private void FetchPublishedProviderFundingStreams()
+    {
+        string container = _configuration["DefaultStorageAccountDataContainer"]
+                           ?? throw new InvalidOperationException("DefaultStorageAccountDataContainer not set");
+        string filePath = _configuration["DefaultStorageAccountPublishedFundingPath"]
+                          ?? throw new InvalidOperationException("DefaultStorageAccountPublishedFundingPath not set");
+
+        BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient(container);
+        BlobClient blobClient = containerClient.GetBlobClient(filePath);
         
-        _statementsDocument = JsonDocument.Parse(fs,
+        Console.WriteLine("Attempting to download published funding blob...");
+        Azure.Response<BlobDownloadResult> downloadResponse = blobClient.DownloadContent();
+
+        Console.WriteLine("Downloaded. Attempting to get value stream...");
+        using var downloadResponseStream = downloadResponse.Value.Content.ToStream();
+        
+        _publishedProviderFunding = JsonDocument.Parse(downloadResponseStream,
             new JsonDocumentOptions
             {
                 AllowTrailingCommas = true,
                 CommentHandling = JsonCommentHandling.Skip
             });
+        
+        Console.Write("Successfully fetched published provider funding stream.");
     }
 
     public JsonElement GetPublishedProviderFundingStreamById(string fundingStreamId)
     {
-        if (!_statementsDocument.RootElement.TryGetProperty(fundingStreamId, out JsonElement statement))
+        if (!_publishedProviderFunding!.RootElement.TryGetProperty(fundingStreamId, out JsonElement providerFunding))
             throw new NotSupportedException($"Funding stream {fundingStreamId} is not supported.");
 
-        return statement;
+        return providerFunding;
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 
 namespace CommunicationsAlpha2025.Test;
@@ -11,11 +12,6 @@ public class StatementsApiTests(WebApplicationFactory<Program> factory)
     private readonly WebApplicationFactory<Program> _factory = factory
         .WithWebHostBuilder(builder =>
         {
-            builder.ConfigureAppConfiguration((_, config) =>
-            {
-                config.AddJsonFile("appsettings.Test.json", optional: false);
-            });
-            
             builder.UseEnvironment("Test");
         });
     
