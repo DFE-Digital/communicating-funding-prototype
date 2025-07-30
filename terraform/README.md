@@ -19,3 +19,10 @@ The following files contain resource definitions:
 Values for specific environments can be found in the `env/` folder.
 
 You can use these by using the `-var-file=...` flag when running `terraform plan` or `terraform apply`.
+
+## Deployment
+
+To deploy your infrastructure changes, run the following commands:
+
+- **Dev (plan)**: `terraform plan --var-file=./envs/dev.tfvars`
+- **Dev (apply)**: `terraform apply --var-file=./envs/dev.tfvars`

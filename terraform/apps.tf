@@ -26,6 +26,7 @@ resource "azurerm_linux_web_app" "wa-prototype" {
   name                                     = "${var.prefix}as-cfp-prototype"
   resource_group_name                      = azurerm_resource_group.rg-default.name
   service_plan_id                          = azurerm_service_plan.asp-default.id
+  
 
   app_settings = {
     // Application Insights configuration
@@ -49,6 +50,10 @@ resource "azurerm_linux_web_app" "wa-prototype" {
 
   site_config {
     always_on = false
+
+    application_stack {
+      node_version = "22-lts"
+    }
   }
 
   tags = {

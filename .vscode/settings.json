@@ -1,6 +1,9 @@
 {
     "appService.zipIgnorePattern": [
         "prototype/node_modules{,/**}",
-        ".vscode{,/**}"
-    ]
+        ".vscode{,/**}",
+        "node_modules{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/51199e9b-8fa9-4269-825e-fa5d7cc2b857/resourceGroups/s255d02rg-uks-cfp-default/providers/Microsoft.Web/sites/s255d02as-cfp-prototype",
+    "appService.deploySubpath": "prototype"
 }
