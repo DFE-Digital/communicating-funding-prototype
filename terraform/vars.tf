@@ -14,7 +14,7 @@ variable "prefix" {
   description = "The resource prefix such as s181t02."
 }
 
-/* Tags required by the DfE's Azure policies. */
+# Tags required by the DfE's Azure policies.
 
 variable "tag_environment" {
   type        = string
