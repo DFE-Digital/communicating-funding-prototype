@@ -1,0 +1,215 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Home" %} 
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" }, { text: "Allocation statements", href: "#" } ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Heading with caption -->
+    <span class="govuk-caption-l">Published: [updatedAt]. <span><strong>Version [content.version]</strong></span></span>
+    <h1 class="govuk-heading-xl">[content.fundingStreamId] for [content.fundingPeriodId</h1>
+    <h2 class="govuk-caption-l">Total allocation</h2>
+    <span class="govuk-heading-l">£[content.totalFunding]</span>
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Description"
+        },
+        {
+          text: "Amount",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "[type.Value (first)] [year (first)] to [type.Value (last)] [year (last)]"
+          },
+          {
+            text: "[(sum)distributionPeriods.value]",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "[type.Value (first)] [year (first)] to [type.Value (last)] [year (last)]"
+          },
+          {
+            text: "[(sum)distributionPeriods.value]",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Total"
+          },
+          {
+            text: "[content.totalFunding]",
+            classes: "govuk-!-font-weight-bold",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-full">
+    <!-- Table 2 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Detailed allocation",
+        captionClasses: "govuk-table__caption--m",
+              classes: "govuk-!-margin-bottom-9",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Description"
+          },
+          {
+            text: "[[type.Value (first)] [year (first)] to [type.Value (last)] [year (last)]]",
+            format: "numeric"
+          },
+          {
+            text: "[[type.Value (first)] [year (first)] to [type.Value (last)] [year (last)]]",
+            format: "numeric"
+          },
+          {
+            text: "Sub-total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "[fundingLines.name]"
+            },
+            {
+              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "[fundingLines.name]"
+            },
+            {
+              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "[fundingLines.name]"
+            },
+            {
+              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "[distributionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Total"
+            },
+            {
+              text: "[(sum)distributionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "[(sum)distributionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "[content.totalFunding]",
+              format: "numeric"
+            }
+          ]
+        ]
+    }) }}
+    </div>
+    </div>
+    <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-heading-l">Total [content.fundingPeriodId] allocation</p>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-heading-l right-align">[content.totalFunding]</p>
+  </div>
+</div>
+    <!-- Custom save or print this statement 'component' (taken from live site) -->
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        To find out more about [content.fundingStreamId] and how allocations are calculated, visit the Gov.uk website.
+      </p>
+    <h3 class="govuk-heading-m">
+      Submit a business case
+    </h3>
+    <p class="govuk-body">
+      You can <a href="#" class="govuk-link">submit a business case (opens in a new tab)</a> if you believe your funding allocation is incorrect.
+    </p>
+    <h3 class="govuk-heading-m">
+      Allocation history
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        View history of allocated funding
+      </a>
+    </p>
+    <div
+      class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-4">
+      <button
+        class="govuk-link govuk-body-s gem-c-print-link__button"
+        data-module="print-link"
+        data-print-link-module-started="true">
+        Save or print this statement (PDF)
+      </button>
+    </div>
+    <div
+      class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-4">
+      <button
+        class="govuk-link govuk-body-s gem-c-print-link__button"
+        data-module="print-link"
+        data-print-link-module-started="true">
+        Download this statement (CSV)
+      </button>
+    </div>
+    <p>You may need a different format if you're using assistive technology. <a class="govuk-link" href="#">Request an accessible format</a></p>
+  </div>
+
+</div>
+{% endblock %}
