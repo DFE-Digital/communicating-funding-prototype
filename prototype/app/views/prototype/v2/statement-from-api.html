@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+{% set pageName="Home" %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" }, { text: "Allocation statements", href: "#" } ] }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading with caption -->
+    <span class="govuk-caption-l">Published: {{ statement.updatedAt | formatAsDate }}. <span><strong>Version {{statement.version}}</strong></span></span>
+    <h1 class="govuk-heading-xl">{{statement.fundingStreamName}} for {{statement.fundingPeriodName | sentenceCaseLower}}</h1>
+    <h2 class="govuk-caption-l">Total allocation</h2>
+    <span class="govuk-heading-l">{{ statement.totalValue | formatAsCurrency }}</span>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-heading-l">Total {{statement.fundingPeriodName | sentenceCaseLower }} allocation</p>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-heading-l right-align">{{ statement.totalValue | formatAsCurrency }}</p>
+  </div>
+</div>
+<!-- Custom save or print this statement 'component' (taken from live site) -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>
+      To find out more about Adult skills fund and how allocations are calculated, visit the GOV.UK website.
+    </p>
+    <h3 class="govuk-heading-m">
+      Submit a business case
+    </h3>
+    <p class="govuk-body">
+      You can <a href="#" class="govuk-link">submit a business case (opens in a new tab)</a> if you believe your funding
+      allocation is incorrect.
+    </p>
+    <h3 class="govuk-heading-m">
+      Allocation history
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        View history of allocated funding
+      </a>
+    </p>
+    <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-4">
+      <button class="govuk-link govuk-body-s gem-c-print-link__button" data-module="print-link"
+        data-print-link-module-started="true">
+        Save or print this statement (PDF)
+      </button>
+    </div>
+    <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-4">
+      <button class="govuk-link govuk-body-s gem-c-print-link__button" data-module="print-link"
+        data-print-link-module-started="true">
+        Download this statement (CSV)
+      </button>
+    </div>
+    <p>You may need a different format if you're using assistive technology. <a class="govuk-link" href="#">Request an
+        accessible format</a></p>
+  </div>
+</div>
+{% endblock %}

@@ -1,10 +1,11 @@
 {
   "scripts": {
-    "dev": "govuk-prototype-kit dev",
-    "serve": "govuk-prototype-kit serve",
-    "start": "govuk-prototype-kit start"
+    "dev": "dotenvx run -f .env.local -- govuk-prototype-kit dev",
+    "serve": "dotenvx run -f .env -- govuk-prototype-kit serve",
+    "start": "dotenvx run -f .env -- govuk-prototype-kit start"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.48.4",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
     "@govuk-prototype-kit/task-list": "2.0.0",
