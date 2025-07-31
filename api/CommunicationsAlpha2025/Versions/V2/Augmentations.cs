@@ -48,6 +48,7 @@ public static class Augmentations
         { "FY", "Financial year (FY)" },
         { "AS", "Academy and school academic year (AS)" },
         { "AC", "Academy academic year (AC)" },
-        { "IL", "ILP Reconciliation period (IL)" }
+        { "IL", "ILP Reconciliation period (IL)" },
+        { "CY", "Calendar year (CY)" }
     };
 }
