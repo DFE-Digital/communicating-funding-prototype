@@ -10,13 +10,17 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-router.get("/prototype/v2/statement-from-api", async (req, res) => {
+router.get("/prototype/v2.1/statement-from-api", async (req, res) => {
     const { fundingStreamId } = req.query;
 
-    const statement = await fetchStatement(fundingStreamId);
-    res.render("prototype/v2/statement-from-api", {
-        statement
-    });
+    try {
+        const statement = await fetchStatement(fundingStreamId);
+        res.render("prototype/v2.1/statement-from-api", {
+            statement
+        });
+    } catch (error) {
+        res.status(500).send()
+    }
 });
 
 async function fetchStatement(fundingSteamId) {
