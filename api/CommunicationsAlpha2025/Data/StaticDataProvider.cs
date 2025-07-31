@@ -18,30 +18,29 @@ public class StaticDataProvider : IStaticDataProvider
     private JsonDocument? _publishedProviderFunding;
     
     private readonly IConfiguration _configuration;
-    private readonly BlobServiceClient _blobServiceClient;
     
     public StaticDataProvider(
-        IConfiguration configuration,
-        BlobServiceClient blobServiceClient)
+        IConfiguration configuration)
     {
         _configuration = configuration;
-        _blobServiceClient = blobServiceClient;
         
         FetchPublishedProviderFundingStreams();
     }
 
     private void FetchPublishedProviderFundingStreams()
     {
+        string storageUri = _configuration["DefaultStorageAccountUri"]
+                            ?? throw new InvalidOperationException("DefaultStorageAccountUri not set");
         string container = _configuration["DefaultStorageAccountDataContainer"]
                            ?? throw new InvalidOperationException("DefaultStorageAccountDataContainer not set");
         string filePath = _configuration["DefaultStorageAccountPublishedFundingPath"]
                           ?? throw new InvalidOperationException("DefaultStorageAccountPublishedFundingPath not set");
 
-        BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient(container);
-        BlobClient blobClient = containerClient.GetBlobClient(filePath);
+        var blobUri = new Uri($"{storageUri}/{container}/{filePath}");
+        var anonymousBlobClient = new BlobClient(blobUri);
         
         Console.WriteLine("Attempting to download published funding blob...");
-        Azure.Response<BlobDownloadResult> downloadResponse = blobClient.DownloadContent();
+        Azure.Response<BlobDownloadResult> downloadResponse = anonymousBlobClient.DownloadContent();
 
         Console.WriteLine("Downloaded. Attempting to get value stream...");
         using var downloadResponseStream = downloadResponse.Value.Content.ToStream();
