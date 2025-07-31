@@ -12,6 +12,7 @@ public partial class Program
         
         builder.Services.AddOpenApi();
         builder.Services.AddControllers();
+        builder.Services.AddSwaggerGen();
 
         builder.Services.AddSingleton<IStaticDataProvider, StaticDataProvider>();
 
@@ -38,6 +39,9 @@ public partial class Program
         {
             app.UseHttpsRedirection();
         }
+        
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
         app.MapControllers();
         app.Run();
