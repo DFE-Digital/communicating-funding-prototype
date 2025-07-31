@@ -11,7 +11,7 @@ public static class Augmentations
     /// This data was manually created by using the CFS production
     /// environment's specification list found here: https://calculate-funding.education.gov.uk/app/SpecificationsList
     /// </summary>
-    public static Dictionary<string, string> FundingStreamIdToName = new()
+    public static readonly Dictionary<string, string> FundingStreamIdToName = new()
     {
         { "1619", "16-19" },
         { "DADA", "Dance and Drama Award" },
@@ -37,5 +37,16 @@ public static class Augmentations
         { "ASFC", "Contracting - Adult Skills Fund Contract" },
         { "ASFG", "Contracting - Adult Skills Fund Grant" },
         { "LOANS", "Contracting - Advanced Learner Loans" }
+    };
+
+    /// <summary>
+    /// Mapping from funding period IDs to their names.
+    /// </summary>
+    public static readonly Dictionary<string, string?> FundingPeriodIdAcronymToName = new()
+    {
+        { "AY", "Academic year (AY)" },
+        { "FY", "Financial year (FY)" },
+        { "AS", "Academy and school academic year (AS)" },
+        { "AC", "Academy academic year (AC)" }
     };
 }
