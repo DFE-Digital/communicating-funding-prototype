@@ -17,11 +17,21 @@ public class Statement
     public IEnumerable<FundingLine> FundingLines { get; set; } = [];
 
     public required Provider Provider { get; set; }
+    
+    public required DateTime UpdatedAt { get; set; }
+    
+    public int Version { get; set; }
 
     public static Statement FromCfsDataDocument(JsonElement element)
     {
         JsonElement currentNode = element.GetProperty("content").GetProperty("current");
-
+        
+        // Get root notes
+        bool hasUpdatedAt = element.GetProperty("updatedAt").TryGetDateTime(out DateTime updatedAt);
+        bool hasCreatedAt = element.GetProperty("createdAt").TryGetDateTime(out DateTime createdAt);
+        if (!hasCreatedAt)
+            throw new InvalidOperationException("Statement does not have updatedAt or createdAt attribute.");
+        
         // Get 'content.current' nodes
         string fundingStreamId = currentNode.GetProperty("fundingStreamId").GetString()!;
         string fundingStreamName = Augmentations.FundingStreamIdToName.GetValueOrDefault(fundingStreamId)
@@ -29,6 +39,7 @@ public class Statement
         string fundingPeriodId = currentNode.GetProperty("fundingPeriodId").GetString()!;
         string fundingPeriodName = Transformations.FormatFundingPeriodIdAsName(fundingPeriodId);
         decimal totalFunding = currentNode.GetProperty("totalFunding").GetDecimal();
+        int version = currentNode.GetProperty("version").GetInt32()!;
 
         // Get 'content.current.provider' nodes
         JsonElement providerNode = currentNode.GetProperty("provider");
@@ -93,6 +104,8 @@ public class Statement
             FundingPeriodName = fundingPeriodName,
             TotalValue = totalFunding,
             FundingLines = fundingLines,
+            UpdatedAt = hasUpdatedAt ? updatedAt : createdAt,
+            Version = version,
             Provider = new Provider
             {
                 Name = providerName,
