@@ -18,10 +18,13 @@ public partial class Program
         builder.Services.AddAzureClients(async clientBuilder =>
         {
             const string defaultStorageAccountUriConfigKey = "DefaultStorageAccountUri";
-            clientBuilder.AddBlobServiceClient(builder.Configuration[defaultStorageAccountUriConfigKey]
-                ?? throw new InvalidOperationException($"Missing config property '{defaultStorageAccountUriConfigKey}'"));
+            var defaultStorageAccountUri = new Uri(builder.Configuration[defaultStorageAccountUriConfigKey]
+                                                   ?? throw new InvalidOperationException(
+                                                       $"Missing config property '{defaultStorageAccountUriConfigKey}'"));
+                                              
+            clientBuilder.AddBlobServiceClient(defaultStorageAccountUri);
 
-            clientBuilder.UseCredential(new DefaultAzureCredential());
+            clientBuilder.UseCredential(new AzureCliCredential());
         });
 
         WebApplication app = builder.Build();
