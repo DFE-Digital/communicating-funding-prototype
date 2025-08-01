@@ -65,6 +65,7 @@ public class Statement
                 {
                     JsonElement.ArrayEnumerator distributionPeriodsEnumerator =
                         distributionPeriodsNode.EnumerateArray();
+
                     distributionPeriods = distributionPeriodsEnumerator
                         .Select(dp =>
                         {
@@ -89,7 +90,7 @@ public class Statement
 
                 return new FundingLine
                 {
-                    Name = fl.GetProperty("name").GetString()!,
+                    Name = Transformations.FormatAsHumanReadableFundingStreamName(fl.GetProperty("name").GetString()!),
                     Value = fl.GetProperty("value").ValueKind == JsonValueKind.Null
                         ? 0
                         : fl.GetProperty("value").GetDecimal(),
