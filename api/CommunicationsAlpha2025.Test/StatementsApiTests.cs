@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.Configuration;
 
 namespace CommunicationsAlpha2025.Test;
 
 [Collection("API")]
-public class StatementsApiTests(WebApplicationFactory<Program> factory) 
+public class StatementsApiTests(WebApplicationFactory<Program> factory)
     : IClassFixture<WebApplicationFactory<Program>>
 {
     private readonly WebApplicationFactory<Program> _factory = factory
@@ -14,10 +12,10 @@ public class StatementsApiTests(WebApplicationFactory<Program> factory)
         {
             builder.UseEnvironment("Test");
         });
-    
+
     [Theory]
     [ClassData(typeof(TestData.FundingStreamTestData))]
-    public async Task Get_EndpointsReturnSuccessStatusCode(string fundingStreamType)
+    public async Task GetStatementByIdEndpointsReturnSuccessStatusCode(string fundingStreamType)
     {
         // Arrange
         HttpClient client = _factory.CreateClient();
