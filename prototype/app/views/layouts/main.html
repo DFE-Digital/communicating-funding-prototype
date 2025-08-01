@@ -22,9 +22,22 @@ govukRebrand = true %} {% block header %} {% set providerName %}
   </div>
 </div>
 
-{{ govukHeader({ rebrand: true }) }} {{ govukServiceNavigation({ serviceName: "Manage your education and skills funding
-", serviceUrl: "/../index.html", navigation: [{ href: "/../index.html", text: "View your
-sub-services" },{ href: "/../index.html", text: "Sign out" } ] }) }}
+{{ govukHeader({ rebrand: true }) }} 
+
+{{ govukServiceNavigation({ 
+  serviceName: "Manage your education and skills funding",
+  serviceUrl: fallbackPage or "/../index.html",
+  navigation: [
+    { 
+      href: fallbackPage or "/../index.html",
+      text: "View your sub-services"
+    },
+    {
+      href: fallbackPage or "/../index.html",
+      text: "Sign out"
+    }
+  ] 
+}) }}
 
 <div class="govuk-width-container">
   {{ govukPhaseBanner({ tag: { text: "Alpha" }, html: 'This service is a place

@@ -1,9 +1,11 @@
 {% extends "layouts/main.html" %}
-{% set pageName="Home" %}
+{% set pageName="Allocation statement" %}
+{% set fallbackPage="../../research-rounds/round-1" %}
 
 {% block beforeContent %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" }, { text: "Allocation statements", href: "#" } ] }) }}
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" }, { text: "Allocation statements", href:
+"../../research-rounds/round-1" } ] }) }}
 {% endblock %}
 
 {% block content %}
@@ -12,27 +14,29 @@
   <!-- LEFT HAND COLUMN -->
   <div class="govuk-grid-column-full">
     <!-- Heading with caption -->
-    <span class="govuk-caption-l">Published: {{ statement.updatedAt | formatAsDate }}. <span><strong>Version {{statement.version}}</strong></span></span>
-    <h1 class="govuk-heading-xl">{{statement.fundingStreamName}} for {{statement.fundingPeriodName | sentenceCaseLower}}</h1>
+    <span class="govuk-caption-l">Published: {{ statement.updatedAt | formatAsDate }}. <span><strong>Version
+          {{statement.version}}</strong></span></span>
+    <h1 class="govuk-heading-xl">{{statement.fundingStreamName}} for {{statement.fundingPeriodName | sentenceCaseLower}}
+    </h1>
     <h2 class="govuk-caption-l">Total allocation</h2>
     <span class="govuk-heading-l">{{ statement.totalValue | formatAsCurrency }}</span>
     <!-- Table 1 -->
     {% from "govuk/components/table/macro.njk" import govukTable %}
     {{ govukTable({
-      caption: "Summary allocation",
-      captionClasses: "govuk-table__caption--m",
-      classes: "govuk-!-margin-bottom-9",
-      firstCellIsHeader: true,
-      head: [
-        {
-          text: "Description"
-        },
-        {
-          text: "Sub-total",
-          format: "numeric"
-        }
-      ],
-      rows: statement.fundingLines | asSummaryAllocationRows
+    caption: "Summary allocation",
+    captionClasses: "govuk-table__caption--m",
+    classes: "govuk-!-margin-bottom-9",
+    firstCellIsHeader: true,
+    head: [
+    {
+    text: "Description"
+    },
+    {
+    text: "Sub-total",
+    format: "numeric"
+    }
+    ],
+    rows: statement.fundingLines | asSummaryAllocationRows
 
     }) }}
   </div>
@@ -44,12 +48,12 @@
     <!-- Table 1 -->
     {% from "govuk/components/table/macro.njk" import govukTable %}
     {{ govukTable({
-      caption: "Detailed allocation",
-      captionClasses: "govuk-table__caption--m",
-      classes: "govuk-!-margin-bottom-9",
-      firstCellIsHeader: false,
-      head: statement.fundingLines | asDetailedAllocationHeaderRows,
-      rows: statement.fundingLines | asDetailedAllocationRows
+    caption: "Detailed allocation",
+    captionClasses: "govuk-table__caption--m",
+    classes: "govuk-!-margin-bottom-9",
+    firstCellIsHeader: false,
+    head: statement.fundingLines | asDetailedAllocationHeaderRows,
+    rows: statement.fundingLines | asDetailedAllocationRows
 
     }) }}
   </div>
@@ -77,20 +81,21 @@
         View history of allocated funding
       </a>
     </p>
-    <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-4">
-      <button class="govuk-link govuk-body-s gem-c-print-link__button" data-module="print-link"
-        data-print-link-module-started="true">
-        Save or print this statement (PDF)
-      </button>
+
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        <img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);" />Save or print this statement (PDF)
+      </a>
+    </p>
+
+    <div class="govuk-body">
+      <p>
+        <a class="govuk-link" href="#"><img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);"/>Download
+          this statement (CSV)</a>
+      </p>
+      <p>
+        <span>You may need a different format if you're using assistive technology.&nbsp;<a class="govuk-link" href="#">Request an accessible format</a></span>
+      </p>
     </div>
-    <div class="gem-c-print-link govuk-!-display-none-print govuk-!-margin-bottom-4">
-      <button class="govuk-link govuk-body-s gem-c-print-link__button" data-module="print-link"
-        data-print-link-module-started="true">
-        Download this statement (CSV)
-      </button>
-    </div>
-    <p>You may need a different format if you're using assistive technology. <a class="govuk-link" href="#">Request an
-        accessible format</a></p>
   </div>
-</div>
-{% endblock %}
+  {% endblock %}
