@@ -16,16 +16,46 @@
     <h1 class="govuk-heading-xl">{{statement.fundingStreamName}} for {{statement.fundingPeriodName | sentenceCaseLower}}</h1>
     <h2 class="govuk-caption-l">Total allocation</h2>
     <span class="govuk-heading-l">{{ statement.totalValue | formatAsCurrency }}</span>
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Description"
+        },
+        {
+          text: "Sub-total",
+          format: "numeric"
+        }
+      ],
+      rows: statement.fundingLines | asSummaryAllocationRows
+
+    }) }}
   </div>
 </div>
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
-    <p class="govuk-heading-l">Total {{statement.fundingPeriodName | sentenceCaseLower }} allocation</p>
-  </div>
-  <div class="govuk-grid-column-one-half">
-    <p class="govuk-heading-l right-align">{{ statement.totalValue | formatAsCurrency }}</p>
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Detailed allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: false,
+      head: statement.fundingLines | asDetailedAllocationHeaderRows,
+      rows: statement.fundingLines | asDetailedAllocationRows
+
+    }) }}
   </div>
 </div>
+
+
 <!-- Custom save or print this statement 'component' (taken from live site) -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
