@@ -76,6 +76,7 @@ public class Statement
                                 {
                                     Year = pp.GetProperty("year").GetInt32(),
                                     TypeValue = pp.GetProperty("typeValue").GetString()!,
+                                    Value = pp.GetProperty("profiledValue").GetDecimal()
                                 });
 
                             return new DistributionPeriod
