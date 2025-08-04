@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+{% set pageName="Allocation statement" %}
+{% set fallbackPage="../../research-rounds/round-1" %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" }, { text: "Allocation statements", href:
+"../../research-rounds/round-1" } ] }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading with caption -->
+    <span class="govuk-caption-l">Published: {{ statement.updatedAt | formatAsDate }}. <span><strong>Version
+          {{statement.version}}</strong></span></span>
+    <h1 class="govuk-heading-xl">{{statement.fundingStreamName}} for {{statement.fundingPeriodName | sentenceCaseLower}}
+    </h1>
+    <h2 class="govuk-caption-l">Total allocation</h2>
+    <span class="govuk-heading-l">{{ statement.totalValue | formatAsCurrency }}</span>
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+    caption: "Summary allocation",
+    captionClasses: "govuk-table__caption--m",
+    classes: "govuk-!-margin-bottom-9",
+    firstCellIsHeader: true,
+    head: [
+    {
+    text: "Description"
+    },
+    {
+    text: "Sub-total",
+    format: "numeric"
+    }
+    ],
+    rows: statement.fundingLines | asSummaryAllocationRows
+
+    }) }}
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+    caption: "Detailed allocation",
+    captionClasses: "govuk-table__caption--m",
+    classes: "govuk-!-margin-bottom-9",
+    firstCellIsHeader: false,
+    head: statement.fundingLines | asDetailedAllocationHeaderRows,
+    rows: statement.fundingLines | asDetailedAllocationRows
+
+    }) }}
+  </div>
+</div>
+
+
+<!-- Custom save or print this statement 'component' (taken from live site) -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>
+      To find out more about Adult skills fund and how allocations are calculated, visit the GOV.UK website.
+    </p>
+    <h3 class="govuk-heading-m">
+      Submit a business case
+    </h3>
+    <p class="govuk-body">
+      You can <a href="#" class="govuk-link">submit a business case (opens in a new tab)</a> if you believe your funding
+      allocation is incorrect.
+    </p>
+    <h3 class="govuk-heading-m">
+      Allocation history
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        View history of allocated funding
+      </a>
+    </p>
+
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        <img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);" />Save or print this statement (PDF)
+      </a>
+    </p>
+
+    <div class="govuk-body">
+      <p>
+        <a class="govuk-link" href="#"><img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);"/>Download
+          this statement (CSV)</a>
+      </p>
+      <p>
+        <span>You may need a different format if you're using assistive technology.&nbsp;<a class="govuk-link" href="#">Request an accessible format</a></span>
+      </p>
+    </div>
+  </div>
+  {% endblock %}

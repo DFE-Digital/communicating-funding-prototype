@@ -13,7 +13,7 @@ govukRebrand = true %} {% block header %} {% set providerName %}
 <div class="top-bar">
   <div class="govuk-width-container">
     <div class="top-bar__inner">
-      <div>Viewing as Shaftesbury Technical College (UKPRN: 10001234)</div>
+      <div>Viewing as Demo Provider (UKPRN: 90000000)</div>
       <div>
         <span class="top-bar__divider"></span>
         <a href="#">Change Provider</a>
@@ -22,9 +22,22 @@ govukRebrand = true %} {% block header %} {% set providerName %}
   </div>
 </div>
 
-{{ govukHeader({ rebrand: true }) }} {{ govukServiceNavigation({ serviceName: "Manage your education and skills funding
-", serviceUrl: "/../index.html", navigation: [{ href: "/../index.html", text: "View your
-sub-services" },{ href: "/../index.html", text: "Sign out" } ] }) }}
+{{ govukHeader({ rebrand: true }) }} 
+
+{{ govukServiceNavigation({ 
+  serviceName: "Manage your education and skills funding",
+  serviceUrl: fallbackPage or "/../index.html",
+  navigation: [
+    { 
+      href: fallbackPage or "/../index.html",
+      text: "View your sub-services"
+    },
+    {
+      href: fallbackPage or "/../index.html",
+      text: "Sign out"
+    }
+  ] 
+}) }}
 
 <div class="govuk-width-container">
   {{ govukPhaseBanner({ tag: { text: "Alpha" }, html: 'This service is a place
