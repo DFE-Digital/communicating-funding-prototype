@@ -46,7 +46,7 @@ resource "azurerm_linux_web_app" "wa-prototype" {
   webdeploy_publish_basic_authentication_enabled = false
 
   site_config {
-    always_on = false
+    always_on = true
 
     application_stack {
       node_version = "22-lts"
@@ -88,7 +88,7 @@ resource "azurerm_linux_web_app" "wa-prototype-api" {
   webdeploy_publish_basic_authentication_enabled = false
 
   site_config {
-    always_on = false
+    always_on = true
 
     application_stack {
       dotnet_version = "9.0"
