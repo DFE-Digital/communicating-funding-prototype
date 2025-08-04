@@ -53,5 +53,9 @@ resource "azurerm_key_vault_secret" "kv-default-prototype-pass" {
   depends_on = [
     azurerm_key_vault_access_policy.kv-default-access-policy-general
   ]
+
+  lifecycle {
+    ignore_changes = [ value ]
+  }
 }
 

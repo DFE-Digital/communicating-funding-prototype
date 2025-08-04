@@ -23,7 +23,7 @@ resource "azurerm_linux_web_app" "wa-prototype" {
   name                                     = "${var.prefix}as-cfp-prototype"
   resource_group_name                      = azurerm_resource_group.rg-default.name
   service_plan_id                          = azurerm_service_plan.asp-default.id
-  
+
 
   app_settings = {
     # Application Insights configuration
@@ -70,7 +70,7 @@ resource "azurerm_linux_web_app" "wa-prototype-api" {
   name                                     = "${var.prefix}as-cfp-prototype-api"
   resource_group_name                      = azurerm_resource_group.rg-default.name
   service_plan_id                          = azurerm_service_plan.asp-default.id
-  
+
 
   app_settings = {
     # Application Insights configuration
@@ -96,8 +96,9 @@ resource "azurerm_linux_web_app" "wa-prototype-api" {
   }
 
   tags = {
-    Environment        = var.tag_environment
-    Product            = var.tag_product
-    "Service Offering" = var.tag_service_offering
+    Environment                              = var.tag_environment
+    Product                                  = var.tag_product
+    "Service Offering"                       = var.tag_service_offering
+    "hidden-link: /app-insights-resource-id" = "/subscriptions/51199e9b-8fa9-4269-825e-fa5d7cc2b857/resourceGroups/s255d01rg-uks-cfp-default/providers/microsoft.insights/components/s255d01ai-appinsights-default"
   }
 }

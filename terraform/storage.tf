@@ -16,5 +16,5 @@ resource "azurerm_storage_account" "sa-default" {
 resource "azurerm_storage_container" "sa-default-data" {
   name                  = "data"
   storage_account_id    = azurerm_storage_account.sa-default.id
-  container_access_type = "private"
+  container_access_type = "blob"
 }
