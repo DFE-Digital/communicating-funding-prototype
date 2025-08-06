@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dev": "dotenvx run -f .env.local -- govuk-prototype-kit dev",
+    "dev:live": "dotenvx run -f .env -- govuk-prototype-kit dev",
     "serve": "dotenvx run -f .env -- govuk-prototype-kit serve",
     "start": "dotenvx run -f .env -- govuk-prototype-kit start"
   },
