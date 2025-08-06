@@ -8,6 +8,8 @@ const addFilter = govukPrototypeKit.views.addFilter
 
 // Add your filters here
 
+require('../app/views/prototype/v2.2/_filters.js');
+
 const currencyFormatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'GBP',
@@ -35,7 +37,7 @@ addFilter('asSummaryAllocationRows', fundingLines => {
         { text: currencyFormatter.format(periods[key]), format: "numeric" }
     ]);
 })
-
+//need to do a versioned change here to update description for v2.2
 addFilter('asDetailedAllocationHeaderRows', fundingLines => {
     const periods = getDistributionPeriods(fundingLines);
 
