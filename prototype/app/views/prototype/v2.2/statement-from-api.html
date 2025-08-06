@@ -52,7 +52,7 @@
     captionClasses: "govuk-table__caption--m",
     classes: "govuk-!-margin-bottom-9",
     firstCellIsHeader: false,
-    head: statement.fundingLines | asDetailedAllocationHeaderRows,
+    head: statement.fundingLines | asV2DetailedAllocationHeaderRows,
     rows: statement.fundingLines | asDetailedAllocationRows
 
     }) }}
