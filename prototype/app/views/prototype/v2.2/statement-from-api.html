@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set pageName="Allocation statement" %}
-{% set fallbackPage="../../research-rounds/round-1" %}
+{% set fallbackPage="../../research-rounds/round-2" %}
 
 {% block beforeContent %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
@@ -28,7 +28,7 @@
     firstCellIsHeader: true,
     head: [
     {
-    text: "Description"
+    text: "Funding period"
     },
     {
     text: "Sub-total",
@@ -47,11 +47,11 @@
     <!-- Table 1 -->
     {% from "govuk/components/table/macro.njk" import govukTable %}
     {{ govukTable({
-    caption: "Detailed allocation",
+    caption: "Detailed breakdown",
     captionClasses: "govuk-table__caption--m",
     classes: "govuk-!-margin-bottom-9",
     firstCellIsHeader: false,
-    head: statement.fundingLines | asDetailedAllocationHeaderRows,
+    head: statement.fundingLines | asV2DetailedAllocationHeaderRows,
     rows: statement.fundingLines | asDetailedAllocationRows
 
     }) }}
@@ -66,11 +66,10 @@
       To find out more about Adult skills fund and how allocations are calculated, visit the GOV.UK website.
     </p>
     <h3 class="govuk-heading-m">
-      Submit a business case
+      Tell us if there is a problem
     </h3>
     <p class="govuk-body">
-      You can <a href="#" class="govuk-link">submit a business case (opens in a new tab)</a> if you believe your funding
-      allocation is incorrect.
+      If you think your allocation is incorrect you can <a href="#" class="govuk-link">submit a business case (opens in a new tab)</a>.
     </p>
     <h3 class="govuk-heading-m">
       Allocation history
@@ -91,9 +90,6 @@
       <p>
         <a class="govuk-link" href="#"><img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);"/>Download
           this statement (CSV)</a>
-      </p>
-      <p>
-        <span>You may need a different format if you're using assistive technology.&nbsp;<a class="govuk-link" href="#">Request an accessible format</a></span>
       </p>
     </div>
   </div>
