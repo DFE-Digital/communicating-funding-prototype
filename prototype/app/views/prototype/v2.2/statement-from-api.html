@@ -1,11 +1,10 @@
 {% extends "layouts/main.html" %}
 {% set pageName="Allocation statement" %}
-{% set fallbackPage="../../research-rounds/round-1" %}
+{% set fallbackPage="../../research-rounds/round-2" %}
 
 {% block beforeContent %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" }, { text: "Allocation statements", href:
-"../../research-rounds/round-1" } ] }) }}
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" }, { text: "Allocation statements", href: fallbackPage } ] }) }}
 {% endblock %}
 
 {% block content %}
