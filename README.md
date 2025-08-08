@@ -21,3 +21,10 @@ We are [documenting our design decisions and experiences in a design history](ht
 ## Infrastructure
 
 This repo uses Terraform to define its infrastructure on Azure. See [terraform/README.md](./terraform/README.md) for more information.
+
+## Deploying
+
+To deploy:
+1. Ensure you're authenticated using `az login`, and scoped to subscription with ID `51199e9b-8fa9-4269-825e-fa5d7cc2b857`
+2. Run `pwsh deploy.ps1`
+
