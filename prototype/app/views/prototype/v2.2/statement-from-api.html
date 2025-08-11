@@ -63,7 +63,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <p>
-      To find out more about Adult skills fund and how allocations are calculated, visit the GOV.UK website.
+      To find out more about {{statement.fundingStreamName}} and how allocations are calculated, visit <a href="#">{{statement.fundingStreamName}} for {{statement.fundingPeriodName | sentenceCaseLower}} guidance</a> on GOV.UK.
     </p>
     <h3 class="govuk-heading-m">
       Tell us if there is a problem
@@ -87,9 +87,13 @@
     </p>
 
     <div class="govuk-body">
+      <p style="margin-top: -15px;">
+        <a class="govuk-link" href="#"><img src="/public/images/document-trans.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download the raw data for
+          this statement (CSV, 208KB)</a><br/>
+          <span style="position: relative; z-index: 1; margin-top: 5px; display: inline-block; margin-left: 36px;">You may need a different format if you're using assistive technology.&nbsp;<a class="govuk-link" href="#">Request an accessible format</a>.</span>
+      </p>
       <p>
-        <a class="govuk-link" href="#"><img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);"/>Download
-          this statement (CSV)</a>
+        
       </p>
     </div>
   </div>
