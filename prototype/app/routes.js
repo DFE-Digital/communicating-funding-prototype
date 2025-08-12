@@ -19,6 +19,7 @@ router.get("/prototype/v2.1/statement-from-api", async (req, res) => {
             statement
         });
     } catch (error) {
+        console.error("Error fetching statement:", error);
         res.status(500).send()
     }
 });
@@ -33,6 +34,7 @@ router.get("/prototype/v2.2/statement-from-api", async (req, res) => {
             statement
         });
     } catch (error) {
+        console.error("Error fetching statement:", error);
         res.status(500).send()
     }
 });
