@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set pageName="Allocation statement" %}
-{% set fallbackPage="../../research-rounds/round-2" %}
+{% set fallbackPage="../../research-rounds/round-1" %}
 
 {% block beforeContent %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
@@ -9,14 +9,14 @@
 
 {% block content %}
 
+
 <div class="govuk-grid-row">
   <!-- LEFT HAND COLUMN -->
   <div class="govuk-grid-column-full">
     <!-- Heading with caption -->
     <span class="govuk-caption-l">Published: {{ statement.updatedAt | formatAsDate }}. <span><strong>Version
-          {{statement.version}}</strong></span></span>
-    <h1 class="govuk-heading-xl">{{statement.fundingStreamName}} for {{statement.fundingPeriodName | sentenceCaseLower}}
-    </h1>
+          {{statement.version}} </strong></span><span><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></span></span>
+    <h1 class="govuk-heading-xl">{{statement.fundingStreamName}} for {{statement.fundingPeriodName | sentenceCaseLower}}</h1>
     <h2 class="govuk-caption-l">Total allocation</h2>
     <span class="govuk-heading-l">{{ statement.totalValue | formatAsCurrency }}</span>
     <!-- Table 1 -->
