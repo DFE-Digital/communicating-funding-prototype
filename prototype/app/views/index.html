@@ -12,55 +12,123 @@
     </h1>
 
     <p class="govuk-body-l">A prototype to experiment in as part of the Communicating Funding alpha phase.</p>
-    <h2 class="govuk-heading-l">Prototype</h2>
-    <h3 class="govuk-heading-m">Version 1</h3>
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link" href="prototype/v1/statement.html">Allocation statement - Data-driven concept</a>
-      </li>
-    </ul>
-    <h3 class="govuk-heading-m">Version 2.0</h3>
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link" href="prototype/v2/statement.html">Allocation statement - componentised layout</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="prototype/v2/statement-asf.html">Allocation statement - ASF example</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="prototype/v2/statement-all.html">Allocation statement - ALL example</a>
-      </li>
-    </ul>
 
-    <h3 class="govuk-heading-m">Version 2.1</h3>
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link" href="prototype/v2.1/statement-from-api?fundingStreamId=ASF">Allocation statement (CFS) - Adult Skills Fund (ASF)</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="prototype/v2.1/statement-from-api?fundingStreamId=DSG">Allocation statement (CFS) - Dedicated Schools Grant (DSG)</a>
-      </li>
+  </div>
 
-      <li>
-        <a class="govuk-link" href="prototype/v2.1/statement-from-api?fundingStreamId=ALL">Allocation statement (CFS) - Advanced Learner Loans (ALL)</a>
-      </li>
-      
-    </ul>
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table govuk-table--small-text-until-tablet">
+  <caption class="govuk-table__caption govuk-table__caption--m">Prototype versions</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Version</th>
+      <th scope="col" class="govuk-table__header">Date</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header">Reasoning</th>
+      <th scope="col" class="govuk-table__header">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
 
-        <h3 class="govuk-heading-m">Version 2.2</h3>
-    <ul class="govuk-list">
-      <li>
-        <a class="govuk-link" href="prototype/v2.2/statement-from-api?fundingStreamId=ASF">Allocation statement (CFS) - Adult Skills Fund (ASF)</a>
-      </li>
-      <li>
-        <a class="govuk-link" href="prototype/v2.2/statement-from-api?fundingStreamId=DSG">Allocation statement (CFS) - Dedicated Schools Grant (DSG)</a>
-      </li>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Version 1.1 to 1.3</th>
+      <td class="govuk-table__cell">30 June to 8 July 2025</td>
+      <td class="govuk-table__cell">Iterated</td>
+      <td class="govuk-table__cell">
+        This version was iterated mostly in Figma before creating the final V1.3 in code
+        <ul>
+          <li>
+            Based on the assumptions and hypothesis generated at inception day and in line with the research approach agreed by the team.
+          </li>
+          <li>
+            Adding in guidance copy, content improvements: adding dummy provider name and UKPRN, updating content to ensure it meets basic gov.uk style guidelines, updating content to ensure it meets basic accessibility requirements, updating the presentation of funding numbers to ensure they meet known user needs
+          </li>
+          <li>
+            Team agreement that we can already disprove the idea that the raw data is usable because it is not accessible and does not meet basic gov uk content standards, and so do not need to test all of the data in its raw form. Also, with Anoop back from AL, he was able to add in some missing content, such as guidance links.
+          </li>
+          <li>
+            Split out funding lines by time period, added more guidance content back in.
+          </li>
+          <li>
+            We found out that previous technical constraints do not apply as expected; we can use improved table layout and include universal guidance links.
+          </li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell"><a href="prototype/v1/statement.html" class="govuk-button">Launch v1 prototype</a></td>
+    </tr>
 
-      <li>
-        <a class="govuk-link" href="prototype/v2.2/statement-from-api?fundingStreamId=ALL">Allocation statement (CFS) - Advanced Learner Loans (ALL)</a>
-      </li>
-      
-    </ul>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Version 2.0</th>
+      <td class="govuk-table__cell">30 July 2025</td>
+      <td class="govuk-table__cell">Iterated</td>
+      <td class="govuk-table__cell">        
+        Components and patterns defined in figma and mocked up (hard coded) in prototype kit
+        <ul>
+          <li>
+            Creating new page layouts from the component analysis and ideation. Considerations: handling multiple streams (tabbed or listed content), identifying which funding lines should be shown (type information or payment, excluding null values,  has findingLineCode), defining how the data would map to the tables
+          </li>
+          <li>
+            We tested statement templates with component sets and validated technical feasibility of the data-driven components
+          </li>
+          <li>
+            We took these designs to a design critique
+          </li>
+        </ul>
+      </td>
+      <td class="govuk-table__cell"><a href="prototype/v2/statement.html" class="govuk-button">Data mapping example</a> <br><a href="prototype/v2/statement-asf.html" class="govuk-button">Adult skills fund example</a> <br><a href="prototype/v2/statement-all.html" class="govuk-button">Advanced learner loans example</a> </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Version 2.1</th>
+      <td class="govuk-table__cell">4 August 2025</td>
+      <td class="govuk-table__cell">Iterated</td>
+      <td class="govuk-table__cell">        
+        We created MVP API and added front-end filters to transform how data is presented. 
+        <br><br>This version uses data from the CFS staging environment to populate the components and patterns.
+        <br><br>Minor iterations were made following the design critique 
+      </td>
+      <td class="govuk-table__cell"><a href="prototype/v2.1/statement-from-api?fundingStreamId=ASF" class="govuk-button">Adult Skills Fund (ASF)</a> <br><a href="prototype/v2.1/statement-from-api?fundingStreamId=DSG" class="govuk-button">Dedicated Schools Grant (DSG)</a> <br><a href="prototype/v2.1/statement-from-api?fundingStreamId=ALL" class="govuk-button">Advanced learner loans (ALL)</a> </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Version 2.2</th>
+      <td class="govuk-table__cell">6 August 2025</td>
+      <td class="govuk-table__cell">Tested</td>
+            <td class="govuk-table__cell">        
+        Following feedback from design crit:
+        <ul>
+          <li>
+            summary allocation table head change "Description" to "Funding period"
+          </li>
+          <li>
+            updated H2 from "Detailed allocation" to "Detailed breakdown"
+          </li>
+          <li>
+            detailed allocation table head change "Description" to "Funding line item"
+          </li>
+          <li>
+            Update business case copy to:
+<br>[H3] Tell us if there is a problem
+<br>[p] If you think your allocation is incorrect you can submit a business case (opens in a new tab)
+          </li>
+        </ul>
+Following contextual information ideations spike:
+<ul>
+  <li>
+    added dummy links to guidance on GOV.UK as proposed solution is to map and content manage these upstream
+  </li>
+</ul>
+        <br><br>This version was taken through user research rounds 1 and 2
+        <br><br>
+      </td>
+      <td class="govuk-table__cell"><a href="prototype/v2.1/statement-from-api?fundingStreamId=ASF" class="govuk-button">Adult Skills Fund (ASF)</a> <br><a href="prototype/v2.1/statement-from-api?fundingStreamId=DSG" class="govuk-button">Dedicated Schools Grant (DSG)</a> <br><a href="prototype/v2.1/statement-from-api?fundingStreamId=ALL" class="govuk-button">Advanced learner loans (ALL)</a> 
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    
 
     <h2 class="govuk-heading-l">Research round landing pages</h2>
     <ul class="govuk-list">
