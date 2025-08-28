@@ -25,6 +25,21 @@ router.get("/prototype/v2.1/statement-from-api", async (req, res) => {
 });
 
 // render version 2.2
+router.get("/prototype/v2.2/statement-from-api", async (req, res) => {
+    const { fundingStreamId } = req.query;
+
+    try {
+        const statement = await fetchStatement(fundingStreamId);
+        res.render("prototype/v2.2/statement-from-api", {
+            statement
+        });
+    } catch (error) {
+        console.error("Error fetching statement:", error);
+        res.status(500).send()
+    }
+});
+
+// render version mvp
 router.get("/prototype/mvp/statement-from-api", async (req, res) => {
     const { fundingStreamId } = req.query;
 
@@ -38,7 +53,6 @@ router.get("/prototype/mvp/statement-from-api", async (req, res) => {
         res.status(500).send()
     }
 });
-
 
 //fetch statement data from CFS test env
 async function fetchStatement(fundingSteamId) {
