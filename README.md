@@ -1,5 +1,5 @@
-# Communicating Funding Alpha
-This repository contains the source code for the communicating funding alpha, including the prototype, infrastructure definitions and related source code.
+# Communicating Funding
+This repository contains the source code for the communicating funding alpha and beta research, including the prototype, infrastructure definitions and related source code.
 
 ## Using the prototype
 
