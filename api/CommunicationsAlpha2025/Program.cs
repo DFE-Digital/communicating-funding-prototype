@@ -18,7 +18,7 @@ public partial class Program
             opt.SwaggerDoc("v2", new OpenApiInfo()
             {
                 Version = "v2",
-                Title = "Communications Alpha 2025 Prototype API (V2)",
+                Title = "Communicating Funding Prototype API (V2)",
                 License = new OpenApiLicense()
                 {
                     Name = "MIT License",
@@ -30,7 +30,7 @@ public partial class Program
             opt.SwaggerDoc("v3", new OpenApiInfo()
             {
                 Version = "v3",
-                Title = "Communications Alpha 2025 Prototype API (V3)",
+                Title = "Communicating Funding Prototype API (V3)",
                 License = new OpenApiLicense()
                 {
                     Name = "MIT License",
