@@ -1,6 +1,5 @@
 using System.Reflection;
 using Azure.Identity;
-using CommunicationsAlpha2025.Data;
 using Microsoft.Extensions.Azure;
 using Microsoft.OpenApi.Models;
 
@@ -47,10 +46,11 @@ public partial class Program
             );
         });
 
-        builder.Services.AddSingleton<IStaticDataProvider, StaticDataProvider>();
         // V2
+        builder.Services.AddSingleton<Versions.V2.IStaticDataProvider, Versions.V2.StaticDataProvider>();
         builder.Services.AddSingleton<Versions.V2.IStatementFactory, Versions.V2.StatementFactory>();
         // V3
+        builder.Services.AddSingleton<Versions.V3.IStaticDataProvider, Versions.V3.StaticDataProvider>();
         builder.Services.AddSingleton<Versions.V3.IStatementFactory, Versions.V3.StatementFactory>();
 
         builder.Services.AddAzureClients(clientBuilder =>

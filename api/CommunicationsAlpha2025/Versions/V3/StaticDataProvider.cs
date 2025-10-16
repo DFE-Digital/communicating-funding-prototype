@@ -2,7 +2,7 @@ using System.Text.Json;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 
-namespace CommunicationsAlpha2025.Data;
+namespace CommunicationsAlpha2025.Versions.V3;
 
 /// <summary>
 /// Provides example static data to power the prototype.
@@ -41,8 +41,8 @@ public class StaticDataProvider : IStaticDataProvider
                             ?? throw new InvalidOperationException("DefaultStorageAccountUri not set");
         string container = _configuration["DefaultStorageAccountDataContainer"]
                            ?? throw new InvalidOperationException("DefaultStorageAccountDataContainer not set");
-        string filePath = _configuration["DefaultStorageAccountPublishedFundingPath"]
-                          ?? throw new InvalidOperationException("DefaultStorageAccountPublishedFundingPath not set");
+        string filePath = _configuration["DefaultStorageAccountPublishedFundingPathV3"]
+                          ?? throw new InvalidOperationException("DefaultStorageAccountPublishedFundingPathV3 not set");
 
         var blobUri = new Uri($"{storageUri}/{container}/{filePath}");
         var anonymousBlobClient = new BlobClient(blobUri);
