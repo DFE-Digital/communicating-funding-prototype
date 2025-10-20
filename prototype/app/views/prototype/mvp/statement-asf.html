@@ -1,0 +1,211 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Home" %} 
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "#" }, { text: "Allocation statements", href: "#" } ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading with caption -->
+    <span class="govuk-caption-l">Published: 6 December 2024. <span><strong>Version
+          2 </strong></span><span><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></span></span>
+    <h1 class="govuk-heading-xl">Adult skills fund for academic year 2024 to 2025</h1>
+    <h2 class="govuk-caption-l">Total allocation</h2>
+    <span class="govuk-heading-l">£1,644,784.00</span>
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Funding period"
+        },
+        {
+          text: "Sub-total",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "August 2024 to March 2025"
+          },
+          {
+            text: "£1,096,741.99",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "April 2025 to July 2025"
+          },
+          {
+            text: "£548,042.01",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-full">
+    <!-- Table 2 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Detailed breakdown",
+        captionClasses: "govuk-table__caption--m",
+              classes: "govuk-!-margin-bottom-9",
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Funding line item"
+          },
+          {
+            text: "August 2024 to March 2025",
+            format: "numeric"
+          },
+          {
+            text: "April 2025 to July 2025",
+            format: "numeric"
+          },
+          {
+            text: "Sub-total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Adult skills core"
+              
+            },
+            {
+              text: "£956,110.51",
+              format: "numeric"
+            },
+            {
+              text: "£477,768.49",
+              format: "numeric"
+            },            
+            {
+              text: "£1,433,879.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Tailored learning"
+            },
+            {
+              text: "£51,962.38",
+              format: "numeric"
+            },
+            {
+              text: "£25,965.62",
+              format: "numeric"
+            },            
+            {
+              text: "£77,928.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Funding for innovative provision"
+            },
+            {
+              text: "£31,177.58",
+              format: "numeric"
+            },
+            {
+              text: "£15,579.42",
+              format: "numeric"
+            },            
+            {
+              text: "£46,757.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Free courses for jobs"
+            },
+            {
+              text: "£57,491.52",
+              format: "numeric"
+            },
+            {
+              text: "£28,728.48",
+              format: "numeric"
+            },            
+            {
+              text: "£86,220.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Total"
+            },
+            {
+              text: "£1,096,741.99",
+              format: "numeric"
+            },
+            {
+              text: "£548,042.01",
+              format: "numeric"
+            },            
+            {
+              text: "£1,644,784.00",
+              format: "numeric"
+            }
+          ]
+        ]
+    }) }}
+    </div>
+ 
+    <!-- Custom save or print this statement 'component' (taken from live site) -->
+  
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        To find out more about Adult skills fund and how allocations are calculated, visit the GOV.UK website.
+      </p>
+    <h3 class="govuk-heading-m">
+      Submit a business case
+    </h3>
+    <p class="govuk-body">
+      You can <a href="#" class="govuk-link">submit a business case (opens in a new tab)</a> if you believe your funding allocation is incorrect.
+    </p>
+    <h3 class="govuk-heading-m">
+      Allocation history
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        View history of allocated funding
+      </a>
+    </p>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        <img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);" />Save or print this statement (PDF)
+      </a>
+    </p>
+
+    <div class="govuk-body">
+      <p style="margin-top: -15px;">
+        <a class="govuk-link" href="#"><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download this statement data (CSV, 208KB)</a>
+      </p>
+      <p>
+        
+      </p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
