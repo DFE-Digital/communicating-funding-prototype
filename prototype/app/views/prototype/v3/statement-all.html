@@ -13,7 +13,7 @@
   <div class="govuk-grid-column-full">
     <!-- Heading with caption -->
     <span class="govuk-caption-l">Published: 12 February 2026. <span><strong>Version
-          1 </strong></span></span>
+          1 </strong></span><span><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></span></span>
     <h1 class="govuk-heading-xl">Adult skills fund for academic year 2025 to 2026</h1>
     <h2 class="govuk-caption-l">Total allocation</h2>
     <span class="govuk-heading-l">£5,418.00</span>
@@ -23,7 +23,7 @@
       caption: "Summary allocation",
       captionClasses: "govuk-table__caption--m",
       classes: "govuk-!-margin-bottom-9",
-      firstCellIsHeader: true,
+      firstCellIsHeader: false,
       head: [
         {
           text: "Funding period"
@@ -62,7 +62,7 @@
         caption: "Detailed breakdown",
         captionClasses: "govuk-table__caption--m",
               classes: "govuk-!-margin-bottom-9",
-        firstCellIsHeader: true,
+        firstCellIsHeader: false,
         head: [
           {
             text: "Funding line item"
@@ -118,18 +118,18 @@
           ],
           [
             {
-              text: "Total"
+              html: "<strong>Total</strong>"
             },
             {
-              text: "£3,215.76",
+              html: "<strong>£3,215.76</strong>",
               format: "numeric"
             },
             {
-              text: "£2,202.24",
+              html: "<strong>£2,202.24</strong>",
               format: "numeric"
             },            
             {
-              text: "£2,202.24",
+              html: "<strong>£2,202.24</strong>",
               format: "numeric"
             }
           ]
