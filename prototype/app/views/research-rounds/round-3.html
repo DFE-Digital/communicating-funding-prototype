@@ -1,0 +1,31 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Research round #3" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Research round #3
+    </h1>
+  
+    <h2 class="govuk-heading-l">Allocation statements</h2>
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link" href="../prototype/v3/statement?fundingStreamId=ASF_indicative">ASF (indicative)</a>
+      </li>
+
+      <li>
+        <a class="govuk-link" href="../prototype/v3/statement?fundingStreamId=ASF_actual">ASF (actual)</a>
+      </li>
+
+      <li>
+        <a class="govuk-link" href="../prototype/v3/statement?fundingStreamId=ALL">ALL</a>
+      </li>
+    </ul>
+</div>
+
+
+{% endblock %}

@@ -1,5 +1,5 @@
 
-namespace CommunicationsAlpha2025.Versions.V2.Models;
+namespace CommunicationsAlpha2025.Versions.V3.Models;
 
 public class Statement
 {
