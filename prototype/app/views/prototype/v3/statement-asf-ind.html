@@ -23,7 +23,7 @@
       caption: "Summary allocation",
       captionClasses: "govuk-table__caption--m",
       classes: "govuk-!-margin-bottom-9",
-      firstCellIsHeader: true,
+      firstCellIsHeader: false,
       head: [
         {
           text: "Funding period"
@@ -62,7 +62,7 @@
         caption: "Detailed breakdown",
         captionClasses: "govuk-table__caption--m",
               classes: "govuk-!-margin-bottom-9",
-        firstCellIsHeader: true,
+        firstCellIsHeader: false,
         head: [
           {
             text: "Funding line item"
@@ -204,18 +204,18 @@
           ],
           [
             {
-              text: "Total"
+              html: "<strong>Total</strong>"
             },
             {
-              text: "£1,766,283.99",
+              html: "<strong>£1,766,283.99</strong>",
               format: "numeric"
             },
             {
-              text: "£883,010.01",
+              html: "<strong>£883,010.01</strong>",
               format: "numeric"
             },            
             {
-              text: "£2,649,294.00",
+              html: "<strong>£2,649,294.00</strong>",
               format: "numeric"
             }
           ]
