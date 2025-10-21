@@ -1,0 +1,168 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Advanced learner loans for academic year 2025 to 2026" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "javascript:history.back()" } ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading with caption -->
+    <span class="govuk-caption-l">Published: 12 February 2026. <span><strong>Version
+          1 </strong></span><span><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></span></span>
+    <h1 class="govuk-heading-xl">Advanced learner loans for academic year 2025 to 2026</h1>
+    <h2 class="govuk-caption-l">Total allocation</h2>
+    <span class="govuk-heading-l">£5,418.00</span>
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Funding period"
+        },
+        {
+          text: "Sub-total",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "August 2025 to March 2026"
+          },
+          {
+            text: "£3,215.76",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "April 2026 to July 2026"
+          },
+          {
+            text: "£2,202.24",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-full">
+    <!-- Table 2 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Detailed breakdown",
+        captionClasses: "govuk-table__caption--m",
+              classes: "govuk-!-margin-bottom-9",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Funding line item"
+          },
+          {
+            text: "August 2025 to March 2026",
+            format: "numeric"
+          },
+          {
+            text: "April 2026 to July 2026",
+            format: "numeric"
+          },
+          {
+            text: "Sub-total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Loans bursary"
+              
+            },
+            {
+              text: "£2,320.00",
+              format: "numeric"
+            },
+            {
+              text: "£1,680.00",
+              format: "numeric"
+            },            
+            {
+              text: "£4,000.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Loans facility"
+            },
+            {
+              text: "£895.76",
+              format: "numeric"
+            },
+            {
+              text: "£522.24",
+              format: "numeric"
+            },            
+            {
+              text: "£1,418.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<strong>Total</strong>"
+            },
+            {
+              html: "<strong>£3,215.76</strong>",
+              format: "numeric"
+            },
+            {
+              html: "<strong>£2,202.24</strong>",
+              format: "numeric"
+            },            
+            {
+              html: "<strong>£5,418.00</strong>",
+              format: "numeric"
+            }
+          ]
+        ]
+    }) }}
+    </div>
+ 
+    <!-- Custom save or print this statement 'component' (taken from live site) -->
+  
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        You can find information about how allocations are calculated and what to do if something does not look right on <a href="https://www.gov.uk/">GOV.UK</a>.
+      </p>
+
+    <h3 class="govuk-heading-m">
+      Save or download your allocation statement
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="javascript:window.print()">
+        <img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);" />Save or print this statement
+      </a>
+    </p>
+
+    <div class="govuk-body">
+      <p style="margin-top: -15px;">
+        <a class="govuk-link" href="/public/files/90000000_advanced_learner_loans_2025_2026_version1.csv"><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download the funding data provided in this statement (CSV)</a>
+      </p>
+      <p>
+        You may need a different format if you're using assistive technology. <a href="#">Request an accessible format</a>.
+      </p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

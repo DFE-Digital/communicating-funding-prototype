@@ -1,14 +1,16 @@
 using System.Text.Json;
-using CommunicationsAlpha2025.Data;
 using CommunicationsAlpha2025.Versions.V2.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CommunicationsAlpha2025.Versions.V2.Controllers;
 
 [ApiController]
+[ApiExplorerSettings(GroupName = "v2")]
 [Route("api/v2/[controller]")]
 [Produces("application/json")]
-public class StatementController(IStaticDataProvider staticDataProvider) : ControllerBase
+public class StatementController(
+    IStaticDataProvider staticDataProvider,
+    IStatementFactory statementFactory) : ControllerBase
 {
     /// <summary>
     /// Provides statements for a given funding stream ID.
@@ -20,7 +22,7 @@ public class StatementController(IStaticDataProvider staticDataProvider) : Contr
     {
         JsonElement publishedProviderFundingStream
             = staticDataProvider.GetPublishedProviderFundingStreamById(fundingStreamId);
-        Statement statement = Statement.FromCfsDataDocument(publishedProviderFundingStream);
+        Statement statement = statementFactory.FromCfsDataDocument(publishedProviderFundingStream);
         return Ok(statement);
     }
 
@@ -40,7 +42,7 @@ public class StatementController(IStaticDataProvider staticDataProvider) : Contr
         {
             try
             {
-                Statement statement = Statement.FromCfsDataDocument(fundingStream);
+                Statement statement = statementFactory.FromCfsDataDocument(fundingStream);
                 statements.Add(statement);
             }
             // If any fail, don't fail the whole endpoint. Just log the error and continue.

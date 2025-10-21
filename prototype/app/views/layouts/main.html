@@ -14,7 +14,7 @@ govukRebrand = true %} {% block header %} {% set providerName %}
   <div class="govuk-width-container">
     <div class="top-bar__inner">
       <div>Viewing as Demo Provider (UKPRN: 90000000)</div>
-      <div>
+      <div class="govuk-!-display-none-print">
         <span class="top-bar__divider"></span>
         <a href="#">Change Provider</a>
       </div>
@@ -24,7 +24,8 @@ govukRebrand = true %} {% block header %} {% set providerName %}
 
 {{ govukHeader({ rebrand: true }) }} 
 
-{{ govukServiceNavigation({ 
+<div class="govuk-!-display-none-print">
+  {{ govukServiceNavigation({ 
   serviceName: "Manage your education and skills funding",
   serviceUrl: fallbackPage or "/../index.html",
   navigation: [
@@ -38,10 +39,12 @@ govukRebrand = true %} {% block header %} {% set providerName %}
     }
   ] 
 }) }}
+</div>
 
 <div class="govuk-width-container">
-  {{ govukPhaseBanner({ tag: { text: "Alpha" }, html: 'This service is a place
+  {{ govukPhaseBanner({ tag: { text: "Prototype" }, html: 'This service is a place
   to rapidly experiment and should not be shared more widely outside of user
   research.' }) }}
 </div>
+
 {% endblock %}

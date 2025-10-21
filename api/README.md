@@ -1,4 +1,4 @@
-# Communications Alpha Prototype API
+# Communicating Funding Prototype API
 
 This API:
 - Defines a prototype schema used to power the prototype UI
