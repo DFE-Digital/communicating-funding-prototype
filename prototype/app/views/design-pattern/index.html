@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Design pattern name" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block header %}
+<link rel="stylesheet" href="/prototype/app/assets/sass/dfe.scss">
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+<nav class="dfe-vertical-nav govuk-!-margin-top-2">
+
+                        <a href="/design-system" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to
+            design system</a>
+
+                        <ul class="dfe-vertical-nav__section">
+                            <li class="dfe-vertical-nav__section-item">
+                                <a class="dfe-vertical-nav__link" href="/design-system/patterns">Patterns</a>
+                            </li>
+
+                            <li class="dfe-vertical-nav__section-item">
+                            <a class="dfe-vertical-nav__link" href="/design-system/patterns/charts">Charts</a>
+                            </li>
+                            <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--current">
+                                <a class="dfe-vertical-nav__link" href="/design-system/patterns/select-a-school">Select a school</a>
+                            </li>
+
+                        </ul>
+
+                    </nav>    </div>
+  <div class="govuk-grid-column-three-quarters">
+    <!-- Heading with caption -->
+    <span class="govuk-caption-l">Patterns</span>
+    <h1 class="govuk-heading-xl">{{pageName}}</h1>
+        <p class="govuk-body">A pattern for...</p>
+
+        <h2 class="govuk-heading-l">When to use this pattern</h2>
+            <p class="govuk-body">Content to replace this</p>
+
+        <h2 class="govuk-heading-l">When not to use this pattern</h2>
+            <p class="govuk-body">Content to replace this</p>
+
+        <h2 class="govuk-heading-l">How it works</h2>
+            <h3 class="govuk-heading-m">Data source</h3>
+                <p class="govuk-body">Content to replace this</p>
+
+            <h3 class="govuk-heading-m">Information to show on a statement</h3>
+                <h4 class="govuk-heading-s">Statement properties</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Publish date</li>
+                    <li>Version number</li>
+                    <li>Latest version - whether the statement version number is current or historical</li>
+                </ul>
+                <h4 class="govuk-heading-s">Funding properties</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Funding stream or grant name</li>
+                    <li>Date period - which dates the funding covers</li>
+                    <li>Total allocation - the total amount of money allocated in the statement</li>
+                </ul>
+                <h4 class="govuk-heading-s">Funding line items</h4>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Name - the name of a component of a funding allocation</li>
+                    <li>Distribution periods - how the funding line is split across different time periods</li>
+                    <li>Distribution period amounts - the amount of funding allocated for each time period</li>
+                    <li>Sub-total - the total amount of money allocated in the funding line</li>
+                </ul>                
+        
+        <h2 class="govuk-heading-l">Research on this pattern</h2>
+            <p class="govuk-body">This pattern was last used in user research in October 2025.</p>
+            <h3 class="govuk-heading-m">User needs for a financial statement</h3>
+                <p class="govuk-body">Based on research, we know users need a statement that:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Gives them the right level of detail, enabling them to identify whether there are any data discrepancies.</li>
+                    <li>Provides contextual guidance and clearly signposts them to additional support if needed.</li>
+                    <li>Follows a clear and consistent structure, making it easy to compare information with related statements.</li>
+                    <li>Can be downloaded in an alternative format to support their analysis, record keeping and future forecasting.</li>
+                    <li>Is transparent and accurate. This helps to build confidence and in turn, enables them to make informed and efficient decisions.</li>
+                </ul>
+
+        <h2 class="govuk-heading-l">Services using this pattern</h2>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Manage your education and skills funding - adult statements pilot in March 2026</li>
+                <li>Manage my education estate private beta</li>
+            </ul>
+
+        <h2 class="govuk-heading-l">Roadmap</h2>
+            <p class="govuk-body">We expect to add more information to the pattern in the first half of 2026:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>how allocations are calculated</li>
+                    <li>which contract relates to the statement</li>
+                    <li>when teh user should expect to be paid and how much</li>
+                    <li>providing a direct link to the relevant guidance</li>
+                </ul>
+            <p class="govuk-body">We also expect to develop variants of this pattern to:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>meet the needs of users in parent organisations, for example local authorities, multi-academy trusts and responsible bodies</li>
+                    <li>accommodate more complex funding information</li>
+                </ul>
+        <h2 class="govuk-heading-l">Help improve this pattern</h2>
+            <p class="govuk-body">Contact <a href="mailto:#" class="govuk-link">Beth Davies</a> in Funding Service Delivery to discuss this pattern and improvements.</p>
+
+    </div>
+</div>
+{% endblock %}
