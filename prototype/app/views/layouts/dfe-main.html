@@ -1,0 +1,77 @@
+{# For guidance on how to use layouts see: https://prototype-kit.service.gov.uk/docs/how-to-use-layouts #}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% set govukRebrand = true %}
+{% block stylesheets %}
+  {{ super() }}
+  <link rel="stylesheet" href="/public/sass/dfe-design.css">
+{% endblock %}
+{% block header %}
+<div class="top-bar">
+  <div class="govuk-width-container">
+    <div class="top-bar__inner">
+      <div>This is part of a wider prototype and page links are unlikely to work</div>
+      <div class="govuk-!-display-none-print">
+        <span class="top-bar__divider"></span>
+        <a href="/index.html">Go to prototype home</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Custom provider nav (taken from live) -->
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="#" class="govuk-header__link govuk-header__link--homepage">
+        <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
+      </a>
+    </div>
+  </div>
+</header>
+          <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation">
+              <div class="govuk-width-container">
+                  <div class="govuk-service-navigation__container">
+                      <span class="govuk-service-navigation__service-name">
+                          <a href="/" class="govuk-service-navigation__link {% if serviceNav == 'Home' %}govuk-service-navigation__item--active{% endif %}">
+                          Design (Prototype)
+                      </a>
+                      </span>
+                      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+                          <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle"
+                          aria-controls="navigation" hidden>
+                          Menu
+                      </button>
+                          <ul class="govuk-service-navigation__list" id="navigation">
+                              <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
+                                  <a class="govuk-service-navigation__link" href="#">Design system</a>
+                              </li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+          </section>
+          {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/js/dfefrontend.min.js"></script>
+
+    <style>
+      .govuk-width-container {
+    @include govuk-width-container;
+    }
+
+    .govuk-header__link .govuk-header__logotype{
+      height: 30px;
+    }
+
+    .govuk-header__link:focus .govuk-header__logotype{
+      content: url(/public/images/department-for-education_black.png);
+      height: 30px;
+    }
+    </style>
+{% endblock %}
