@@ -1,0 +1,175 @@
+{% extends "layouts/dfe-design-layout.html" %}
+
+{% set serviceNav = "Design system" %}
+{% set path = "design-pattern/index" %}
+{% set title = "Show funding allocations" %}
+{% set description = "A pattern for showing funding information to organisations." %}
+{% set mainClasses = 'govuk-!-padding-top-0 ' %}
+
+{% block content %}
+
+    <section class=" govuk-!-margin-top-5">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+
+                <div class="govuk-grid-column-one-quarter">
+
+                    <nav class="dfe-vertical-nav govuk-!-margin-top-2">
+
+                        <a href="#" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-9">Back to
+            design system</a>
+
+                        <ul class="dfe-vertical-nav__section">
+                            <li class="dfe-vertical-nav__section-item dfe-vertical-nav__section-item--current">
+                                <a class="dfe-vertical-nav__link" href="#">{{ title }}</a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+                <div class="govuk-grid-column-three-quarters">
+
+                                  <span class="govuk-caption-xl govuk-!-margin-top-1">Patterns</span>
+                    <h1 class="govuk-heading-xl">{{title}}</h1>
+
+                    <p class="govuk-body">{{description}}</p>
+                    
+                    
+                    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+                        {{ govukInsetText({
+                        html: 'You can access <a href="/prototype/v3/statement-asf-act.html" target="_blank" class="govuk-link">an example of this pattern in the Communicating Funding prototype (opens in new window)</a>.'
+                        }) }}
+
+                    <h2 class="govuk-heading-l">When to use this pattern</h2>
+
+                    <p class="govuk-body">Use this pattern if you need to automate the communication of funding information to organisations. For example, education providers or responsible bodies.</p>
+
+                    <p class="govuk-body">Use this pattern to communicate funding information direct to ‘child’ or independent education providers.</p>
+
+                    <h2 class="govuk-heading-l">When not to use this pattern</h2>
+
+                    <p class="govuk-body">Do not use this pattern if you are communicating funding to individuals (for example students receiving a loan or bursary directly).</p>
+
+                    <p class="govuk-body">Do not use this pattern to communicate complex funding information if the user will need access to calculations to understand what is being shown.</p>
+
+                    <p class="govuk-body">Do not use this pattern to communicate a combined view of funding for ‘child’ providers to a ‘parent’ organisation (for example, provider groups, multi-academy trusts (MAT) or local authorities.</p>
+
+                    <h2 class="govuk-heading-l">How it works</h2>
+
+                    <p class="govuk-body">This pattern is a data-driven approach to generating funding statements. The intention is for this pattern to be reusable and scalable across different funding types. The rules created to support this pattern should be global, meaning they will work for the widest range of funding types.</p>
+
+                    <p class="govuk-body">To implement this pattern effectively you need to follow this process:</p>
+
+                    <ol class="govuk-list govuk-list--number govuk-list--spaced">
+                        <li>Identify the primary data source</li>
+                        <li>Map the data output to the required properties (see below)</li>
+                        <li>Define global rules for which data should be pulled through into the pattern</li>
+                        <li>Identify if the data will need to be transformed to be accessible, clear and meaningful to users. You should consider the following:
+                            <ol class="govuk-list--bullet govuk-list--spaced govuk-!-margin-top-3">
+                                <li>Can the transformation be done on the front-end?</li>
+                                <li>Can the transformation be done within the API (if that is your technical approach)?</li>
+                                <li>Does a change need to be made up-stream in the data source?</li>
+                            </ol>
+                        </li>
+                        <li>Test the statement with users to ensure they understand the contents</li>
+                    </ol>
+
+                    <h3 class="govuk-heading-m">Data source</h3>
+
+                    <p class="govuk-body">This pattern has been developed using one primary data source, but it could be used to pull together and present data from multiple sources. In this case, all data sources would need to be mapped to identify the source of each property. Using multiple data sources adds to the complexity so designers are recommended to work closely with technical leads/developers and business analysts to define the scope.</p>
+
+                    <p class="govuk-body">You can either download this data periodically and update the list in your service, or use their API to fetch
+            updated data as a daily task.</p>
+
+                    <h3 class="govuk-heading-m">Information to show on a statement</h3>
+
+                        <h4 class="govuk-heading-s">Statement properties</h4>
+
+                        <ul class="govuk-list--bullet">
+                            <li>Publish date</li>
+                            <li>Version number</li>
+                            <li>Latest version - whether the statement version number is current or historical</li>
+                        </ul>
+
+                        <h4 class="govuk-heading-s">Funding properties</h4>
+
+                        <ul class="govuk-list--bullet">
+                            <li>Funding stream or grant name</li>
+                            <li>Date period - which dates the funding covers </li>
+                            <li>Total allocation - the total amount of money allocated in the statement</li>
+                        </ul>
+
+                        <h4 class="govuk-heading-s">Funding line items</h4>
+
+                        <ul class="govuk-list--bullet">
+                            <li>Name - the name of a component of a funding allocation</li>
+                            <li>Distribution periods - how the funding line is split across different time periods</li>
+                            <li>Distribution period amounts - the amount of funding allocated for each time period</li>
+                            <li>Sub-total - the total amount of money allocated in the funding line</li>
+                        </ul>
+
+                        {{ govukInsetText({
+                        text: "You should display £0.00 funding lines where the organisation is eligible and the calculation has produced a zero result, or if the organisation received an allocation of money in the most recent cycle of the funding."
+                        }) }}
+
+                        <h4 class="govuk-heading-s">Other functionality</h4>
+                        <p class="govuk-body">You should also allow the user to:</p>
+                        <ul class="govuk-list--bullet">
+                            <li>Download the data displayed on the screen as a .CSV file</li>
+                            <li>Request an accessible format that meets their needs</li>
+                            <li>Print the statement or save what is on the screen as a .PDF file</li>
+                            <li>Find more information about the funding and calculation methodology</li>
+                            <li>Get help if the statement does not look right</li>
+                        </ul>
+
+                    <h2 class="govuk-heading-l">Research on this pattern</h2>
+
+                    <p class="govuk-body">This pattern was last used in user research in October 2025.</p>
+
+                    <h3 class="govuk-heading-m">User needs for a financial statement</h3>
+
+                    <p class="govuk-body">Based on research, we know users need a statement that:</p>
+                        <ul class="govuk-list--bullet govuk-list--spaced">
+                            <li>gives them the right level of detail, enabling them to identify how their allocation has been arrived at, where changes have occurred, and to identify if there are any data discrepancies, and if so, where and what that discrepancy is</li>
+                            <li>provides contextual guidance and clearly signposts them to additional support if needed</li>
+                            <li>follows a clear and consistent structure, making it easy to compare information with related statements</li>
+                            <li>can be downloaded in an offline format to support their analysis, record keeping and future financial forecasting</li>
+                            <li>is transparent and accurate. This helps to build confidence and in turn, enables them to make informed and efficient decisions</li>
+                        </ul>
+
+                        <h3 class="govuk-heading-m">Services using this pattern</h3>
+                        <ul class="govuk-list--bullet">
+                            <li>Manage your education and skills funding - Adult statements pilot in March 2026</li>
+                            <li>Manage my education estate - Private beta</li>
+                        </ul>
+
+                    <h2 class="govuk-heading-l">Roadmap</h3>
+                        <p class="govuk-body">We expect to add more information to the pattern in the first half of 2026, including:</p>
+                        <ul class="govuk-list--bullet">
+                            <li>How allocations are calculated</li>
+                            <li>How to link a contract and which contract relates to the statement</li>
+                            <li>When the user should expect to be paid and how much</li>
+                            <li>Providing a direct link to the relevant guidance</li>
+                        </ul>
+
+                        <p class="govuk-body">We also expect to develop variants of this pattern to:</p>
+                        <ul class="govuk-list--bullet">
+                            <li>meet the needs of users in parent organisations, for example local authorities, multi-academy trusts and responsible bodies</li>
+                            <li>accommodate more complex funding information</li>
+                        </ul>                        
+
+
+                    <h2 class="govuk-heading-l">Help improve this pattern</h2>
+
+                    <p class="govuk-body">Contact <a href="mailto:beth6.davies@education.gov.uk" class="govuk-link" rel="noopener noreferrer" target="_blank">Beth Davies</a>, Product Manager for the Communicating Funding team in the Funding Directorate, to discuss this pattern and improvements.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
