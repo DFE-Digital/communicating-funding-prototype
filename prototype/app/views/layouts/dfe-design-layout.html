@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template govuk-template--rebranded">
+    {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block stylesheets %}
+{{ super() }}
+        <link rel="stylesheet" href="/public/css/dfefrontend-2.0.0.min.css">
+        <link rel="stylesheet" href="/public/sass/application.scss">
+        <link rel="stylesheet" href="/public/css/dfe-design.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+
+                <style>
+            @import url('https://rsms.me/inter/inter.css');
+            h1, h2, h3, h4, h5, h6, p, a, button, th, td, tr, span, li, .govuk-inset-text {
+                font-family: 'Inter', sans-serif !important;
+            }
+        </style>
+{% endblock %}
+
+    {% block header %}
+<header
+  class="gem-c-layout-super-navigation-header">
+    <div class="gem-c-layout-super-navigation-header__container govuk-clearfix">
+        <div class="govuk-width-container transparent-bottom-border">
+            <div class="gem-c-layout-super-navigation-header__header-logo">
+                <a class="govuk-header__link govuk-header__link--homepage"        
+          id="logo" href="#">
+                    <img src="/public/images/department-for-education_white.png" alt="Department for Education"
+            class="govuk-header__logotype">
+                </a>
+            </div>
+        </div>
+
+        </nav>
+    </div>
+</header>
+
+        <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation">
+            <div class="govuk-width-container">
+                <div class="govuk-service-navigation__container">
+                    <span class="govuk-service-navigation__service-name">
+                        <a href="#" class="govuk-service-navigation__link {% if serviceNav == 'Home' %}govuk-service-navigation__item--active{% endif %}">
+                        Design (prototype)
+                    </a>
+                    </span>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+    <body class="govuk-template__body">
+
+        <script>
+            document.body.className += ' js-enabled' + (
+                'noModule' in HTMLScriptElement.prototype
+                ? ' govuk-frontend-supported'
+                : '');
+        </script>
+
+
+        <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+        
+
+        {% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+        <main class="govuk-main-wrapper {{mainClasses}}" id="main-content">
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+        {{ govukPhaseBanner({
+        tag: {
+            text: "Experimental"
+        },
+        html: 'This design pattern is part of the <a class="govuk-link" href="index.html">Communicate Funding prototype</a>.'
+        }) }}
+        {% endblock %}
+
+            {%- block content -%}{%- endblock -%}
+        </main>
+
+        {%- block pageActions -%}{%- endblock -%}
+
+        {% include 'layouts/dfe-design-footer.html' %}
+
+        <script src="/assets/js/header.js"></script>
+        <script src="/assets/js/dfefrontend-2.0.0.min.js"></script>
+        <script src="/assets/js/cookies.js"></script>
+        <script src="/assets/js/app.js"></script>
+        <script src="/assets/js/feedback.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script type="module">
+            import {initAll} from '/assets/js/govuk-frontend-5.11.0.min.js';
+            initAll();
+        </script>
+        <script>
+            hljs.highlightAll();
+        </script>
+        {% block scripts %}{% endblock %}
+
+    </body>
+
+</html>
