@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %} 
-{% set pageName="Advanced learner loans for academic year 2025 to 2026" %} 
+{% set pageName="Adult skills fund for academic year 2025 to 2026" %}
 {% set fallbackPage="javascript:history.back()" %}
 
 {% block beforeContent %} 
@@ -13,11 +13,11 @@
   <!-- LEFT HAND COLUMN -->
   <div class="govuk-grid-column-full">
     <!-- Heading with caption -->
-    <span class="govuk-caption-l">Published: 12 March 2025. <span><strong>Version
-          1 </strong></span><span><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></span></span>
-    <h1 class="govuk-heading-xl">Advanced learner loans for academic year 2025 to 2026</h1>
+    <span class="govuk-caption-l">Published: 12 December 2025. <span><strong>Version
+          2 </strong></span><span><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></span></span>
+    <h1 class="govuk-heading-xl">Adult skills fund for academic year 2025 to 2026</h1>
     <h2 class="govuk-caption-l">Total allocation</h2>
-    <span class="govuk-heading-l">£5,418.00</span>
+    <span class="govuk-heading-l">£2,673,919.00</span>
     <!-- Table 1 -->
     {% from "govuk/components/table/macro.njk" import govukTable %}
     {{ govukTable({
@@ -40,7 +40,7 @@
             text: "August 2025 to March 2026"
           },
           {
-            text: "£3,215.76",
+            text: "£1,782,701.46",
             format: "numeric"
           }
         ],
@@ -49,7 +49,7 @@
             text: "April 2026 to July 2026"
           },
           {
-            text: "£2,202.24",
+            text: "£891,217.54",
             format: "numeric"
           }
         ]
@@ -84,36 +84,122 @@
         rows: [
           [
             {
-              text: "Loans facility"
-            },
-            {
-              text: "£895.76",
-              format: "numeric"
-            },
-            {
-              text: "£522.24",
-              format: "numeric"
-            },            
-            {
-              text: "£1,418.00",
-              format: "numeric"
-            }
-          ],
-                    [
-            {
-              text: "Loans bursary"
+              text: "Adult skills core"
               
             },
             {
-              text: "£2,320.00",
+              text: "£1,511,625.56",
               format: "numeric"
             },
             {
-              text: "£1,680.00",
+              text: "£755,699.44",
               format: "numeric"
             },            
             {
-              text: "£4,000.00",
+              text: "£2,267,325.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Tailored learning"
+            },
+            {
+              text: "£121,960.80",
+              format: "numeric"
+            },
+            {
+              text: "£60,971.20",
+              format: "numeric"
+            },            
+            {
+              text: "£182,932.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Innovative funding"
+            },
+            {
+              text: "£50,523.21",
+              format: "numeric"
+            },
+            {
+              text: "£25,257.79",
+              format: "numeric"
+            },            
+            {
+              text: "£75,781.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Free courses for jobs"
+            },
+            {
+              text: "£98,504.27",
+              format: "numeric"
+            },
+            {
+              text: "£49,244.75",
+              format: "numeric"
+            },            
+            {
+              text: "£147,749.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Continuing learners in newly devolved areas - adult skills core"
+            },
+            {
+              text: "£0.00",
+              format: "numeric"
+            },
+            {
+              text: "£0.00",
+              format: "numeric"
+            },            
+            {
+              text: "£0.00",
+              format: "numeric"
+            }
+          ],
+          
+          [
+            {
+              text: "Continuing learners in newly devolved areas - tailored learning"
+            },
+            {
+              text: "£0.00",
+              format: "numeric"
+            },
+            {
+              text: "£0.00",
+              format: "numeric"
+            },            
+            {
+              text: "£0.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Continuing learners in newly devolved areas - free courses for jobs"
+            },
+            {
+              text: "£87.64",
+              format: "numeric"
+            },
+            {
+              text: "£44.36",
+              format: "numeric"
+            },            
+            {
+              text: "£132.00",
               format: "numeric"
             }
           ],
@@ -122,15 +208,15 @@
               html: "<strong>Total</strong>"
             },
             {
-              html: "<strong>£3,215.76</strong>",
+              html: "<strong>£1,782,701.46</strong>",
               format: "numeric"
             },
             {
-              html: "<strong>£2,202.24</strong>",
+              html: "<strong>£891,217.54</strong>",
               format: "numeric"
             },            
             {
-              html: "<strong>£5,418.00</strong>",
+              html: "<strong>£2,673,919.00</strong>",
               format: "numeric"
             }
           ]
@@ -144,7 +230,14 @@
       <p>
         To understand how allocations are calculated or what to do if something does not look right, you can <a href="https://www.gov.uk/" target="blank">find information on GOV.UK (opens in a new tab)</a>.
       </p>
-
+    <!-- <h3 class="govuk-heading-m">
+      Allocation history
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        View history of allocated funding
+      </a>
+    </p> -->
     <h3 class="govuk-heading-m">
       Save or download your allocation statement
     </h3>
@@ -156,7 +249,7 @@
 
     <div class="govuk-body">
       <p style="margin-top: -15px;">
-        <a class="govuk-link" href="/public/files/90000000_advanced_learner_loans_2025_2026_version1.csv"><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download the funding data provided in this statement (CSV)</a>
+        <a class="govuk-link" href="/public/files/90000001_adult_skills_fund_2025_2026_version2.csv"><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download the funding data provided in this statement (CSV)</a>
       </p>
       <p>
         You may need a different format if you're using assistive technology. <a href="https://customerhelpportal.education.gov.uk/">Request an accessible format</a>.

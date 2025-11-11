@@ -1,4 +1,4 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-index.html" %}
 
 {% set pageName="Home" %}
 
@@ -16,6 +16,49 @@
   </div>
 
   <div class="govuk-grid-column-full">
+<table class="govuk-table govuk-table--small-text-until-tablet">
+      <caption class="govuk-table__caption govuk-table__caption--m">Minimum valuable product (private Beta)</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Version</th>
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Reasoning</th>
+          <th scope="col" class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">MVP</th>
+          <td class="govuk-table__cell">11 November 2025</td>
+          <td class="govuk-table__cell">Tested and iterated</td>
+          <td class="govuk-table__cell">
+            The minimum valuable product for the data-driven allocation statement is informed by 3 rounds of user testing across alpha and private beta.
+            <ul>
+              <li>
+                designed as a pattern to be scaled out across Funding Service grants and funding streams, and used across the DfE to communicate funding information to end users
+              </li>
+              <li>
+                data-driven using funding allocation data from the Calculate Funding Service
+              </li>
+              <li>
+                private beta scoped to deliver adult funding allocations release for academic year 2026-2027 Advanced learner loans and Adult skills fund
+              </li>
+
+            </ul>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="prototype/mvp/statement-data-map" class="govuk-button">MVP data map prototype</a>
+            <br>
+            <a href="prototype/mvp/statement-asf-act" class="govuk-button">Adult skills fund (ASF)</a> 
+            <br>
+            <a href="prototype/mvp/statement-all" class="govuk-button">Advanced learner loans (ALL)</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
     <table class="govuk-table govuk-table--small-text-until-tablet">
       <caption class="govuk-table__caption govuk-table__caption--m">Prototype versions</caption>
       <thead class="govuk-table__head">
@@ -114,7 +157,7 @@
         </tr>
 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"></th>
+          <th scope="row" class="govuk-table__header">Version 2.2</th>
           <td class="govuk-table__cell">6 August 2025</td>
           <td class="govuk-table__cell">Tested</td>
           <td class="govuk-table__cell">
@@ -175,14 +218,15 @@
           <td class="govuk-table__cell">
             <p>In this version, we have:</p>
             <ul>
-              <li>Removed period initials (e.g. AS, AY, FY, etc.) from the statement heading</li>
-              <li>Introduced concept of public facing funding line names with the aim to make them more understandable to users</li>
-              <li>Changed guidance copy to make it more valuable to users</li>
-              <li>Removed the 'business case' section</li>
-              <li>Changed link text for both CSV and PDF links with the aim to make it clearer</li>
-              <li>Introduced a naming convention for downloadable CSV files</li>
-              <li>Changed download link icons</li>
-              <li>Moved the accessibility statement from CSV component level to section level.</li>
+              <li>removed period initials (e.g. AS, AY, FY, etc.) from the statement heading</li>
+              <li>introduced concept of public facing funding line names with the aim to make them more understandable to users</li>
+              <li>reviewed and updated logic for showing or hiding 'null' values based on provder eligibility - we now show £0 values but hide lines with a null value</li>
+              <li>changed guidance copy to make it more valuable to users</li>
+              <li>removed the 'business case' section</li>
+              <li>changed link text for both CSV and PDF links with the aim to make it clearer</li>
+              <li>introduced a naming convention for downloadable CSV files</li>
+              <li>changed download link icons</li>
+              <li>moved the request and accessible format from CSV component level to section level.</li>
             </ul>
             <p>This version was taken through user research round 1 (beta)</p>
           </td>
