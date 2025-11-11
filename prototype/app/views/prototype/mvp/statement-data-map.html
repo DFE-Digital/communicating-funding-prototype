@@ -1,0 +1,266 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Adult skills fund for academic year 2025 to 2026" %}
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "javascript:history.back()" } ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading with caption -->
+    <span class="govuk-caption-l">Published: [updatedAt]. <span><strong>Version
+          [content.version] </strong></span><span><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></span></span>
+    <h1 class="govuk-heading-xl">[content.fundingStreamId] for [content.fundingPeriodId]</h1>
+    <h2 class="govuk-caption-l">Total allocation</h2>
+    <span class="govuk-heading-l">£[content.totalFunding]</span>
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9 govuk-table--small-text-until-tablet",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Funding period"
+        },
+        {
+          text: "Sub-total",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "[profilePeriods.typeValue(first)] [profilePeriods.year(first)] to [profilePeriods.typeValue(last)] [profilePeriods.year(last)]"
+          },
+          {
+            text: "£[(sum)distributionPeriods.value]",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "[profilePeriods.typeValue(first)] [profilePeriods.year(first)] to [profilePeriods.typeValue(last)] [profilePeriods.year(last)]"
+          },
+          {
+            text: "£[(sum)distributionPeriods.value]",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+    <!-- Table 2 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Detailed breakdown",
+        captionClasses: "govuk-table__caption--m",
+              classes: "govuk-!-margin-bottom-9",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Funding line item"
+          },
+          {
+            text: "[profilePeriods.typeValue (first)] [profilePeriods.year (first)] to [profilePeriods.typeValue (last)] [profilePeriods.year (last)]",
+            format: "numeric"
+          },
+          {
+            text: "[profilePeriods.typeValue (first)] [profilePeriods.year (first)] to [profilePeriods.typeValue (last)] [profilePeriods.year (last)]",
+            format: "numeric"
+          },
+          {
+            text: "Sub-total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "[fundingLines.externalName]"
+              
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "£[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "[fundingLines.externalName]"
+              
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "£[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "[fundingLines.externalName]"
+              
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "£[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "[fundingLines.externalName]"
+              
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "£[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "[fundingLines.externalName]"
+              
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "£[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          
+          [
+            {
+              text: "[fundingLines.externalName]"
+              
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "£[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "[fundingLines.externalName]"
+              
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },
+            {
+              text: "£[distrbutionPeriods.value](by distributionPeriodsId)",
+              format: "numeric"
+            },            
+            {
+              text: "£[fundingLines.value]",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<strong>Total</strong>"
+            },
+            {
+              html: "<strong>£[(sum)distributionPeriods.value](by distributionPeriodsId)</strong>",
+              format: "numeric"
+            },
+            {
+              html: "<strong>£[(sum)distributionPeriods.value](by distributionPeriodsId)</strong>",
+              format: "numeric"
+            },            
+            {
+              html: "<strong>£[content.totalFunding]</strong>",
+              format: "numeric"
+            }
+          ]
+        ]
+    }) }}
+    </div>
+ 
+    <!-- Custom save or print this statement 'component' (taken from live site) -->
+  
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        To understand how allocations are calculated or what to do if something does not look right, you can <a href="https://www.gov.uk/" target="blank">find information on GOV.UK (opens in a new tab)</a>.
+      </p>
+    <!-- <h3 class="govuk-heading-m">
+      Allocation history
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        View history of allocated funding
+      </a>
+    </p> -->
+    <h3 class="govuk-heading-m">
+      Save or download your allocation statement
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="javascript:window.print()">
+        <img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);" />Save or print this statement
+      </a>
+    </p>
+
+    <div class="govuk-body">
+      <p style="margin-top: -15px;">
+        <a class="govuk-link" href="/public/files/90000001_adult_skills_fund_2025_2026_version2.csv"><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download the funding data provided in this statement (CSV)</a>
+      </p>
+      <p>
+        You may need a different format if you're using assistive technology. <a href="https://customerhelpportal.education.gov.uk/">Request an accessible format</a>.
+      </p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
