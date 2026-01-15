@@ -1,0 +1,215 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Advanced learner loans for academic year 2025 to 2026" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "javascript:history.back()" } ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading -->
+    <h1 class="govuk-heading-xl">Payment history for Adult skills fund for academic year 2025 to 2026</h1>
+  </div>
+</div>
+    <!--SUMMARY STATS-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Total payments to date</h2>
+    <span class="govuk-heading-l">£1,422,865.58</span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Last payment</h2>
+    <span class="govuk-heading-l">18 December 2025</span>
+  </div>
+</div>
+
+<!--PAYMENTS ACCORDION-->
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+  id: "accordion-with-summary-sections",
+  items: [
+    {
+      heading: {
+        text: "18 December 2025"
+    },
+      summary: {
+        text: "Total paid: £0.00"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on 8 December 2025 to reach your bank by 18 December 2025. 
+        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1069</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Learning Support Capping December 2025</td>
+              <td class="govuk-table__cell">-£90,102.66</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1069</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Programme Funding Reconciliation December 2025</td>
+              <td class="govuk-table__cell">£88,185.11</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Reconciliation December 2025</td>
+              <td class="govuk-table__cell">£1,917.55</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£0.00</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "20 November 2025"
+      },
+      summary: {
+        text: "Total paid: £166,942.34"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on 10 November 2025 to reach your bank by 20 November 2025. 
+        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1048</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Learning Support Capping November 2025</td>
+              <td class="govuk-table__cell">-£22,731.81</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1048</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Programme Funding Reconciliation November 2025</td>
+              <td class="govuk-table__cell">£28,261.18</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1048</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Reconciliation November 2025</td>
+              <td class="govuk-table__cell">-£5529.37</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1069</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Learning Support Capping November 2025</td>
+              <td class="govuk-table__cell">-£30,406.67</td>
+            </tr>
+              <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1069</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Programme Funding Reconciliation November 2025</td>
+              <td class="govuk-table__cell">£1,913,49.01</td>
+            </tr>
+              <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1069</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Reconciliation November 2025</td>
+              <td class="govuk-table__cell">£6,000</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£166,942.34/strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "20 October 2025"
+      },
+      summary: {
+        text: "Total paid: £336,954.57"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on 10 October 2025 to reach your bank by 20 October 2025. 
+        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1048</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Learning Support Capping October 2025</td>
+              <td class="govuk-table__cell">-£27,829.32</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1048</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Programme Funding Reconciliation October 2025</td>
+              <td class="govuk-table__cell">£33,073.88</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1048</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Reconciliation October 2025</td>
+              <td class="govuk-table__cell">£9.91</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1069</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Programme Funding Reconciliation October 2025</td>
+              <td class="govuk-table__cell">£325,700.10</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFA23-1069</td>
+              <td class="govuk-table__cell">Adult skills fund (2023 Procurement) - Adult Skills Reconciliation October 2025</td>
+              <td class="govuk-table__cell">£6,000.00</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£336,954.57</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "18 September 2025"
+      },
+      summary: {
+        text: "Total paid: £834,727.55"
+      }
+    }
+  ]
+}) }}
+{% endblock %}
