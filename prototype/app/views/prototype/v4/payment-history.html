@@ -1,0 +1,614 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Advanced learner loans for academic year 2025 to 2026" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "javascript:history.back()" } ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading -->
+    <h1 class="govuk-heading-xl">Payment history for Adult skills fund for academic year 2025 to 2026</h1>
+  </div>
+</div>
+    <!--SUMMARY STATS-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Total payments to date</h2>
+    <span class="govuk-heading-l">£XX,XXX.XX</span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Last payment</h2>
+    <span class="govuk-heading-l">DD MONTH YYYY</span>
+  </div>
+</div>
+
+<!--PAYMENTS ACCORDION-->
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+  id: "accordion-with-summary-sections",
+  items: [
+    {
+      heading: {
+        text: "DD Month YYYY"
+    },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">TThis payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "DD Month YYYY"
+      },
+      summary: {
+        text: "Total paid: £XX,XXX.XX"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on DD MONTH YYY to reach your bank by DD MONTH YYY. 
+        Only payment lines for adult skills fund YYYY to YYYY are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">XXXXXX-XXXX</td>
+              <td class="govuk-table__cell">Description goes here.</td>
+              <td class="govuk-table__cell">£XX,XXX.XX</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£XX,XXX.XX</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    }
+  ]
+}) }}
+{% endblock %}

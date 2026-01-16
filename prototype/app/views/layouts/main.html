@@ -48,3 +48,8 @@ govukRebrand = true %} {% block header %} {% set providerName %}
 </div>
 
 {% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="/assets/js/dfefrontend.min.js"></script>
+{% endblock %}
