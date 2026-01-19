@@ -4,7 +4,7 @@
 
 {% block beforeContent %} 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "javascript:history.back()" }, { text: "Adult skills fund 2025 to 2026", href: "hub-2-prof-payment-schedule" } ] }) }} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "../../../research-rounds/round-5" }, { text: "Adult skills fund 2025 to 2026", href: "hub-2-prof-payment-schedule" } ] }) }} 
 {% endblock %} 
 
 {% block content %}
@@ -14,6 +14,7 @@
   <div class="govuk-grid-column-full">
     <!-- Heading -->
     <h1 class="govuk-heading-xl">Payment schedule for Adult skills fund for academic year 2025 to 2026</h1>
+    <p class="govuk-body-l">Payment schedules for this funding stream can be downloaded on this page.</p>
   
     <!-- Table 1 -->
     {% from "govuk/components/table/macro.njk" import govukTable %}
@@ -23,7 +24,9 @@
       firstCellIsHeader: false,
       head: [
         {
-          text: "Version"
+          text: "Master contract number"
+        },
+        { text: "Contract version"
         },
         {
           text: "Date published"
@@ -39,11 +42,15 @@
       rows: [
         [
           {
+            text: "DFE-12345",
+            classes: "govuk-!-padding-top-4"
+          },
+          {
             text: "2",
             classes: "govuk-!-padding-top-4"
           },
           {
-            text: "19 December 2025",
+            text: "4 July 2025",
             format: "date",
             classes: "govuk-!-padding-top-4"
           },
@@ -59,31 +66,6 @@
           href: "/downloads/v2.csv",
           classes: "govuk-button--secondary"}),
           classes: "govuk-!-padding-top-3" 
-          }
-        ],
-        [
-          {
-            text: "1",
-            classes: "govuk-!-padding-top-4"
-          },
-          {
-            text: "22 July 2025",
-            format: "date",
-            classes: "govuk-!-padding-top-4"
-          },
-          { 
-            html: govukTag({
-            text: "Replaced", 
-            classes: "govuk-tag--grey"}),
-            classes: "govuk-!-padding-top-4"
-          },
-          { 
-            html: govukButton({
-            text: "Download",
-            href: "/downloads/v2.csv",
-            classes: "govuk-button--secondary"}),
-            classes: "govuk-!-padding-top-3"
-          
           }
         ]
       ]
