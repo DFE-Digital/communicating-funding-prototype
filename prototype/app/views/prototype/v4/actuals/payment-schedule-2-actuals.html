@@ -4,7 +4,7 @@
 
 {% block beforeContent %} 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "../../../research-rounds/round-5" }, { text: "Adult skills fund 2025 to 2026", href: "hub-2-actuals-payment-schedule" } ] }) }} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "../../../research-rounds/round-5" }, { text: "Adult skills fund 2025 to 2026", href: "hub-3-actuals-payment-history" } ] }) }} 
 {% endblock %} 
 
 {% block content %}
@@ -43,16 +43,16 @@
       rows: [
         [
           {
-            text: "DFE-26878",
+            text: "DFE-12345",
             classes: "govuk-!-padding-top-4"
           },
           {
-            text: "1",
+            text: "3",
+            classes: "govuk-!-padding-top-4"
+          },
+          {
+            text: "18 December 2025",
             format: "date",
-            classes: "govuk-!-padding-top-4"
-          },
-          {
-            text: "15 July 2025",
             classes: "govuk-!-padding-top-4"
           },
           {
@@ -67,6 +67,35 @@
           href: "/downloads/v2.csv",
           classes: "govuk-button--secondary"}),
           classes: "govuk-!-padding-top-3" 
+          }
+        ],
+        [
+        {
+            text: "DFE-12345",
+            classes: "govuk-!-padding-top-4"
+          },
+          {
+            text: "1",
+            classes: "govuk-!-padding-top-4"
+          },
+          {
+            text: "15 July 2025",
+            format: "date",
+            classes: "govuk-!-padding-top-4"
+          },
+          { 
+            html: govukTag({
+            text: "Replaced", 
+            classes: "govuk-tag--grey"}),
+            classes: "govuk-!-padding-top-4"
+          },
+          { 
+            html: govukButton({
+            text: "Download",
+            href: "/downloads/v2.csv",
+            classes: "govuk-button--secondary"}),
+            classes: "govuk-!-padding-top-3"
+          
           }
         ]
       ]
