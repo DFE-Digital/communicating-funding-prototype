@@ -4,7 +4,7 @@
 
 {% block beforeContent %} 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "../../../research-rounds/round-5" }, { text: "Adult skills fund 2025 to 2026", href: "hub-3-prof-payment-history" } ] }) }} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "../../../research-rounds/round-5" }, { text: "Allocation statements", href: "allocation-index-prof-3" }, { text: "Adult skills fund 2025 to 2026", href: "hub-3-prof-payment-history" } ] }) }} 
 {% endblock %} 
 
 {% block content %}
@@ -24,7 +24,7 @@
       firstCellIsHeader: false,
       head: [
         {
-          text: "Master contract number"
+          text: "Master Contract number"
         },
         {
           text: "Date published"
