@@ -1,0 +1,326 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Advanced learner loans for academic year 2025 to 2026" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "../../../research-rounds/round-5" }, { text: "Allocation statements", href: "allocation-index-prof-3" }, { text: "Adult skills fund 2025 to 2026", href: "hub-3-prof-payment-history" } ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading -->
+    <h1 class="govuk-heading-xl">Payment history for adult skills fund for academic year 2025 to 2026</h1>
+  </div>
+</div>
+    <!--SUMMARY STATS-->
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Total payments to date</h2>
+    <span class="govuk-heading-l">£1,721,857.65</span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Last payment</h2>
+    <span class="govuk-heading-l">18 December 2025</span>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Download all as CSV",
+      href: "/downloads/v2.csv",
+      classes: "govuk-button--secondary"
+    }) }}
+  </div>
+</div>
+
+
+<!--PAYMENTS ACCORDION-->
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+
+{{ govukAccordion({
+  id: "accordion-with-summary-sections",
+  items: [
+    {
+      heading: {
+        text: "18 December 2025"
+    },
+      summary: {
+        text: "Total paid: £592,052.35"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on 8 December 2025 to reach your bank by 18 December 2025. 
+        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1394</td>
+              <td class="govuk-table__cell">Reconciled adult skills fund for adult skills, tailored learning and funding for innovative provision reconciliation December 2025</td>
+              <td class="govuk-table__cell">£291,415.20</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Funding for innovative provision profile December 2025</td>
+              <td class="govuk-table__cell">£7,827.53</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for adult skills profile December 2025</td>
+              <td class="govuk-table__cell">£240,045.03</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for tailored learning profile December 2025</td>
+              <td class="govuk-table__cell">£13,045.95</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFC-1254</td>
+              <td class="govuk-table__cell">Adult skills fund national skills fund grant funded reconciliation December 2025</td>
+              <td class="govuk-table__cell">£18,439.90</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFC-1470</td>
+              <td class="govuk-table__cell">Free courses for jobs profile December 2025</td>
+              <td class="govuk-table__cell">£21,278.74</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£592,052.35</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "18 November 2025"
+      },
+      summary: {
+        text: "Total paid: £282,197.25"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on 8 November 2025 to reach your bank by 18 November 2025. 
+        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Funding for innovative provision profile November 2025</td>
+              <td class="govuk-table__cell">£7,827.53</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for adult skills profile November 2025</td>
+              <td class="govuk-table__cell">£240,045.03</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for tailored learning profile November 2025</td>
+              <td class="govuk-table__cell">£13,045.95</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFC-1470</td>
+              <td class="govuk-table__cell">Free courses for jobs profile November 2025</td>
+              <td class="govuk-table__cell">£21,278.74</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£282,197.25</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "17 October 2025"
+      },
+      summary: {
+        text: "Total paid: £282,197.25"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on 7 Ocotober 2025 to reach your bank by 17 October 2025. 
+        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Funding for innovative provision profile October 2025</td>
+              <td class="govuk-table__cell">£7,827.53</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for adult skills profile October 2025</td>
+              <td class="govuk-table__cell">£240,045.03</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for tailored learning profile October 2025</td>
+              <td class="govuk-table__cell">£13,045.95</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFC-1470</td>
+              <td class="govuk-table__cell">Free courses for jobs profile October 2025</td>
+              <td class="govuk-table__cell">£21,278.74</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£282,197.25</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "18 September 2025"
+      },
+      summary: {
+        text: "Total paid: £282,197.25"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on 8 September 2025 to reach your bank by 18 September 2025. 
+        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Funding for innovative provision profile September 2025</td>
+              <td class="govuk-table__cell">£7,827.53</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for adult skills profile September 2025.</td>
+              <td class="govuk-table__cell">£240,045.03</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for tailored learning profile September 2025</td>
+              <td class="govuk-table__cell">£13,045.95</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFC-1470</td>
+              <td class="govuk-table__cell">Free courses for jobs profile September 2025</td>
+              <td class="govuk-table__cell">£21,278.74</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£282,197.25</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+      text: "18 August 2025"
+      },
+      summary: {
+        text: "Total paid: £283,213.55"
+      },
+    
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on 8 August 2025 to reach your bank by 18 August 2025. 
+        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="abc">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Funding for innovative provision profile August 2025</td>
+              <td class="govuk-table__cell">£7,855.72</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for adult skills profile August 2025</td>
+              <td class="govuk-table__cell">£240,909.53</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASCA-1662</td>
+              <td class="govuk-table__cell">Profiled adult skills fund for tailored learning profile August 2025</td>
+              <td class="govuk-table__cell">£13,092.93</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">ASFC-1470</td>
+              <td class="govuk-table__cell">Free courses for jobs profile August 2025</td>
+              <td class="govuk-table__cell">£21,355.37</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£283,213.55</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    }
+  ]
+}) }}
+{% endblock %}

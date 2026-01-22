@@ -4,7 +4,7 @@
 
 {% block beforeContent %} 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "javascript:history.back()" }, { text: "Adult skills fund 2025 to 2026", href: "hub-2-prof-payment-schedule" } ] }) }} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "../../../research-rounds/round-5" }, { text: "Allocation statements", href: "allocation-index-actuals-1" }, { text: "Adult skills fund 2025 to 2026", href: "hub-1-actuals-pre-contract" } ] }) }} 
 {% endblock %} 
 
 {% block content %}
@@ -13,11 +13,11 @@
   <!-- LEFT HAND COLUMN -->
   <div class="govuk-grid-column-full">
     <!-- Heading with caption -->
-    <span class="govuk-caption-l">Published: 2 July 2025. <span><strong>Version
-          2 </strong></span></span>
+    <span class="govuk-caption-l">Published: 24 April 2025. <span><strong>Version
+          1 </strong></span></span>
     <h1 class="govuk-heading-xl">Adult skills fund for academic year 2025 to 2026</h1>
     <h2 class="govuk-caption-l">Total allocation</h2>
-    <span class="govuk-heading-l">£XXXXXX</span>
+    <span class="govuk-heading-l">£1,861,092.00</span>
     <!-- Table 1 -->
     {% from "govuk/components/table/macro.njk" import govukTable %}
     {{ govukTable({
@@ -40,7 +40,7 @@
             text: "August 2025 to March 2026"
           },
           {
-            text: "£XXXXXX",
+            text: "£1,240,790.33",
             format: "numeric"
           }
         ],
@@ -49,7 +49,7 @@
             text: "April 2026 to July 2026"
           },
           {
-            text: "£XXXXXX",
+            text: "£620,301.67",
             format: "numeric"
           }
         ]
@@ -88,49 +88,32 @@
               
             },
             {
-              text: "£XXXXXX",
+              text: "£1,240,486.03",
               format: "numeric"
             },
             {
-              text: "£XXXXXX",
+              text: "£620,149.97",
               format: "numeric"
             },            
             {
-              text: "£XXXXXX",
+              text: "£1,860,636.00",
               format: "numeric"
             }
           ],
           [
             {
-              text: "Tailored learning"
+              text: "Adult skills core - learner support"
             },
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             },
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             },            
             {
-              text: "£XXXXXX",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              text: "Innovative funding"
-            },
-            {
-              text: "£XXXXXX",
-              format: "numeric"
-            },
-            {
-              text: "£XXXXXX",
-              format: "numeric"
-            },            
-            {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             }
           ],
@@ -139,51 +122,49 @@
               text: "Free courses for jobs"
             },
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             },
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             },            
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             }
           ],
-                    
-                    
-          [
+           [
             {
-              text: "Continuing learners in newly devolved areas - adult skills core (indicative)"
+              text: "Free courses for jobs - learner support"
             },
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             },
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             },            
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             }
           ],          
           [
             {
-              text: "Continuing learners in newly devolved areas - tailored learning (indicative)"
+              text: "Continuing learners in newly devolved areas - adult skills core (indicative)"
             },
             {
-              text: "£XXXXXX",
+              text: "£304.30",
               format: "numeric"
             },
             {
-              text: "£XXXXXX",
+              text: "£151.705",
               format: "numeric"
             },            
             {
-              text: "£XXXXXX",
+              text: "£456.00",
               format: "numeric"
             }
           ],          
@@ -193,15 +174,15 @@
               text: "Continuing learners in newly devolved areas - free courses for jobs (indicative)"
             },
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             },
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             },            
             {
-              text: "£XXXXXX",
+              text: "£0.00",
               format: "numeric"
             }
           ],
@@ -210,15 +191,15 @@
               html: "<strong>Total</strong>"
             },
             {
-              html: "<strong>£XXXXXX</strong>",
+              html: "<strong>£1,240,790.33</strong>",
               format: "numeric"
             },
             {
-              html: "<strong>£XXXXXX</strong>",
+              html: "<strong>£620,301.67</strong>",
               format: "numeric"
             },            
             {
-              html: "<strong>£XXXXXX</strong>",
+              html: "<strong>£1,861,092.00</strong>",
               format: "numeric"
             }
           ]
