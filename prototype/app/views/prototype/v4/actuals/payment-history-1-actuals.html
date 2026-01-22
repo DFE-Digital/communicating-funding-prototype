@@ -17,7 +17,7 @@
   </div>
 </div>
     <!--SUMMARY STATS-->
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
   <div class="govuk-grid-column-one-half">
     <h2 class="govuk-caption-l">Total payments to date</h2>
     <span class="govuk-heading-l">£1,422,865.58</span>
@@ -25,6 +25,17 @@
   <div class="govuk-grid-column-one-half">
     <h2 class="govuk-caption-l">Last payment</h2>
     <span class="govuk-heading-l">18 December 2025</span>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Download all as CSV",
+      href: "/downloads/v2.csv",
+      classes: "govuk-button--secondary"
+    }) }}
   </div>
 </div>
 
