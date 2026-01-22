@@ -4,7 +4,7 @@
 
 {% block beforeContent %} 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "javascript:history.back()" } ] }) }} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "../../../research-rounds/round-5" }, { text: "Allocation statements", href: "allocation-index-prof-1" } ] }) }} 
 {% endblock %} 
 
 {% block content %}
@@ -84,10 +84,25 @@
             </h3>
             <p>View and save a detailed breakdown of your latest allocation statement.</p>
           </div>
+         </div>
+      <div class="dfe-card dfe-card--disabled">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <span class="govuk-secondary-text-color">Payment schedule </span>
+            </h3>
+            <p>Available once your contract has been released.</p>
+          </div>
+      </div>
+      <div class="dfe-card dfe-card--disabled">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <span class="govuk-secondary-text-color">Payment history</span>
+            </h3>
+            <p>Available once you start to receive payments.</p>
+          </div>
       </div>
     </div>
   </div>
-  </div> 
 
     </main>
 </div>  

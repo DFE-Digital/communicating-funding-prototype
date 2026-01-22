@@ -4,7 +4,7 @@
 
 {% block beforeContent %} 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "javascript:history.back()" }, { text: "Allocation statements", href: "javascript:history.back()" } ] }) }} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "../../../research-rounds/round-5" }, { text: "Allocation statements", href: "allocation-index-prof-2" } ] }) }} 
 {% endblock %} 
 
 {% block content %}
@@ -88,13 +88,19 @@
       <div class="dfe-card">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
-                <a href="#" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Payment schedule </a>
+                <a href="payment-schedule-1-prof" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Payment schedule </a>
             </h3>
             <p>Payments due in this funding year.</p>
           </div>
       </div>
+      <div class="dfe-card dfe-card--disabled">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <span class="govuk-secondary-text-color">Payment history</span>
+            </h3>
+            <p>Available once you start to receive payments.</p>
+          </div>
   </div>
-  </div> 
     </main>
 </div>  
 
