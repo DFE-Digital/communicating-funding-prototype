@@ -9,14 +9,19 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-main-wrapper--m">
+
   <!-- Heading with caption -->
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Allocation statements</h1>
-      <p class="govuk-caption-s govuk-!-margin-bottom-8">If you need a statement in a different format, you can contact the <a href="#">Customer Help Portal.</a></p>
+     <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Allocation statements</h1>
+      <p class="govuk-body">If you need a statement in a different format, you can contact the <a href="#">Customer Help Portal.</a></p>
+    </div>
+    </div>
   <!-- Statement list -->
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
   <div class="govuk-grid-row">
-      <div class="card-container">
+    <div>
+      <div class="card-container  govuk-!-margin-top-5">
         <div class="govuk-grid-column-two-thirds">
           <span class="govuk-heading-m">
           <a href="hub-1-prof-pre-contract.html" class="govuk-link">Adult skills fund for 2025 to 2026</a>
@@ -25,6 +30,7 @@
       <div class="govuk-grid-column-one-third">
           <span class="govuk-heading-m govuk-!-text-align-right">£3,364,211.00</h3>
       </div>
+    </div>
     </div>
   </div>
   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -66,6 +72,5 @@
       </div>
     </div>
   </div>
-  </main>
-</div>  
+
 {% endblock %}
