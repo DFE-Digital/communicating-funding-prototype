@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %} 
-{% set pageName="Advanced learner loans for academic year 2025 to 2026" %} 
+{% set pageName="Adult skills fund for academic year 2025 to 2026" %} 
 {% set fallbackPage="javascript:history.back()" %}
 
 {% block beforeContent %} 
@@ -9,18 +9,20 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-main-wrapper--m">
   <!-- Heading with caption -->
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">Adult skills fund</h1>
-      <p class="govuk-caption-l govuk-!-margin-bottom-8">Funding overview for 2025 to 2026</p>
+   <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Adult skills fund</h1>
+        <span class="govuk-caption-l govuk-!-margin-bottom-8">Funding overview for 2025 to 2026</span>
+    </div>
+    </div>
     <div class="govuk-grid-row">
   <!-- LEFT HAND COLUMN -->
     <div class="govuk-grid-column-one-half">
     <!-- Allocation amount & version -->
       <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Total allocation</h2>
       <p class="govuk-heading-xl govuk-!-margin-bottom-1">£3,364,211.00</p>
-      <p class="govuk-body">Last updated 24 April 2025 <strong class="govuk-secondary-text-color">Version 1</strong></p>
+      <p class="govuk-body">Last updated 15 March 2025 <strong class="govuk-secondary-text-color">Version 1</strong></p>
       <p><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></p>
     </div>
     <!-- RIGHT HAND COLUMN -->
@@ -85,6 +87,7 @@
             <p>View and save a detailed breakdown of your latest allocation statement.</p>
           </div>
          </div>
+         <!-- Inactive Card -->
       <div class="dfe-card dfe-card--disabled">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
@@ -104,9 +107,4 @@
     </div>
   </div>
 
-    </main>
-</div>  
-
-
-   
 {% endblock %}

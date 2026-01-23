@@ -445,7 +445,7 @@
 }
 
 @media (hover: hover) and(pointer: fine) {
-    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not(: focus-visible):hover::after {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not( :focus-visible):hover::after {
         background: #fff;
     }
     .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not( :focus-visible):hover .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner {
@@ -1823,3 +1823,4 @@ a:focus {
 .dfe-chevron-card__link:focus::before {
     border-color: #0b0c0c
 }
+
