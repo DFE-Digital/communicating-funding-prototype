@@ -438,7 +438,7 @@
 }
 
 @media (min-width: 22.5em) {
-    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not(: focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
         border-bottom-color: #fff;
         border-right-color: #fff;
     }
@@ -568,7 +568,7 @@
 }
 
 @media (min-width: 22.5em) {
-    .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(: focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
+    .gem-c-layout-super-navigation-header__navigation-top-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible) .gem-c-layout-super-navigation-header__navigation-top-toggle-button-inner::before {
         border-bottom-color: #1d70b8;
         border-right-color: #1d70b8;
         -webkit-transform: translateY(1px) rotate(225deg) scale(1);
@@ -723,7 +723,7 @@
 }
 
 @media (hover: hover) and(pointer: fine) {
-    .gem-c-layout-super-navigation-header__search-toggle-button:focus:not(: focus-visible):hover {
+    .gem-c-layout-super-navigation-header__search-toggle-button:focus:not(:focus-visible):hover {
         color: #fff;
     }
     .gem-c-layout-super-navigation-header__search-toggle-button:focus:not( :focus-visible):hover::after {
@@ -816,7 +816,7 @@
 }
 
 @media (hover: hover) and(pointer: fine) {
-    .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(: focus-visible):hover::after {
+    .gem-c-layout-super-navigation-header__search-toggle-button.gem-c-layout-super-navigation-header__open-button:focus:not(:focus-visible):hover::after {
         background: #1d70b8;
     }
 }

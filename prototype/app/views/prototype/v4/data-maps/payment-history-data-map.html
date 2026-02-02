@@ -1,0 +1,416 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Adult skills fund for academic year 2025 to 2026 - payment history" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "../../../research-rounds/round-5" }, { text: "Allocation statements", href: "allocation-index-prof-3" }, { text: "Adult skills fund 2025 to 2026", href: "hub-3-prof-payment-history" } ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading -->
+    <h1 class="govuk-heading-xl">Payment history for [content.fundingStreamId] for [content.fundingPeriodId]</h1>
+  </div>
+</div>
+    <!--SUMMARY STATS-->
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Total payments to date</h2>
+    <span class="govuk-heading-l">£[totalFundingToDate.value]</span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Last payment</h2>
+    <span class="govuk-heading-l">[astPayment.date]</span>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Download all as CSV",
+      href: "/public/files/900000000_adult_skills_fund_2025_2026_payment-history.csv",
+      classes: "govuk-button--secondary"
+    }) }}
+  </div>
+</div>
+
+
+<!--PAYMENTS ACCORDION-->
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+
+{{ govukAccordion({
+  id: "accordion-with-summary-sections",
+  items: [
+    {
+      heading: {
+        text: "[payment.date(received)]"
+    },
+      summary: {
+        text: "Total paid: £[totalMonthlyPayment.value]"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on [payment.date(sent)] to reach your bank by [payment.date(received)]. 
+        Only payment lines for [content.fundingStreamId(lowercase)][content.fundingPeriodId] are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>[totalMonthlyPayment.value]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+        {
+      heading: {
+        text: "[payment.date(received)]"
+    },
+      summary: {
+        text: "Total paid: £[totalMonthlyPayment.value]"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on [payment.date(sent)] to reach your bank by [payment.date(received)]. 
+        Only payment lines for [content.fundingStreamId(lowercase)][content.fundingPeriodId] are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>[totalMonthlyPayment.value]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+        {
+      heading: {
+        text: "[payment.date(received)]"
+    },
+      summary: {
+        text: "Total paid: £[totalMonthlyPayment.value]"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on [payment.date(sent)] to reach your bank by [payment.date(received)]. 
+        Only payment lines for [content.fundingStreamId(lowercase)][content.fundingPeriodId] are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>[totalMonthlyPayment.value]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+        text: "[payment.date(received)]"
+    },
+      summary: {
+        text: "Total paid: £[totalMonthlyPayment.value]"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on [payment.date(sent)] to reach your bank by [payment.date(received)]. 
+        Only payment lines for [content.fundingStreamId(lowercase)][content.fundingPeriodId] are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>[totalMonthlyPayment.value]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+        text: "[payment.date(received)]"
+    },
+      summary: {
+        text: "Total paid: £[totalMonthlyPayment.value]"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on [payment.date(sent)] to reach your bank by [payment.date(received)]. 
+        Only payment lines for [content.fundingStreamId(lowercase)][content.fundingPeriodId] are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>[totalMonthlyPayment.value]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+        text: "[payment.date(received)]"
+    },
+      summary: {
+        text: "Total paid: £[totalMonthlyPayment.value]"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on [payment.date(sent)] to reach your bank by [payment.date(received)]. 
+        Only payment lines for [content.fundingStreamId(lowercase)][content.fundingPeriodId] are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>[totalMonthlyPayment.value]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    },
+    {
+      heading: {
+        text: "[payment.date(received)]"
+    },
+      summary: {
+        text: "Total paid: £[totalMonthlyPayment.value]"
+    },
+      content: {
+        html: '<p class="govuk-body">This payment was sent by DfE on [payment.date(sent)] to reach your bank by [payment.date(received)]. 
+        Only payment lines for [content.fundingStreamId(lowercase)][content.fundingPeriodId] are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[contractNumber.ref]</td>
+              <td class="govuk-table__cell">[paymentDescription.text]</td>
+              <td class="govuk-table__cell">£[fundingLinePayment.value]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>[totalMonthlyPayment.value]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>'
+      }
+    }
+  ]
+}) }}
+{% endblock %}

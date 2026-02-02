@@ -4,7 +4,7 @@
 
 {% block beforeContent %} 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "../../../research-rounds/round-5" }, { text: "Allocation statements", href: "allocation-index-actuals-1" } ] }) }} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "../../../research-rounds/round-5" }, { text: "Allocation statements", href: "allocation-index-prof-1" } ] }) }} 
 {% endblock %} 
 
 {% block content %}
@@ -12,18 +12,17 @@
   <!-- Heading with caption -->
    <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Adult skills fund</h1>
-        <span class="govuk-caption-l govuk-!-margin-bottom-8">Funding overview for 2025 to 2026</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">[content.fundingStreamId]</h1>
+        <span class="govuk-caption-l govuk-!-margin-bottom-8">Funding overview for [fundingPeriodId]</span>
     </div>
     </div>
-    
-      <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
   <!-- LEFT HAND COLUMN -->
     <div class="govuk-grid-column-one-half">
     <!-- Allocation amount & version -->
-      <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Total allocation</h2>
-      <p class="govuk-heading-xl govuk-!-margin-bottom-1">£1,861,092.00</p>
-      <p class="govuk-body">Last updated 15 March 2025 <strong class="govuk-secondary-text-color">Version 1</strong></p>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Total allocation</h2>
+      <p class="govuk-heading-l govuk-!-margin-bottom-1">£[content.totalFunding]</p>
+      <p class="govuk-body">Last updated [updatedAt] <strong class="govuk-secondary-text-color">Version [content.version]</strong></p>
       <p><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></p>
     </div>
     <!-- RIGHT HAND COLUMN -->
@@ -47,19 +46,19 @@
       rows: [
         [
           {
-            text: "August 2025 to March 2026"
+            text: "[profilePeriods.typeValue(first)] [profilePeriods.year(first)] to [profilePeriods.typeValue(last)] [profilePeriods.year(last)]"
           },
           {
-            text: "£1,240,790.33",
+            text: "£[(sum)distributionPeriods.value]",
             format: "numeric"
           }
         ],
         [
           {
-            text: "April 2026 to July 2026"
+            text: "[profilePeriods.typeValue(first)] [profilePeriods.year(first)] to [profilePeriods.typeValue(last)] [profilePeriods.year(last)]"
           },
           {
-            text: "£620,301.67",
+            text: "£[(sum)distributionPeriods.value]",
             format: "numeric"
           }
         ],
@@ -68,7 +67,7 @@
             html: "<strong>Total</strong>"
           },
           {
-            html: "<strong>£1,861,092.00</strong>",
+            html: "<strong>£[content.totalFunding]</strong>",
             format: "numeric"
           }
         ],
@@ -83,15 +82,15 @@
       <div class="dfe-card">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
-                <a href="statement-1-actuals-pre-contract.html" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Allocation statement</a>
+                <a href="statement-1-prof-pre-contract.html" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">[allocationID]</a>
             </h3>
             <p>View and save a detailed breakdown of your latest allocation statement.</p>
           </div>
-      </div>
-      <div class="dfe-card dfe-card--disabled" aria-disabled="true">
+         </div>
+      <div class="dfe-card">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
-                <span class="govuk-secondary-text-color">Payment schedule </span>
+                <a href="payment-schedule-2-prof" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">[paymentScheduleID]</a>
             </h3>
             <p>Available once your contract has been released.</p>
           </div>
@@ -99,15 +98,12 @@
       <div class="dfe-card dfe-card--disabled">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
-                <span class="govuk-secondary-text-color">Payment history</span>
+              <a href="payment-history-1-prof" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">[paymentHistoryID]</a>
             </h3>
             <p>Available once you start to receive payments.</p>
           </div>
       </div>
     </div>
+  </div>
 
-
-
-
-   
 {% endblock %}
