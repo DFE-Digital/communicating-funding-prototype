@@ -464,19 +464,17 @@
 }
 
 // Disabled card styles - remove hover state and set heading to grey
-.dfe-card--disabled {
-  &:hover,
-  &:focus-within {
-    background-color: #fff;
-    
-    .govuk-heading-m,
-    a,
-    p {
-      color: #626a6d;
+
+
+.disabled-card {
+  pointer-events: none;
+  cursor: pointer;
+  background-color: #f3f3f3;
+    .govuk-heading-m {
+    color: #484949;
     }
-  }
-  
-  .govuk-heading-m {
-    color: #626a6d;
-  }
+    .govuk-body {
+      color: #484949;
+    }
 }
+
