@@ -1,6 +1,7 @@
 {% extends "layouts/main.html" %} 
 {% set pageName="Adult skills fund for academic year 2025 to 2026" %} 
 {% set fallbackPage="javascript:history.back()" %}
+{% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}
 
 {% block beforeContent %} 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
@@ -88,15 +89,15 @@
             <p>View and save a detailed breakdown of your latest allocation statement.</p>
           </div>
       </div>
-      <div class="dfe-card dfe-card--disabled">
+      <div class=" dfe-card disabled-card">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
                 <span class="govuk-secondary-text-color">Payment schedule </span>
             </h3>
-            <p>Available once your contract has been released.</p>
+            <p class="govuk-body">Available once your contract has been released.</p>
           </div>
       </div>
-      <div class="dfe-card dfe-card--disabled">
+      <div class="dfe-card disabled-card">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
                 <span class="govuk-secondary-text-color">Payment history</span>
