@@ -170,3 +170,25 @@ function sumProfilePeriods(profilePeriods) {
         return sum + (profilePeriod.value || 0);
     }, 0);
 }
+
+// Calculations
+
+addFilter('asfundingLinesRows', fundingLines => {
+    if (!fundingLines || !Array.isArray(fundingLines)) return [];
+
+    return fundingLines
+        .filter(line => line.value !== null) 
+        .map(line => [
+            { 
+                text: line.name 
+            },
+            { 
+                text: line.value.toLocaleString('en-GB', { 
+                    style: 'currency', 
+                    currency: 'GBP',
+                    maximumFractionDigits: 0 
+                }), 
+                format: 'numeric' 
+            }
+        ]);
+})

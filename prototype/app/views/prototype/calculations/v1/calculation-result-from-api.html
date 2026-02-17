@@ -9,7 +9,33 @@
 
 {% block content %}
 
+    <div class="govuk-grid-column-full">
+    <span class="govuk-caption-l">Published: 12 Feb 2026. <span><strong>Version 1 </strong></span><span><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></span></span>
+    <h1 class="govuk-heading-xl">16-19 for academic year 2026 to 2027</h1>
+    <h2 class="govuk-caption-l">Total allocation</h2>
+    <span class="govuk-heading-l">£1,150,000</span>
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+    caption: "Summary allocation",
+    captionClasses: "govuk-table__caption--m",
+    classes: "govuk-!-margin-bottom-9",
+    firstCellIsHeader: true,
+    head: [
+    {
+    text: "High Needs Funding"
+    },
+    {
+    text: "Current Total",
+    format: "numeric"
+    }
+    ],
+    rows: calculationresult.fundingTemplate.fundingLines | asfundingLinesRows
+
+    }) }}
+  </div>
+
 <div class="govuk-grid-row">
+    
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-l">Published: 12 Feb 2026. <span><strong>Version 1 </strong></span><span><strong class="govuk-tag" style="display: inline; margin-left: 5px;">Latest</strong></span></span>
     <h1 class="govuk-heading-xl">16-19 for academic year 2026 to 2027</h1>
