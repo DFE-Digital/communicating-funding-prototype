@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %} 
+<<<<<<< HEAD
+{% set pageName="Adult skills fund 2025 to 2026 payment schedule" %} 
+=======
+{% set pageName="Adult skills fund for academic year 2025 to 2026 - payment schedule" %} 
+>>>>>>> 49fb3c8758af3d6149d4797cee608b09fb90c878
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "hub-2-payment-schedule"
+}) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading -->
+    <h1 class="govuk-heading-xl">Payment schedule for adult skills fund for academic year 2025 to 2026</h1>
+    <p class="govuk-body-l">Payment schedules for this funding stream can be downloaded on this page.</p>
+  
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Master contract number"
+        },
+        {
+          text: "Date published"
+        },
+        { 
+          text: "Status"
+        },
+        {
+          text: "Download (csv)"
+        }
+
+      ],
+      rows: [
+        [
+          {
+            text: "DFE-12345",
+            classes: "govuk-!-padding-top-4"
+          },
+          {
+            text: "4 July 2025",
+            format: "date",
+            classes: "govuk-!-padding-top-4"
+          },
+          {
+            html: govukTag({
+            text: "Latest", 
+            classes: "govuk-tag--blue"}),
+            classes: "govuk-!-padding-top-4"
+          },
+          { 
+          html: govukButton({
+          text: "Download",
+          href: "/public/files/900000000_adult_skills_fund_2025_2026_payment-schedule_version2.csv",
+          classes: "govuk-button--secondary"}),
+          classes: "govuk-!-padding-top-3" 
+          }
+        ]
+      ]
+    }) }}
+  </div>
+{% endblock %}
