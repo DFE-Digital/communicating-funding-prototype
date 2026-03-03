@@ -191,7 +191,6 @@ function formatCalculationFactorRows(fundingAndCalculationLines, rows, level = 0
 
         if (item.value !== null && item.value !== undefined && !isDuplicateName) {
         
-
         if (!isDuplicateName && item.value !== null && item.value !== undefined) {
         // Format based on the type
         let formattedValue = item.value;
@@ -207,14 +206,10 @@ function formatCalculationFactorRows(fundingAndCalculationLines, rows, level = 0
         } else {
             formattedValue = item.value.toLocaleString('en-GB');
         }
-        
-        // Indent, based on level in the JSON hierachy
-        const indentationClass = level > 0 ? `govuk-!-padding-left-${Math.min(level * 3, 9)}` : "";
 
         rows.push([
             { 
             text: item.name,
-            classes: indentationClass
             },
             { 
             text: formattedValue, 
