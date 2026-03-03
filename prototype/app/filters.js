@@ -220,7 +220,7 @@ function formatCalculationFactorRows(fundingAndCalculationLines, rows, level = 0
         }
         }
 
-        //If the row was skipped, thanks to a dupe or null, don't iterate the level, to maintain indentation
+        //If the row was skipped, thanks to a dupe or null, don't iterate the level
         const nextLevel = rowAdded ? level + 1 : level;
 
         //Recurse if further calculations exist, on our current item
