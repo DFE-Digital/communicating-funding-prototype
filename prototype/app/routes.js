@@ -85,3 +85,28 @@ async function fetchV3Statement(fundingSteamId) {
     const res = await fetch(url);
     return await res.json();
 }
+
+//Calculations
+
+// render Calculation Factors Data MVP v1
+router.get("/prototype/calculations/v1/calculation-result-from-api", async (req, res) => {
+
+    try {
+        const calculationresult = await fetchV2CalculationResult();
+        console.log(calculationresult)
+        res.render("prototype/calculations/v1/calculation-result-from-api", {
+            calculationresult
+        });
+    } catch (error) {
+        console.error("Error fetching calculationresult:", error);
+        res.status(500).send()
+    }
+});
+
+//fetch v2 calculation result from CFS test env
+async function fetchV2CalculationResult() {
+    const url = `${process.env.PROTOTYPE_API_URL}/api/v2/calculationresult`;
+    console.log("Fetching calculation result from API", "URL:", url);
+    const res = await fetch(url);
+    return await res.json();
+}

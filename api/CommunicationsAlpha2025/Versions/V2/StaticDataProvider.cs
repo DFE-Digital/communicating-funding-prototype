@@ -18,12 +18,18 @@ public interface IStaticDataProvider
     /// Gets all published provider funding streams as an enumerable of JSON elements.
     /// </summary>
     IEnumerable<JsonElement> GetAllPublishedProviderFundingStreams();
+
+    /// <summary>
+    /// Gets prototype calc result as the raw json string.
+    /// </summary>
+    string GetPrototypeCalcResult();
 }
 
 /// <inheritdoc cref="IStaticDataProvider"/>
 public class StaticDataProvider : IStaticDataProvider
 {
     private JsonDocument? _publishedProviderFunding;
+    private string? _publishedCalcsResults;
 
     private readonly IConfiguration _configuration;
 
@@ -32,19 +38,27 @@ public class StaticDataProvider : IStaticDataProvider
     {
         _configuration = configuration;
 
-        FetchPublishedProviderFundingStreams();
+        FetchPublishedFundingData();
     }
 
-    private void FetchPublishedProviderFundingStreams()
+    private void FetchPublishedFundingData()
     {
         string storageUri = _configuration["DefaultStorageAccountUri"]
                             ?? throw new InvalidOperationException("DefaultStorageAccountUri not set");
         string container = _configuration["DefaultStorageAccountDataContainer"]
                            ?? throw new InvalidOperationException("DefaultStorageAccountDataContainer not set");
-        string filePath = _configuration["DefaultStorageAccountPublishedFundingPath"]
+        string filePathProviderData = _configuration["DefaultStorageAccountPublishedFundingPath"]
                           ?? throw new InvalidOperationException("DefaultStorageAccountPublishedFundingPath not set");
+        string filePathCalcsData = _configuration["DefaultStorageAccountPublishedCalcsResultsPath"]
+                  ?? throw new InvalidOperationException("DefaultStorageAccountPublishedCalcsResultsPath not set");
 
-        var blobUri = new Uri($"{storageUri}/{container}/{filePath}");
+        GetBlobData(storageUri, container, filePathProviderData, ref _publishedProviderFunding);
+        GetJsonString(storageUri, container, filePathCalcsData, ref _publishedCalcsResults);
+    }
+
+    private static void GetBlobData(string storageUri, string container, string filePathProviderData, ref JsonDocument? jsonData)
+    {
+        var blobUri = new Uri($"{storageUri}/{container}/{filePathProviderData}");
         var anonymousBlobClient = new BlobClient(blobUri);
 
         Console.WriteLine("Attempting to download published funding blob...");
@@ -53,14 +67,26 @@ public class StaticDataProvider : IStaticDataProvider
         Console.WriteLine("Downloaded. Attempting to get value stream...");
         using var downloadResponseStream = downloadResponse.Value.Content.ToStream();
 
-        _publishedProviderFunding = JsonDocument.Parse(downloadResponseStream,
+        jsonData = JsonDocument.Parse(downloadResponseStream,
             new JsonDocumentOptions
             {
                 AllowTrailingCommas = true,
                 CommentHandling = JsonCommentHandling.Skip
             });
 
-        Console.Write("Successfully fetched published provider funding stream.");
+        Console.Write("Successfully fetched json document.");
+    }
+
+    private static void GetJsonString(string storageUri, string container, string filePathProviderData, ref string? jsonstring)
+    {
+        var blobUri = new Uri($"{storageUri}/{container}/{filePathProviderData}");
+        var anonymousBlobClient = new BlobClient(blobUri);
+
+        Console.WriteLine("Attempting to download published funding blob...");
+        Azure.Response<BlobDownloadResult> downloadResponse = anonymousBlobClient.DownloadContent();
+        jsonstring = downloadResponse.Value.Content.ToString();
+
+        Console.Write("Successfully fetched json string.");
     }
 
     public JsonElement GetPublishedProviderFundingStreamById(string fundingStreamId)
@@ -81,5 +107,13 @@ public class StaticDataProvider : IStaticDataProvider
 
         return _publishedProviderFunding.RootElement.EnumerateObject()
             .Select(property => property.Value);
+    }
+
+    public string GetPrototypeCalcResult()
+    {
+        if (string.IsNullOrWhiteSpace(_publishedCalcsResults))
+            throw new InvalidOperationException("Published calc results have not been fetched.");
+
+        return _publishedCalcsResults;
     }
 }

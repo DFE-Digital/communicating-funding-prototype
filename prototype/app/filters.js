@@ -170,3 +170,67 @@ function sumProfilePeriods(profilePeriods) {
         return sum + (profilePeriod.value || 0);
     }, 0);
 }
+
+// Calculations
+
+// Takes in a fundingLines Object, of which contains fundingLines and calculations
+// Here we roll through the Object recursively, outputting all funding lines and calculations in the appropriate hierachy
+addFilter('asfundingLinesRows', fundingAndCalculationLines => {
+    const rows = [];
+
+    formatCalculationFactorRows(fundingAndCalculationLines, rows);
+    return rows;
+});
+
+function formatCalculationFactorRows(fundingAndCalculationLines, rows, level = 0) {
+    if (!fundingAndCalculationLines || !Array.isArray(fundingAndCalculationLines)) return;
+
+    fundingAndCalculationLines.forEach(item => {
+        const isDuplicateName = rows.some(row => row[0].text === item.name);
+        let rowAdded = false;
+
+        if (item.value !== null && item.value !== undefined && !isDuplicateName) {
+        
+        if (!isDuplicateName && item.value !== null && item.value !== undefined) {
+        // Format based on the type
+        let formattedValue = item.value;
+        //If valueFormat does not exist as a property, we are on the fundingLine, which is always a currency value
+        if (item.valueFormat === 'Currency' || !item.valueFormat) { 
+            formattedValue = new Intl.NumberFormat('en-GB', { 
+            style: 'currency', 
+            currency: 'GBP',
+            maximumFractionDigits: 0 
+            }).format(item.value);
+        } else if (item.valueFormat === 'Percentage') {
+            formattedValue = item.value + '%';
+        } else {
+            formattedValue = item.value.toLocaleString('en-GB');
+        }
+
+        rows.push([
+            { 
+            text: item.name,
+            },
+            { 
+            text: formattedValue, 
+            format: 'numeric' 
+            }
+        ]);
+        rowAdded = true;
+        }
+        }
+
+        //If the row was skipped, thanks to a dupe or null, don't iterate the level
+        const nextLevel = rowAdded ? level + 1 : level;
+
+        //Recurse if further calculations exist, on our current item
+        if (item.calculations && item.calculations.length > 0) {
+        formatCalculationFactorRows(item.calculations, rows, nextLevel);
+        }
+
+        //Recurse if further funding lines exist, on our current item
+        if (item.fundingLines && item.fundingLines.length > 0) {
+        formatCalculationFactorRows(item.fundingLines, rows, nextLevel);
+        }
+    });
+}
