@@ -90,7 +90,8 @@
           </tbody>
         </table>
 
-          <a href="#" class="govuk-button govuk-button--secondary">Download 18 December payments (CSV)</a>'
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download 18 December payments (CSV)</a>'
     
       }
     },
@@ -105,8 +106,7 @@
       },
     
       content: {
-        html: '<p class="govuk-body">This payment was sent by DfE on 8 November 2025 to reach your bank by 18 November 2025. 
-        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="#">View all payment lines for 18 November 2025 (opens in a new window).</a></p>
         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -148,9 +148,11 @@
           </tbody>
         </table>
         
+      <!--MONTHLY DOWNLOAD BUTTON-->
         <a href="#" class="govuk-button govuk-button--secondary">Download 18 November payments (CSV)</a>'
       }
     },
+    
     {
       heading: {
       text: "17 October 2025"
@@ -160,8 +162,7 @@
       },
     
       content: {
-        html: '<p class="govuk-body">This payment was sent by DfE on 7 Ocotober 2025 to reach your bank by 17 October 2025. 
-        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="#">View all payment lines for 17 October 2025 (opens in a new window).</a></p>
         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -201,7 +202,11 @@
               </td>
             </tr>
           </tbody>
-        </table>'
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+        <a href="#" class="govuk-button govuk-button--secondary">Download 17 October payments (CSV)</a>'
+
       }
     },
     {
@@ -213,8 +218,7 @@
       },
     
       content: {
-        html: '<p class="govuk-body">This payment was sent by DfE on 8 September 2025 to reach your bank by 18 September 2025. 
-        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="#">View all payment lines for 18 September 2025 (opens in a new window).</a></p>
         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -254,7 +258,11 @@
               </td>
             </tr>
           </tbody>
-        </table>'
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+        <a href="#" class="govuk-button govuk-button--secondary">Download 18 September payments (CSV)</a>'
+
       }
     },
     {
@@ -266,8 +274,7 @@
       },
     
       content: {
-        html: '<p class="govuk-body">This payment was sent by DfE on 8 August 2025 to reach your bank by 18 August 2025. 
-        Only payment lines for adult skills fund 2025 to 2026 are shown in this summary. <a href ="#">View your complete payment history.</a></p>
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="#">View all payment lines for 18 August 2025 (opens in a new window).</a></p>
         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -307,9 +314,30 @@
               </td>
             </tr>
           </tbody>
-        </table>'
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+        <a href="#" class="govuk-button govuk-button--secondary">Download 18 August payments (CSV)</a>'
+
       }
     }
   ]
 }) }}
+
+  <div class="govuk-grid-row govuk-!-margin-top-8">
+  <div class="govuk-grid-column-full">
+ 
+    <h3 class="govuk-heading-m">
+      Download your payment history
+    </h3>
+
+    <div class="govuk-body">
+      <p style="margin-top: -15px;">
+        <a class="govuk-link" href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-aug-2025–18-dec-2025 (MOCK EXAMPLE).csv"><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download adult skills fund 2025 to 2026 payments to date (CSV)</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+
 {% endblock %}
