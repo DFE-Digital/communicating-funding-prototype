@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Allocation statements" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "myesf-dashboard" } ] }) }}  
+{% endblock %} 
+
+{% block content %}
+
+  <!-- Heading with caption -->
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Funding information</h1>
+      
+      </div>
+      </div>
+      <!-- Statement list -->
+
+    <div class="govuk-grid-row">
+      <div class="card-container govuk-!-margin-top-5">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="hub" class="govuk-link">Adult skills fund for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 20 March 2026</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,396,272.00</h3>
+      </div>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+   <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="hub-alt" class="govuk-link">Adult skills fund for 2025 to 2026</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 15 January 2026</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,406,785.00</h3>
+      </div>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated 20 March 2026</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£909,648.00</h3>
+      </div>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2025 to 2026</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated 12 February 2026</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£899,850.00</h3>
+      </div>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Non-levy apprenticeship for 2024 to 2025</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated 6 February 2025</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£24,200.00</h3>
+      </div>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+   <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Apprenticeship carry-in for 2024 to 2025</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated 11 July 2024</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£1,000.00</h3>
+      </div>
+    </div>
+  </div>
+ 
+{% endblock %}
