@@ -8,11 +8,12 @@
   "dependencies": {
     "@dotenvx/dotenvx": "^1.48.4",
     "@govuk-prototype-kit/common-templates": "3.0.0",
+    "@ministryofjustice/frontend": "^9.0.0",
     "dfe-frontend": "^2.0.1",
     "fs-extra": "^11.3.0",
     "govuk-frontend": "6.1.0",
     "govuk-prototype-kit": "13.19.1",
-    "jquery": "3.7.1",
-    "notifications-node-client": "8.2.1"
+    "jquery": "4.0.0",
+    "notifications-node-client": "8.3.0"
   }
 }
