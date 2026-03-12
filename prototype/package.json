@@ -7,14 +7,11 @@
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.48.4",
-    "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@govuk-prototype-kit/step-by-step": "2.2.3",
-    "@govuk-prototype-kit/task-list": "2.0.0",
+    "@govuk-prototype-kit/common-templates": "3.0.0",
     "dfe-frontend": "^2.0.1",
     "fs-extra": "^11.3.0",
-    "govuk-frontend": "5.11.0",
-    "govuk-prototype-kit": "13.17.0",
-    "hmrc-frontend": "6.76.0",
+    "govuk-frontend": "6.1.0",
+    "govuk-prototype-kit": "13.19.1",
     "jquery": "3.7.1",
     "notifications-node-client": "8.2.1"
   }
