@@ -1,0 +1,379 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Adult skills fund for academic year 2025 to 2026 - allocation statement" %}
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "hub-1-pre-contract"
+}) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading with caption -->
+    <span class="govuk-caption-l">Published: 12 March 2025. <span><strong>Version
+          1 </strong></span></span>
+    <h1 class="govuk-heading-xl">Adult skills fund for academic year 2025 to 2026</h1>
+    <h2 class="govuk-caption-l">Total allocation</h2>
+    <span class="govuk-heading-l">£4,247,865.00</span>
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Funding period"
+        },
+        {
+          text: "Sub-total",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "August 2025 to March 2026"
+          },
+          {
+            text: "£2,832,051.57",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "April 2026 to July 2026"
+          },
+          {
+            text: "£1,415,813.39",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-full">
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Detailed breakdown",
+        captionClasses: "govuk-table__caption--m",
+              classes: "govuk-!-margin-bottom-9",
+        firstCellIsHeader: false,
+        head: [
+           {
+            text: "Funding line item"
+          },
+          {
+            text: "August 2025 to March 2026",
+            format: "numeric"
+          },
+          {
+            text: "April 2026 to July 2026",
+            format: "numeric"
+          },
+          {
+            text: "Sub-total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Adult skills core"
+              
+            },
+            {
+              text: "£1,305,059.89",
+              format: "numeric"
+            },
+            {
+              text: "£652,432.07",
+              format: "numeric"
+            },            
+            {
+              text: "£1,957,492.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Tailored learning"
+            },
+            {
+              text: "£1,460,970.37",
+              format: "numeric"
+            },
+            {
+              text: "£730,375.62",
+              format: "numeric"
+            },            
+            {
+              text: "£2,191,346.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Innovative provision"
+            },
+            {
+              text: "£0.00",
+              format: "numeric"
+            },
+            {
+              text: "£0.00",
+              format: "numeric"
+            },            
+            {
+              text: "£0.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Free courses for jobs"
+            },
+            {
+              text: "£66,021.31",
+              format: "numeric"
+            },
+            {
+              text: "£33,005.70",
+              format: "numeric"
+            },            
+            {
+              text: "£99,027.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<strong>Total</strong>"
+            },
+            {
+              html: "<strong>£2,832,051.57</strong>",
+              format: "numeric"
+            },
+            {
+              html: "<strong>£1,415,813.39</strong>",
+              format: "numeric"
+            },            
+            {
+              html: "<strong>£4,247,865.00</strong>",
+              format: "numeric"
+            }
+          ]
+        ]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-full">
+  {% from "govuk/components/details/macro.njk" import govukDetails %}
+  {{ govukDetails({
+  summaryText: "View calculation factors by funding line",
+  html: '
+  <!--Calc factors table 2-->
+    <table class="govuk-table">
+      <caption class="govuk-table__caption"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Adult skills</th>
+          <th scope="col" class="govuk-table__header">Current total</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Allocation for academic year 2023 to 2024</td>
+          <td class="govuk-table__cell">£4,504,803</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Allocation for academic year 2024 to 2025</td>
+          <td class="govuk-table__cell">£4,504,325</td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Delivery for 2023 to 2024</td>
+          <td class="govuk-table__cell">£4,381,954</td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Delivery adjusted for 2024 to 2025 devolved areas</td>
+          <td class="govuk-table__cell">£4,381,954</td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Change to allocation for baseline to equal delivery (or maximum over delivery)</td>
+          <td class="govuk-table__cell">-£122,371</td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2025 to 2026 funding rate changes using 2023 to 2024 delivery</td>
+          <td class="govuk-table__cell">£33,380</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Total including rate changes</td>
+          <td class="govuk-table__cell">£4,415,334</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong>Total adult skills</strong></td>
+          <td class="govuk-table__cell"><strong>£4,415,334</td>
+        </tr>
+      </tbody>
+    </table>
+
+  <!--Calc factors table 2-->
+  <table class="govuk-table">
+      <caption class="govuk-table__caption"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Adult skills fund core</th>
+          <th scope="col" class="govuk-table__header">Current total</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Adult skills core split</td>
+          <td class="govuk-table__cell">£2,084,115</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Delivery percentage in newly devolved area</td>
+          <td class="govuk-table__cell">0.08%</td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Devolved funding removed</td>
+          <td class="govuk-table__cell">-£1,677</td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Affordability factor adjustment</td>
+          <td class="govuk-table__cell">94%</td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong>Total adult skills fund core</strong></td>
+          <td class="govuk-table__cell"><strong>£1,957,492</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+   <!--Calc factors table 3-->
+  <table class="govuk-table">
+      <caption class="govuk-table__caption"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Tailored learning</th>
+          <th scope="col" class="govuk-table__header">Current total</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Tailored learning split</td>
+          <td class="govuk-table__cell">£2,331,219</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Affordability factor adjustment</td>
+          <td class="govuk-table__cell">94%</td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong>Total tailored learning</strong></td>
+          <td class="govuk-table__cell"><strong>£2,191,346</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+  <!--Calc factors table 4-->
+  <table class="govuk-table">
+      <caption class="govuk-table__caption"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Free courses for jobs</th>
+          <th scope="col" class="govuk-table__header">Current total</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Allocation for academic year 2023 to 2024</td>
+          <td class="govuk-table__cell">£79,622</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Allocation for academic year 2024 to 2025</td>
+          <td class="govuk-table__cell">£79,622</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Delivery for 2023 to 2024</td>
+          <td class="govuk-table__cell">£87,441</td>
+        </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Delivery percentage</td>
+          <td class="govuk-table__cell">110%</td>
+        </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Delivery adjusted for 2024 to 2025 devolved areas</td>
+          <td class="govuk-table__cell">£87,441</td>
+        </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Performance related change to allocation</td>
+          <td class="govuk-table__cell">£7,819</td>
+        </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Baseline allocation</td>
+          <td class="govuk-table__cell">£87,441</td>
+        </tr>
+        </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2025 to 2026 funding rate changes using 2023 to 2024 delivery</td>
+          <td class="govuk-table__cell">£11,587</td>
+        </tr>
+         </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Free courses for jobs including rate changes</td>
+          <td class="govuk-table__cell">£99,027</td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><strong>Total free courses for jobs</strong></td>
+          <td class="govuk-table__cell"><strong>£99,027</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  '
+}) }}
+</div>
+ 
+    <!-- Custom save or print this statement 'component' (taken from live site) -->
+    <div class="govuk-grid-column-two-thirds">
+      <p>
+        You can find information about how allocations are calculated and what to do if something does not look right on <a href="https://www.gov.uk/">GOV.UK</a>.
+      </p>
+    <!-- <h3 class="govuk-heading-m">
+      Allocation history
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="#">
+        View history of allocated funding
+      </a>
+    </p> -->
+    <h3 class="govuk-heading-m">
+      Save or download your allocation statement
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="javascript:window.print()">
+        <img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);" />Save or print this statement
+      </a>
+    </p>
+
+    <div class="govuk-body">
+      <p style="margin-top: -15px;">
+        <a class="govuk-link" href="/public/files/90000000_adult_skills_fund_2025_2026_version1.csv"><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download the funding data provided in this statement (CSV)</a>
+      </p>
+       <div class="govuk-body">
+        <p style="margin-top: -15px;">
+          <a class="govuk-link" href=""><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download the calculation data provided in this statement (CSV)</a>
+      </p>
+      <p>
+        You may need a different format if you're using assistive technology. <a href="https://customerhelpportal.education.gov.uk/">Request an accessible format</a>.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
