@@ -4,7 +4,7 @@
 
 {% block beforeContent %} 
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
-{{ govukBreadcrumbs({ items: [ { text: "Home", href: "myesf-dashboard" }, { text: "Funding information", href: "index" } ] }) }} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "/prototype/v5-1/index/myesf-dashboard" }, { text: "Funding information", href: "/prototype/v5-1/index/index" } ] }) }} 
 {% endblock %} 
 
 {% block content %}
@@ -14,7 +14,7 @@
    <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Adult skills fund</h1>
-        <span class="govuk-caption-l govuk-!-margin-bottom-8">Funding overview for 2025 to 2026</span>
+        <span class="govuk-caption-l govuk-!-margin-bottom-8">Funding overview for 2026 to 2027</span>
     </div>
     </div>
     <div class="govuk-grid-row">
@@ -22,8 +22,8 @@
     <div class="govuk-grid-column-one-half">
     <!-- Allocation amount & version -->
       <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Total allocation</h2>
-      <p class="govuk-heading-xl govuk-!-margin-bottom-1">£3,396,272.00</p>
-      <p class="govuk-body">Last updated 17 December 2025 <strong class="govuk-secondary-text-color">Version 3</strong></p>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-1">£3,406,785.00</p>
+      <p class="govuk-body">Last updated 15 March 2026 <strong class="govuk-secondary-text-color">Version 1</strong></p>
   
     </div>
     <!-- RIGHT HAND COLUMN -->
@@ -50,7 +50,7 @@
             text: "August 2025 to March 2026"
           },
           {
-            text: "£2,266,274.30",
+            text: "£2,271,190.00",
             format: "numeric"
           }
         ],
@@ -59,7 +59,7 @@
             text: "April 2026 to July 2026"
           },
           {
-            text: "£1,129,997.70",
+            text: "£1,135,595.00",
             format: "numeric"
           }
         ],
@@ -68,7 +68,7 @@
             html: "<strong>Total</strong>"
           },
           {
-            html: "<strong>£3,396,272.00</strong>",
+            html: "<strong>£3,406,785.00</strong>",
             format: "numeric"
           }
         ],
@@ -84,29 +84,35 @@
       <div class="dfe-card">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
-                <a href="/prototype/v5-1/index/2526/allocation-alt" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">
+                <a href="/prototype/v5-1/index/2627/allocation-alt" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">
                 Allocation statement
               </a>
             </h3>
             <p>View and save a detailed breakdown of your latest allocation statement.</p>
           </div>
       </div>
-      <div class="dfe-card">
+         <!-- Inactive Card -->
+      <div class="dfe-card disabled-card">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
-                <a href="payment-schedule" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Payment schedule </a>
+                Payment schedule
             </h3>
-            <p>Payments due in this funding year.</p>
+            <p class="govuk-body">Available once your contract has been released.</p>
+            <p><strong class="govuk-tag govuk-tag--grey">
+          Not yet available
+        </strong> </p>
           </div>
       </div>
-      <div class="dfe-card">
+      <div class="dfe-card disabled-card">
           <div class="dfe-card-container">
             <h3 class="govuk-heading-m">
-                <a href="payment-history" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Payment history</a>
+                Payment history
             </h3>
-            <p>Payments made to date in this funding year.</p>
+            <p class="govuk-body">Available once you start to receive payments.</p>
+            <p><strong class="govuk-tag govuk-tag--grey">
+          Not yet available
+        </strong> </p>
           </div>
-          
       </div>
   </div>
   </div> 
