@@ -7,7 +7,7 @@
 
 {{ govukBackLink({
   text: "Back",
-  href: "hub-1-pre-contract"
+  href: "../../../research-rounds/round-6-calcs"
 }) }} 
 {% endblock %} 
 
@@ -67,7 +67,7 @@
   {% from "govuk/components/table/macro.njk" import govukTable %}
   
   {% from "govuk/components/table/macro.njk" import govukTable %}
-    {% set AllocationOverview %}
+    {% set DetailedBreakdown %}
       {{ govukTable({
         caption: "Detailed breakdown",
         captionClasses: "govuk-table__caption--m",
@@ -503,10 +503,10 @@
     {{ govukTabs ({
       items: [
         {
-          label: "Allocation overview",
-          id: "allocation-overview",
+          label: "Detailed breakdown",
+          id: "detailed-breakdown",
           panel: {
-            html: AllocationOverview | safe
+            html: DetailedBreakdown | safe
           }
         },
         {
@@ -526,7 +526,7 @@
     <!-- Custom save or print this statement 'component' (taken from live site) -->
     <div class="govuk-grid-column-two-thirds">
       <p>
-        For more information about how your allocation is calculated and what to do if something does not look right, you can read the <a href="https://www.gov.uk/government/collections/funding-allocations-and-performance-management-for-providers">funding and allocations guidance (opens in a new tab).</a>
+        For more information about how your allocation is calculated and what to do if something does not look right, you can read the <a href="https://www.gov.uk/government/collections/funding-allocations-and-performance-management-for-providers">funding and allocations guidance (opens in a new tab)</a>.
       </p>
     <!-- <h3 class="govuk-heading-m">
       Allocation history
