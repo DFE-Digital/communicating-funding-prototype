@@ -176,24 +176,21 @@
     }) }}
   </div>
 
-
+  <h2 class="govuk-heading-m">Calculation factors by funding line</h2>
   <!--Accordion organising calculation factors by funding lines-->
-  <div class="govuk-grid-column-full">
-
-    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
-    {% from "govuk/components/table/macro.njk" import govukTable %}
-    
-    <h2 class="govuk-heading-m">Calculation factors by funding line</h2>
-    {{ govukAccordion({
-      id: "accordion-default",
-      items: [
-        {
-          heading: {
-            html: "<h4>Adult skills</h4>"
-          },
-          content: {
-            html: '
-              ' + govukTable({
+  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h3 class="govuk-accordion__section-heading">
+        <!-- the class to change the size needs to be applied to the span not the heading-->
+        <span class="govuk-accordion__section-button  govuk-!-font-size-19" id="accordion-default-heading-1">
+          Adult skills
+        </span>
+      </h3>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<!-- insert table here - it needs to have the double braces/ curly brackets around it to work -->
+     {{ govukTable({
                 classes: "govuk-!-margin-bottom-4",
                 firstCellIsHeader: false,
                 head: [
@@ -235,7 +232,7 @@
                   ],
                   [
                     {
-                      text: "Delivery percentage for academic year 2023 to 2024"
+                      text: "Delivery percentage for academic year 2023 to"
                     },
                     {
                       text: "97%",
@@ -297,18 +294,22 @@
                     }
                   }
                 ]
-              }) + '
-            '
-          }
-        },
-      {
-          heading: {
-            html: "<h3>Adult skills fund core</h3>",
-            classes: "govuk-heading-s"
-          },
-          content: {
-            html: '
-              ' + govukTable({
+              }) 
+            }}
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h3 class="govuk-accordion__section-heading">
+        <!-- the class to change the size needs to be applied to the span not the heading-->
+        <span class="govuk-accordion__section-button  govuk-!-font-size-19" id="accordion-default-heading-1">
+          Adult skills fund core
+        </span>
+      </h3>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<!-- insert table here - it needs to have the double braces/ curly brackets around it to work -->
+     {{ govukTable({
                 classes: "govuk-!-margin-bottom-4",
                 firstCellIsHeader: false,
                 head: [
@@ -359,7 +360,7 @@
                   ],
                   [
                     {
-                      html: "<strong>Total adult skills fund core</strong>"
+                      html: "<strong>Total adult skills fund</strong>"
                     },
                     {
                       html: "<strong>£1,957,492</strong>",
@@ -367,17 +368,22 @@
                     }
                   }
                 ]
-              }) + '
-            '
-          }
-        },
-        {
-          heading: {
-            html: "<h4>Tailored learning</h4>"
-          },
-          content: {
-            html: '
-              ' + govukTable({
+              }) 
+            }}
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h3 class="govuk-accordion__section-heading">
+        <!-- the class to change the size needs to be applied to the span not the heading-->
+        <span class="govuk-accordion__section-button  govuk-!-font-size-19" id="accordion-default-heading-1">
+          Tailored learning
+        </span>
+      </h3>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<!-- insert table here - it needs to have the double braces/ curly brackets around it to work -->
+     {{ govukTable({
                 classes: "govuk-!-margin-bottom-4",
                 firstCellIsHeader: false,
                 head: [
@@ -418,17 +424,22 @@
                     }
                   }
                 ]
-              }) + '
-            '
-          }
-        },
-      {
-          heading: {
-            html: "<h4>Free courses for jobs</h4>"
-          },
-          content: {
-            html: '
-              ' + govukTable({
+              }) 
+            }}
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h3 class="govuk-accordion__section-heading">
+        <!-- the class to change the size needs to be applied to the span not the heading-->
+        <span class="govuk-accordion__section-button  govuk-!-font-size-19" id="accordion-default-heading-1">
+          Free courses for jobs
+        </span>
+      </h3>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+<!-- insert table here - it needs to have the double braces/ curly brackets around it to work -->
+     {{ govukTable({
                 classes: "govuk-!-margin-bottom-4",
                 firstCellIsHeader: false,
                 head: [
@@ -486,7 +497,7 @@
                       format: "numeric"
                     }
                   ],
-                  [
+                    [
                     {
                       text: "Performance related change to allocation"
                     },
@@ -513,7 +524,7 @@
                       format: "numeric"
                     }
                   ],
-                   [
+                  [
                     {
                       text: "Free courses for jobs including rate changes"
                     },
@@ -532,13 +543,12 @@
                     }
                   }
                 ]
-              }) + '
-            '
-          }
-        }
-      ]
-    }) }}
+              }) 
+            }}
+    </div>
   </div>
+</div>
+
  
     <!-- Custom save or print this statement 'component' (taken from live site) -->
   
