@@ -11,7 +11,21 @@
     <ItemGroup>
         <PackageReference Include="Azure.Identity" Version="1.14.2" />
         <PackageReference Include="Azure.Storage.Blobs" Version="12.25.0" />
+        <PackageReference Include="HotChocolate.AspNetCore" Version="16.0.0-p.11.52" />
+        <PackageReference Include="HotChocolate.AspNetCore.CommandLine" Version="16.0.0-p.11.52" />
+        <PackageReference Include="HotChocolate.Data" Version="16.0.0-p.11.52" />
+        <PackageReference Include="HotChocolate.Types.Analyzers" Version="16.0.0-p.11.52" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.14" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.14">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.14" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.14">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.Extensions.Azure" Version="1.12.0" />
         <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
         <PackageReference Include="NSwag.AspNetCore" Version="14.4.0" />

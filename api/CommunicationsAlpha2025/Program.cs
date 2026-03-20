@@ -1,5 +1,10 @@
 using System.Reflection;
 using Azure.Identity;
+using CommunicationsAlpha2025.Versions.V2.Data;
+using CommunicationsAlpha2025.Versions.V2.Data.Models;
+using CommunicationsAlpha2025.Versions.V2.Query;
+using HotChocolate.Execution;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Azure;
 using Microsoft.OpenApi.Models;
 
@@ -39,7 +44,7 @@ public partial class Program
             });
 
             var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            opt.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+            opt.IncludeXmlComments(System.IO.Path.Combine(AppContext.BaseDirectory, xmlFilename));
 
             opt.CustomSchemaIds(type =>
                 type.FullName!.Replace('.', '_') // or a custom formatting to make schemaIds unique
@@ -63,8 +68,17 @@ public partial class Program
             clientBuilder.AddBlobServiceClient(defaultStorageAccountUri);
             clientBuilder.UseCredential(new AzureCliCredential());
         });
+        
+//DB
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(
+                builder.Configuration.GetConnectionString("DefaultConnection")));
+
+        builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections();
 
         WebApplication app = builder.Build();
+
+
 
         if (!app.Environment.IsEnvironment("Test"))
         {
@@ -83,6 +97,9 @@ public partial class Program
         });
 
         app.MapControllers();
+        app.MapGraphQL();
+        app.RunWithGraphQLCommands(args);
         app.Run();
+
     }
 }
