@@ -1,7 +1,11 @@
 using System.Reflection;
 using Azure.Identity;
+using CommunicationsAlpha2025.Versions.V2.Application.Interfaces;
+using CommunicationsAlpha2025.Versions.V2.Application.Services;
 using CommunicationsAlpha2025.Versions.V2.Data;
+using CommunicationsAlpha2025.Versions.V2.Data.Interfaces;
 using CommunicationsAlpha2025.Versions.V2.Data.Models;
+using CommunicationsAlpha2025.Versions.V2.Data.Repositories;
 using CommunicationsAlpha2025.Versions.V2.Query;
 using HotChocolate.Execution;
 using Microsoft.EntityFrameworkCore;
@@ -75,6 +79,10 @@ public partial class Program
                 builder.Configuration.GetConnectionString("DefaultConnection")));
 
         builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections();
+
+        builder.Services.AddScoped<ISpecificationService, SpecificationService>();
+        
+        builder.Services.AddScoped<ISpecificationRepository, SpecificationRepository>();
 
         WebApplication app = builder.Build();
 
