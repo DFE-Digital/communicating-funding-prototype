@@ -74,25 +74,24 @@ public partial class Program
         });
         
 //DB
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(
-                builder.Configuration.GetConnectionString("DefaultConnection")));
-
-        builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections();
-
-        builder.Services.AddScoped<ISpecificationService, SpecificationService>();
+// Only run GraphQL in Dev environment
+        if (builder.Environment.IsDevelopment())
+        {
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections();
+            builder.Services.AddScoped<ISpecificationService, SpecificationService>();
+            builder.Services.AddScoped<ISpecificationRepository, SpecificationRepository>();
+        }
         
-        builder.Services.AddScoped<ISpecificationRepository, SpecificationRepository>();
-
         WebApplication app = builder.Build();
-
-
 
         if (!app.Environment.IsEnvironment("Test"))
         {
             app.UseHttpsRedirection();
         }
-
+        
         app.UseSwagger();
         app.UseSwaggerUI(opt =>
         {
@@ -105,8 +104,14 @@ public partial class Program
         });
 
         app.MapControllers();
-        app.MapGraphQL();
-        app.RunWithGraphQLCommands(args);
+        
+// Only run GraphQL in Dev environment
+        if (app.Environment.IsDevelopment())
+        {
+            app.MapGraphQL();
+            app.RunWithGraphQLCommands(args);
+        }
+
         app.Run();
 
     }
