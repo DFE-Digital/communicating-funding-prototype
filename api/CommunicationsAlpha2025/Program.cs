@@ -1,5 +1,14 @@
 using System.Reflection;
 using Azure.Identity;
+using CommunicationsAlpha2025.Versions.V2.Application.Interfaces;
+using CommunicationsAlpha2025.Versions.V2.Application.Services;
+using CommunicationsAlpha2025.Versions.V2.Data;
+using CommunicationsAlpha2025.Versions.V2.Data.Interfaces;
+using CommunicationsAlpha2025.Versions.V2.Data.Models;
+using CommunicationsAlpha2025.Versions.V2.Data.Repositories;
+using CommunicationsAlpha2025.Versions.V2.Query;
+using HotChocolate.Execution;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Azure;
 using Microsoft.OpenApi.Models;
 
@@ -39,7 +48,7 @@ public partial class Program
             });
 
             var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            opt.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+            opt.IncludeXmlComments(System.IO.Path.Combine(AppContext.BaseDirectory, xmlFilename));
 
             opt.CustomSchemaIds(type =>
                 type.FullName!.Replace('.', '_') // or a custom formatting to make schemaIds unique
@@ -63,14 +72,26 @@ public partial class Program
             clientBuilder.AddBlobServiceClient(defaultStorageAccountUri);
             clientBuilder.UseCredential(new AzureCliCredential());
         });
-
+        
+//DB
+// Only run GraphQL in Dev environment
+        if (builder.Environment.IsDevelopment())
+        {
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections();
+            builder.Services.AddScoped<ISpecificationService, SpecificationService>();
+            builder.Services.AddScoped<ISpecificationRepository, SpecificationRepository>();
+        }
+        
         WebApplication app = builder.Build();
 
         if (!app.Environment.IsEnvironment("Test"))
         {
             app.UseHttpsRedirection();
         }
-
+        
         app.UseSwagger();
         app.UseSwaggerUI(opt =>
         {
@@ -83,6 +104,15 @@ public partial class Program
         });
 
         app.MapControllers();
+        
+// Only run GraphQL in Dev environment
+        if (app.Environment.IsDevelopment())
+        {
+            app.MapGraphQL();
+            app.RunWithGraphQLCommands(args);
+        }
+
         app.Run();
+
     }
 }
