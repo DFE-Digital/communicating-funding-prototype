@@ -1,0 +1,197 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Adult skills fund for academic year 2025 to 2026 - allocation statement" %}
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "hub-alt"
+}) }} 
+{% endblock %} 
+
+{% block content %}
+
+<!-- DATA SOURCE : UKPRN: 10005128 / ASF 2025/26 - Allocation 2 July 2025 version 2 -->
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading with caption -->
+    <h1 class="govuk-heading-xl">Payment details</h1>
+    <span class="govuk-caption-l">A list of transactions that made up this payment from the DfE for 18 July 2031
+
+      <br><br><br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <!-- Table 2 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+       
+        captionClasses: "govuk-table__caption--m",
+              classes: "govuk-!-margin-bottom-9",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Contract number"
+          },
+          {
+            text: "Budget group",
+            format: "numeric"
+          },
+          {
+            text: "Description",
+            format: "numeric"
+          },
+          {
+            text: "Sub-total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Adult skills core"
+              
+            },
+            {
+              text: "£1,922,224.74",
+              format: "numeric"
+            },
+            {
+              text: "£960,968.26",
+              format: "numeric"
+            },            
+            {
+              text: "£2,883,293.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Tailored learning"
+            },
+            {
+              text: "£105,414.58",
+              format: "numeric"
+            },
+            {
+              text: "£52,699.42",
+              format: "numeric"
+            },            
+            {
+              text: "£157,914.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Innovative funding"
+            },
+            {
+              text: "£63,648.43",
+              format: "numeric"
+            },
+            {
+              text: "£31,819.57",
+              format: "numeric"
+            },            
+            {
+              text: "£95,268.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Free courses for jobs"
+            },
+            {
+              text: "£171,306.55",
+              format: "numeric"
+            },
+            {
+              text: "£85,940.45",
+              format: "numeric"
+            },            
+            {
+              text: "£256,947.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Continuing learners in newly devolved areas - adult skills core"
+            },
+            {
+              text: "£1,260.00",
+              format: "numeric"
+            },
+            {
+              text: "£0.00",
+              format: "numeric"
+            },            
+            {
+              text: "£1,260.00",
+              format: "numeric"
+            }
+          ],          
+          [
+            {
+              text: "Continuing learners in newly devolved areas - tailored learning"
+            },
+            {
+              text: "£2,954.85",
+              format: "numeric"
+            },
+            {
+              text: "£1,477.15",
+              format: "numeric"
+            },            
+            {
+              text: "£4,432.00",
+              format: "numeric"
+            }
+          ],          
+          
+          [
+            {
+              text: "Continuing learners in newly devolved areas - free courses for jobs"
+            },
+            {
+              text: "£6,420.00",
+              format: "numeric"
+            },
+            {
+              text: "£870.00",
+              format: "numeric"
+            },            
+            {
+              text: "£7,290.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<strong>Total</strong>"
+            },
+            {
+              html: "<strong>£2,271,303.94</strong>",
+              format: "numeric"
+            },
+            {
+              html: "<strong>£1,135,481.06</strong>",
+              format: "numeric"
+            },            
+            {
+              html: "<strong>£3,406,785.00</strong>",
+              format: "numeric"
+            }
+          ]
+        ]
+    }) }}
+    </div>
+ 
+   
+{% endblock %}

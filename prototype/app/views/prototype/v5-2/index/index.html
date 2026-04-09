@@ -1,0 +1,261 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Allocation statements" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "myesf-dashboard" }, { text: "Choose funding streams", href: "index-triage" } ] }) }}  
+{% endblock %} 
+
+{% block content %}
+
+  <!-- Heading with caption -->
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Funding information</h1>
+
+
+      </div>
+      </div>
+
+
+      <!-- Statement list -->
+
+    <div class="govuk-grid-row">
+      <div class="card-container govuk-!-margin-top-5">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="/prototype/v5-2/index/2031-32/hub-alt" class="govuk-link">Adult skills fund for 2031 to 2032</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 20 March 2032</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,406,785.00</h3>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2031 to 2032</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 15 March 2032</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£909,648.00</h3>
+      </div>
+    </div>
+  </div>
+  
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+   <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="/prototype/v5-2/index/2030-31/hub-alt" class="govuk-link">Adult skills fund for 2030 to 2031</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 17 December 2031</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,396,272.00</h3>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2030 to 2031</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 12 February 2031</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£899,850.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Adult skills fund for 2029 to 2030</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 15 December 2029</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,355,000.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2029 to 2030</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 10 February 2030</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£889,400.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Adult skills fund for 2028 to 2029</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 13 December 2029</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,328,400.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2028 to 2029</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 8 February 2029</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£864,500.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Adult skills fund for 2027 to 2028</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 11 December 2028</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,349,000.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2027 to 2028</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 6 February 2028</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£845,600.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Adult skills fund for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 9 December 2027</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,543,000.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 4 February 2027</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£845,500.00</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Adult skills fund for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 9 December 2027</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,356,000.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 4 February 2027</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£899,000.00</span>
+      </div>
+    </div>
+  </div>
+
+   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Adult skills fund for 2025 to 2026</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 9 December 2025</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£3,332,100.00</span>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2025 to 2026</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 4 February 2026</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£983,800.00</span>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

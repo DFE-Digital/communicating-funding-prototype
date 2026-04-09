@@ -1,0 +1,116 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Adult skills fund for academic year 2030 to 2031" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "/prototype/v5-2/index/myesf-dashboard" }, { text: "Choose funding streams", href: "/prototype/v5-2/index/index-triage" }, { text: "Funding information", href: "/prototype/v5-2/index/index" }  ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+
+  <!-- Heading with caption -->
+   <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-0">Adult skills fund</h1>
+        <span class="govuk-caption-l govuk-!-margin-bottom-8">Funding overview for 2030 to 2031</span>
+    </div>
+    </div>
+    <div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+    <div class="govuk-grid-column-one-half">
+    <!-- Allocation amount & version -->
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Total allocation</h2>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-1">£3,396,272.00</p>
+      <p class="govuk-body">Last updated : 17 December 2030  <strong class="govuk-secondary-text-color">Version 3</strong></p>
+  
+    </div>
+    <!-- RIGHT HAND COLUMN -->
+    <div class="govuk-grid-column-one-half">
+       <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Funding period"
+        },
+        {
+          text: "Sub-total",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "August 2030 to March 2031"
+          },
+          {
+            text: "£2,266,274.30",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "April 2031 to July 2031"
+          },
+          {
+            text: "£1,129,997.70",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            html: "<strong>Total</strong>"
+          },
+          {
+            html: "<strong>£3,396,272.00</strong>",
+            format: "numeric"
+          }
+        ],
+      [
+      ]
+      ]
+    }) }}
+    
+    </div>
+  </div>
+
+<div class="dfe-grid-container">
+      <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <a href="/prototype/v5-2/index/2030-31/allocation-alt" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">
+                Allocation statement
+              </a>
+            </h3>
+            <p>View and download a detailed breakdown of all allocation statements from this funding period.</p>
+          </div>
+      </div>
+      <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <a href="payment-schedule" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Payment schedule </a>
+            </h3>
+            <p>Payments due in this funding year.</p>
+          </div>
+      </div>
+      <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <a href="payment-history" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Payment history</a>
+            </h3>
+            <p>Payments made to date in this funding year.</p>
+          </div>
+          
+      </div>
+  </div>
+  </div> 
+
+
+   
+{% endblock %}
