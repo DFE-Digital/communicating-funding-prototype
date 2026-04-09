@@ -1,0 +1,303 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Advanced learner loans for academic year 2025 to 2026 - allocation statement" %}
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "../../../research-rounds/round-6-calcs"
+}) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading with caption -->
+    <span class="govuk-caption-l">Published: 12 March 2025. <span><strong>Version
+          1 </strong></span></span>
+    <h1 class="govuk-heading-xl">Advanced learner loans for 2025 to 2026</h1>
+    <h2 class="govuk-caption-l">Total allocation</h2>
+    <span class="govuk-heading-l">£103,528.05</span>
+    <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Funding period"
+        },
+        {
+          text: "Sub-total",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "August 2025 to March 2026"
+          },
+          {
+            text: "£66,573.53",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "April 2026 to July 2026"
+          },
+          {
+            text: "£36,954.52",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-full">
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Detailed breakdown",
+        captionClasses: "govuk-table__caption--m",
+              classes: "govuk-!-margin-bottom-9",
+        firstCellIsHeader: false,
+        head: [
+           {
+            text: "Funding line item"
+          },
+          {
+            text: "August 2025 to March 2026",
+            format: "numeric"
+          },
+          {
+            text: "April 2026 to July 2026",
+            format: "numeric"
+          },
+          {
+            text: "Sub-total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Loans facility"
+              
+            },
+            {
+              text: "£58,130.73",
+              format: "numeric"
+            },
+            {
+              text: "£34,140.27",
+              format: "numeric"
+            },            
+            {
+              text: "£92,271.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Loans bursary"
+            },
+            {
+              text: "£8,442.80",
+              format: "numeric"
+            },
+            {
+              text: "£2,814.25",
+              format: "numeric"
+            },            
+            {
+              text: "£11,257.05",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<strong>Total</strong>"
+            },
+            {
+              html: "<strong>£66,573.53</strong>",
+              format: "numeric"
+            },
+            {
+              html: "<strong>£36,954.52</strong>",
+              format: "numeric"
+            },            
+            {
+              html: "<strong>£103,528.05</strong>",
+              format: "numeric"
+            }
+          ]
+        ]
+    }) }}
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-body govuk-!-margin-bottom-8">
+      <p>For more information about how your allocation is calculated and what to do if something does not look right, you can read the <a href="https://www.gov.uk/government/collections/funding-allocations-and-performance-management-for-providers" class="govuk-link govuk-link--no-visited-state">funding and allocations guidance (opens in a new tab)</a>.
+      </p>
+    </div>
+  </div>
+  <!--summary lists-->
+
+  <!--details component with nested tables-->
+  {% from "govuk/components/details/macro.njk" import govukDetails %}
+  {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+  <div class="govuk-grid-column-full">
+  <h2 class="govuk-heading-m">Calculation factors</h2>
+  
+  {% set detailsContent %}
+  <!--card 1-->  
+  {{ govukSummaryList({
+      card: {
+        title: {
+          text: "Loans facility"
+        }
+      },
+      rows: [
+        {
+          key: {
+            text: "Actual delivery for 2024 to 2025", 
+            classes: "govuk-!-font-weight-regular"
+          },
+            value: {
+              html: '<span class="govuk-!-text-align-right govuk-!-display-block">£85,586.19</span>'
+          }
+        },
+        {
+          key: {
+            text: "Uplifted delivery for 2025 to 2026",
+            classes: "govuk-!-font-weight-regular"
+          },
+            value: {
+              html: '<span class="govuk-!-text-align-right govuk-!-display-block">£102,523.37</span>'
+          }
+        },
+        {
+          key: {
+            text: "Delivery percentage for academic year 2023 to 2024",
+            classes: "govuk-!-font-weight-regular" 
+          },
+            value: {
+            html: '<span class="govuk-!-text-align-right govuk-!-display-block">97%</span>'
+          }
+        },
+        {
+          key: {
+            text: "Uplifted proportion for 2025 to 2026",
+            classes: "govuk-!-font-weight-regular"
+          },
+            value: {
+            html: '<span class="govuk-!-text-align-right govuk-!-display-block">1%</span>'
+          }
+        },
+        {
+          key: {
+            text: "Baseline allocation",
+            classes: "govuk-!-font-weight-regular"
+          },
+            value: {
+            html: '<span class="govuk-!-text-align-right govuk-!-display-block">£102,523.37</span>'
+          }
+        },
+        {
+          key: {
+            text: "Total adjusted for performance",
+            classes: "govuk-!-font-weight-regular"
+          },
+            value: {
+            html: '<span class="govuk-!-text-align-right govuk-!-display-block">£92,271.00</span>'
+          }
+        },
+        {
+          key: {
+            text: "Total loans facility" 
+          },
+            value: {
+              html: '<span class="govuk-!-text-align-right govuk-!-display-block">£92,271.00</span>',
+              classes: "govuk-!-font-weight-bold"
+          }
+        }
+      ]
+    }) }}
+
+  <!--card 2-->
+  {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Loans bursary"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Proportion of loans facility baseline delivery", 
+              classes: "govuk-!-font-weight-regular"
+            },
+              value: {
+                html: '<span class="govuk-!-text-align-right govuk-!-display-block">12.2%</span>'
+            }
+          },
+          {
+            key: {
+              text: "Baseline allocation",
+              classes: "govuk-!-font-weight-regular"
+            },
+              value: {
+                html: '<span class="govuk-!-text-align-right govuk-!-display-block">£11,257.05</span>'
+            }
+          },
+          {
+            key: {
+              text: "Total loans bursary" 
+            },
+              value: {
+                html: '<span class="govuk-!-text-align-right govuk-!-display-block">£11,257.05</span>',
+                classes: "govuk-!-font-weight-bold"
+            }
+          }
+        ]
+      }) }}
+  
+{% endset %}
+
+{{ govukDetails({
+  summaryText: "View calculation factors by funding line",
+  html: detailsContent,
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+</div>
+
+<!-- Custom save or print this statement 'component' (taken from live site) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m">
+      Save or download your allocation statement
+    </h3>
+    <p class="govuk-body">
+      <a class="govuk-link" href="javascript:window.print()">
+        <img src="/public/images/print-icon.png" alt="Print icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(5px);" />Save or print this statement
+      </a>
+    </p>
+
+    <div class="govuk-body">
+      <p style="margin-top: -15px;">
+        <a class="govuk-link govuk-link govuk-link--no-visited-state" href=""><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download the funding data provided in this statement (OpenDocument Spreadsheet)</a>
+      </p>
+       <div class="govuk-body">
+      <p>
+        You may need a different format if you're using assistive technology. <a href="https://customerhelpportal.education.gov.uk/" class="govuk-link govuk-link--no-visited-state">Request an accessible format</a>.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
