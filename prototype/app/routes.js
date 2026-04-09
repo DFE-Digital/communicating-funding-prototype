@@ -110,3 +110,19 @@ async function fetchV2CalculationResult() {
     const res = await fetch(url);
     return await res.json();
 }
+// Run this code when a form is submitted to 'triage-answer'
+router.post('/triage-answer', function (req, res) {
+
+  // Read the selected radio value from the form field name
+  var triageIndex = req.session.data.indexTriage || req.body.indexTriage
+
+  // Check whether the variable matches a condition
+  if (triageIndex === "ASF and ALL from 20 June 2026"){
+    // Send user to funding index page
+    res.redirect('/prototype/v5-2/index/index')
+  } else {
+    // Send user to allocation index
+    res.redirect('/prototype/v5-2/index/allocation-index')
+  }
+
+})

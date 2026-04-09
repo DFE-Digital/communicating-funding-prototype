@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "myesf-dashboard" } ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/triage-answer" method="post">
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "indexTriage",
+  fieldset: {
+    legend: {
+      text: "Choose funding streams",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "ASF and ALL from 20 June 2026",
+      text: "Adult skills fund and advanced learner loans from 20 June 2026",
+      hint: {
+        text: "Access allocation statements, payment schedules and payment histories"
+      }
+    },
+    {
+      value: "all other statements",
+      text: "All other statements",
+      hint: {
+        text: "Allocation statements only, return to the home page to access payment schedules and payment histories"
+      }
+    }
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
