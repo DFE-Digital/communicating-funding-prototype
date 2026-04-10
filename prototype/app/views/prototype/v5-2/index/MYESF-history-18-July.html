@@ -7,7 +7,7 @@
 
 {{ govukBackLink({
   text: "Back",
-  href: "hub-alt"
+  href: "2030-31/payment-history"
 }) }} 
 {% endblock %} 
 
@@ -24,6 +24,24 @@
 
       <br><br><br>
 
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-button-group" style="justify-content: flex-end;">
+      {{ govukButton({
+      text: "Download as CSV",
+      classes: "govuk-button--secondary" 
+      }) }}
+
+  {{ govukButton({
+    text: "Save or print details",
+    classes: "govuk-button--secondary"
+  }) }}
+    </div>
+  </div>
+</div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <!-- Table 2 -->
@@ -38,12 +56,10 @@
             text: "Contract number"
           },
           {
-            text: "Budget group",
-            format: "numeric"
+            text: "Budget group"
           },
           {
-            text: "Description",
-            format: "numeric"
+            text: "Description"
           },
           {
             text: "Sub-total",
@@ -53,139 +69,154 @@
         rows: [
           [
             {
-              text: "Adult skills core"
+              text: "16AB-1234"
               
             },
             {
-              text: "£1,922,224.74",
-              format: "numeric"
+              text: "16-19 Funding"
             },
             {
-              text: "£960,968.26",
-              format: "numeric"
+              text: "16-19 High Needs Element 2 Profile July 2031"
             },            
             {
-              text: "£2,883,293.00",
+              text: "£192,499.92",
               format: "numeric"
             }
           ],
           [
             {
-              text: "Tailored learning"
+              text: "16AB-1234"
             },
             {
-              text: "£105,414.58",
-              format: "numeric"
+              text: "16-19 Funding"
             },
             {
-              text: "£52,699.42",
-              format: "numeric"
+              text: "16-19 High Value Courses Premium Profile July 2031"
             },            
             {
-              text: "£157,914.00",
+              text: "£6,950.00",
               format: "numeric"
             }
           ],
           [
             {
-              text: "Innovative funding"
+              text: "16AB-1234"
             },
             {
-              text: "£63,648.43",
-              format: "numeric"
+              text: "16-19 Funding"
             },
             {
-              text: "£31,819.57",
-              format: "numeric"
+              text: "16-19 Programme Funding Profile July 2031"
             },            
             {
-              text: "£95,268.00",
+              text: "£1,544,541.00",
               format: "numeric"
             }
           ],
           [
             {
-              text: "Free courses for jobs"
+              text: "16AB-1234"
             },
             {
-              text: "£171,306.55",
-              format: "numeric"
+              text: "16-19 Funding"
             },
             {
-              text: "£85,940.45",
-              format: "numeric"
-            },            
+              text: "16-19 T-Level Industry Placement Profile July 2031"
+            },
             {
-              text: "£256,947.00",
+              text: "£10,747.91",
               format: "numeric"
             }
           ],
           [
             {
-              text: "Continuing learners in newly devolved areas - adult skills core"
+              text: "ALLC-4321"
             },
             {
-              text: "£1,260.00",
-              format: "numeric"
+              text: "Advanced Learner Loans"
             },
             {
-              text: "£0.00",
-              format: "numeric"
+              text: "Paid-on-actual advanced learner loans bursary Reconciliation July 2031"
             },            
             {
-              text: "£1,260.00",
+              text: "-£12,804.83",
               format: "numeric"
             }
           ],          
           [
             {
-              text: "Continuing learners in newly devolved areas - tailored learning"
+              text: "ASCA-1662"
             },
             {
-              text: "£2,954.85",
-              format: "numeric"
+              text: "Adult Skills Fund"
             },
             {
-              text: "£1,477.15",
-              format: "numeric"
+              text: "Funding for innovative provision profile July 2031"
             },            
             {
-              text: "£4,432.00",
+              text: "£7,827.53",
               format: "numeric"
             }
           ],          
-          
           [
             {
-              text: "Continuing learners in newly devolved areas - free courses for jobs"
+              text: "ASCA-1662"
             },
             {
-              text: "£6,420.00",
-              format: "numeric"
+              text: "Adult skills Fund"
             },
             {
-              text: "£870.00",
-              format: "numeric"
+              text: "Profiled adult skills fund for adult skills profile July 2031"
             },            
             {
-              text: "£7,290.00",
+              text: "£240,045.03",
               format: "numeric"
             }
           ],
           [
             {
-              html: "<strong>Total</strong>"
+              text: "ASCA-1662"
             },
             {
-              html: "<strong>£2,271,303.94</strong>",
+              text: "Adult skills Fund"
+            },
+            {
+              text: "Profiled adult skills fund for tailored learning profile July 2031"
+            },            
+            {
+              text: "£13,045.95",
+              format: "numeric"
+            }
+            ],
+            [
+            {
+              text: "ASCA-1470"
+            },
+            {
+              text: "Adult skills fund"
+            },
+            {
+              text: "Free courses for jobs profile July 2031"
+            },            
+            {
+              text: "£21,278.74",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<strong>Total Amount</strong>"
+            },
+            {
+              html: "<strong></strong>",
               format: "numeric"
             },
             {
-              html: "<strong>£1,135,481.06</strong>",
+              html: "<strong></strong>",
               format: "numeric"
             },            
             {
-              html: "<strong>£3,406,785.00</strong>",
+              html: "<strong>£2,024,131.25</strong>",
               format: "numeric"
             }
           ]
