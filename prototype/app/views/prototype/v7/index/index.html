@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Allocation statements" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "myesf-dashboard" }, { text: "Choose funding information publishing date", href: "index-triage" } ] }) }}  
+{% endblock %} 
+
+{% block content %}
+
+  <!-- Heading with caption -->
+      <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Funding information</h1>
+
+
+      </div>
+      </div>
+
+
+      <!-- Statement list -->
+
+    <div class="govuk-grid-row">
+      <div class="card-container govuk-!-margin-top-5">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="/prototype/v7/index/2026-27/hub-alt" class="govuk-link">Adult skills fund for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 10 May 2026</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£4,247,865.00</h3>
+      </div>
+    </div>
+  </div>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Advanced learner loans for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 22 April 2026</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£909,648.00</h3>
+      </div>
+    </div>
+  </div>
+  
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">16-19 funding for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 18 April 2026</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£402,301.23</h3>
+      </div>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  <div class="govuk-grid-row">
+      <div class="card-container">
+        <div class="govuk-grid-column-two-thirds">
+          <span class="govuk-heading-m">
+          <a href="#" class="govuk-link">Pupil Premium for 2026 to 2027</a>
+          <p class="govuk-body govuk-!-margin-top-2">Last updated: 20 March 2026</p>
+        </div>
+      <div class="govuk-grid-column-one-third">
+          <span class="govuk-heading-m govuk-!-text-align-right">£10,204.24</h3>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
