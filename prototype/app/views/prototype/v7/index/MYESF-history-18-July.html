@@ -1,0 +1,228 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Adult skills fund for academic year 2025 to 2026 - allocation statement" %}
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "2030-31/payment-history"
+}) }} 
+{% endblock %} 
+
+{% block content %}
+
+<!-- DATA SOURCE : UKPRN: 10005128 / ASF 2025/26 - Allocation 2 July 2025 version 2 -->
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading with caption -->
+    <h1 class="govuk-heading-xl">Payment details</h1>
+    <span class="govuk-caption-l">A list of transactions that made up this payment from the DfE for 18 July 2031
+
+      <br><br><br>
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-button-group" style="justify-content: flex-end;">
+      {{ govukButton({
+      text: "Download as CSV",
+      classes: "govuk-button--secondary" 
+      }) }}
+
+  {{ govukButton({
+    text: "Save or print details",
+    classes: "govuk-button--secondary"
+  }) }}
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <!-- Table 2 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+       
+        captionClasses: "govuk-table__caption--m",
+              classes: "govuk-!-margin-bottom-9",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Contract number"
+          },
+          {
+            text: "Budget group"
+          },
+          {
+            text: "Description"
+          },
+          {
+            text: "Sub-total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "16AB-1234"
+              
+            },
+            {
+              text: "16-19 Funding"
+            },
+            {
+              text: "16-19 High Needs Element 2 Profile July 2031"
+            },            
+            {
+              text: "£192,499.92",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "16AB-1234"
+            },
+            {
+              text: "16-19 Funding"
+            },
+            {
+              text: "16-19 High Value Courses Premium Profile July 2031"
+            },            
+            {
+              text: "£6,950.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "16AB-1234"
+            },
+            {
+              text: "16-19 Funding"
+            },
+            {
+              text: "16-19 Programme Funding Profile July 2031"
+            },            
+            {
+              text: "£1,544,541.00",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "16AB-1234"
+            },
+            {
+              text: "16-19 Funding"
+            },
+            {
+              text: "16-19 T-Level Industry Placement Profile July 2031"
+            },
+            {
+              text: "£10,747.91",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "ALLC-4321"
+            },
+            {
+              text: "Advanced Learner Loans"
+            },
+            {
+              text: "Paid-on-actual advanced learner loans bursary Reconciliation July 2031"
+            },            
+            {
+              text: "-£12,804.83",
+              format: "numeric"
+            }
+          ],          
+          [
+            {
+              text: "ASCA-1662"
+            },
+            {
+              text: "Adult Skills Fund"
+            },
+            {
+              text: "Funding for innovative provision profile July 2031"
+            },            
+            {
+              text: "£7,827.53",
+              format: "numeric"
+            }
+          ],          
+          [
+            {
+              text: "ASCA-1662"
+            },
+            {
+              text: "Adult skills Fund"
+            },
+            {
+              text: "Profiled adult skills fund for adult skills profile July 2031"
+            },            
+            {
+              text: "£240,045.03",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "ASCA-1662"
+            },
+            {
+              text: "Adult skills Fund"
+            },
+            {
+              text: "Profiled adult skills fund for tailored learning profile July 2031"
+            },            
+            {
+              text: "£13,045.95",
+              format: "numeric"
+            }
+            ],
+            [
+            {
+              text: "ASCA-1470"
+            },
+            {
+              text: "Adult skills fund"
+            },
+            {
+              text: "Free courses for jobs profile July 2031"
+            },            
+            {
+              text: "£21,278.74",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<strong>Total Amount</strong>"
+            },
+            {
+              html: "<strong></strong>",
+              format: "numeric"
+            },
+            {
+              html: "<strong></strong>",
+              format: "numeric"
+            },            
+            {
+              html: "<strong>£2,024,131.25</strong>",
+              format: "numeric"
+            }
+          ]
+        ]
+    }) }}
+    </div>
+ 
+   
+{% endblock %}
