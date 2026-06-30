@@ -305,7 +305,7 @@
 
   {{ govukDetails({
     classes: "govuk-!-margin-bottom-9",
-    summaryText: "Show calculations",
+    summaryText: "Show calculations by funding line",
     html: (
 
       govukTable({
@@ -1140,7 +1140,7 @@
         rows: [
           [
             { 
-              text: "Eligible minus students" 
+              text: "Eligible students" 
             },
             {
               text: "",
@@ -1257,7 +1257,85 @@
             }
           ]
         ]
-      })    
+      })
+      +
+     govukTable({
+        caption: "",
+        captionClasses: "govuk-table__caption--m",
+        classes: "govuk-!-margin-bottom-8",
+        firstCellIsHeader: false,
+        head: [
+          { 
+          text: "High value courses premium",
+          classes: "govuk-!-width-one-half"
+          },
+          {
+            text: "Calculation",
+            format: "numeric",
+            classes: "govuk-!-width-one-quarter"
+
+          },
+          { 
+            text: "Value", 
+            format: "numeric",
+            classes: "govuk-!-width-one-quarter"
+          }
+        ],
+        rows: [
+          [
+            { 
+              text: "High value courses premium funding" 
+            },
+            {
+              text: "",
+              format: "numeric"
+            },
+            { 
+              text: "£305,400",
+              format: "numeric" 
+            }
+          ],
+          [
+            { 
+              text: "High value courses premium funding - construction" 
+            },
+            {
+              text: "+",
+              format: "numeric"
+            },
+            { 
+              text: "£202,240", 
+              format: "numeric" 
+            }
+          ],
+          [
+            { 
+              text: "High value courses premium funding - uplift to full rate" 
+            },
+            {
+              text: "+",
+              format: "numeric"
+            },
+            { 
+              text: "£136,160", 
+              format: "numeric" 
+            }
+          ],
+          [
+            { 
+              html: "<strong>Total</strong>" 
+            },
+            { 
+              html: "<strong>=</strong>",
+              format: "numeric"
+            },
+            { 
+              html: "<strong>£645,800</strong>", 
+              format: "numeric" 
+            }
+          ]
+        ]
+      })        
        +
      govukTable({
         caption: "",
@@ -1445,84 +1523,6 @@
             },
             { 
               html: "<strong>£136,160</strong>", 
-              format: "numeric" 
-            }
-          ]
-        ]
-      })    
-       +
-     govukTable({
-        caption: "",
-        captionClasses: "govuk-table__caption--m",
-        classes: "govuk-!-margin-bottom-8",
-        firstCellIsHeader: false,
-        head: [
-          { 
-          text: "High value courses premium",
-          classes: "govuk-!-width-one-half"
-          },
-          {
-            text: "Calculation",
-            format: "numeric",
-            classes: "govuk-!-width-one-quarter"
-
-          },
-          { 
-            text: "Value", 
-            format: "numeric",
-            classes: "govuk-!-width-one-quarter"
-          }
-        ],
-        rows: [
-          [
-            { 
-              text: "High value courses premium funding" 
-            },
-            {
-              text: "",
-              format: "numeric"
-            },
-            { 
-              text: "£305,400",
-              format: "numeric" 
-            }
-          ],
-          [
-            { 
-              text: "High value courses premium funding - construction" 
-            },
-            {
-              text: "+",
-              format: "numeric"
-            },
-            { 
-              text: "£202,240", 
-              format: "numeric" 
-            }
-          ],
-          [
-            { 
-              text: "High value courses premium funding - uplift to full rate" 
-            },
-            {
-              text: "+",
-              format: "numeric"
-            },
-            { 
-              text: "£136,160", 
-              format: "numeric" 
-            }
-          ],
-          [
-            { 
-              html: "<strong>Total</strong>" 
-            },
-            { 
-              html: "<strong>=</strong>",
-              format: "numeric"
-            },
-            { 
-              html: "<strong>£645,800</strong>", 
               format: "numeric" 
             }
           ]
@@ -1757,6 +1757,84 @@
             },
             { 
               html: "<strong>£960,000</strong>", 
+              format: "numeric" 
+            }
+          ]
+        ]
+      })
+        +
+     govukTable({
+        caption: "",
+        captionClasses: "govuk-table__caption--m",
+        classes: "govuk-!-margin-bottom-8",
+        firstCellIsHeader: false,
+        head: [
+          { 
+          text: "Student financial support",
+          classes: "govuk-!-width-one-half"
+          },
+          {
+            text: "Calculation",
+            format: "numeric",
+            classes: "govuk-!-width-one-quarter"
+
+          },
+          { 
+            text: "Value", 
+            format: "numeric",
+            classes: "govuk-!-width-one-quarter"
+          }
+        ],
+        rows: [
+          [
+            { 
+              text: "Discretionary bursary fund"
+            },
+            {
+              text: "",
+              format: "numeric"
+            },
+            { 
+              text: "£1,421,197",
+              format: "numeric" 
+            }
+          ],
+          [
+            { 
+              text: "Residential support scheme" 
+            },
+            {
+              text: "+",
+              format: "numeric"
+            },
+            { 
+              text: "£3,631", 
+              format: "numeric" 
+            }
+          ],
+          [
+            { 
+              text: "Free meals funding" 
+            },
+            {
+              text: "+",
+              format: "numeric"
+            },
+            { 
+              text: "£490,233", 
+              format: "numeric" 
+            }
+          ],
+          [
+            { 
+              html: "<strong>Total</strong>" 
+            },
+            { 
+              html: "<strong>=</strong>",
+              format: "numeric"
+            },
+            { 
+              html: "<strong>£1,915,061</strong>", 
               format: "numeric" 
             }
           ]
@@ -2035,84 +2113,6 @@
           ]
         ]
       })    
-       +
-     govukTable({
-        caption: "",
-        captionClasses: "govuk-table__caption--m",
-        classes: "govuk-!-margin-bottom-8",
-        firstCellIsHeader: false,
-        head: [
-          { 
-          text: "Student financial support",
-          classes: "govuk-!-width-one-half"
-          },
-          {
-            text: "Calculation",
-            format: "numeric",
-            classes: "govuk-!-width-one-quarter"
-
-          },
-          { 
-            text: "Value", 
-            format: "numeric",
-            classes: "govuk-!-width-one-quarter"
-          }
-        ],
-        rows: [
-          [
-            { 
-              text: "Discretionary bursary fund"
-            },
-            {
-              text: "",
-              format: "numeric"
-            },
-            { 
-              text: "£1,421,197",
-              format: "numeric" 
-            }
-          ],
-          [
-            { 
-              text: "Residential support scheme" 
-            },
-            {
-              text: "+",
-              format: "numeric"
-            },
-            { 
-              text: "£3,631", 
-              format: "numeric" 
-            }
-          ],
-          [
-            { 
-              text: "Free meals funding" 
-            },
-            {
-              text: "+",
-              format: "numeric"
-            },
-            { 
-              text: "£490,233", 
-              format: "numeric" 
-            }
-          ],
-          [
-            { 
-              html: "<strong>Total</strong>" 
-            },
-            { 
-              html: "<strong>=</strong>",
-              format: "numeric"
-            },
-            { 
-              html: "<strong>£1,915,061</strong>", 
-              format: "numeric" 
-            }
-          ]
-        ]
-      })
       +
      govukTable({
         caption: "",
