@@ -1,0 +1,733 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Payment history" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+  <div class="govuk-grid-column-full">
+    <!-- Heading -->
+    <h1 class="govuk-heading-xl">Payment history for  [funding stream] for [funding period] [YYYY] to [YYYY]</h1>
+  </div>
+</div>
+    <!--SUMMARY STATS-->
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Total payments to date</h2>
+    <span class="govuk-heading-l">£[0.00]</span>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-caption-l">Last payment</h2>
+    <span class="govuk-heading-l">[DD Month YYYY]</span>
+  </div>
+</div>
+
+
+<!--PAYMENTS ACCORDION-->
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+
+{{ govukAccordion({
+  id: "accordion-with-summary-sections",
+  items: [
+
+{
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+
+  {
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+
+  {
+     heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+
+{
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+
+  {
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+
+  {
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+
+    {
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+
+    {
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+   
+
+    {
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+    
+    {
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+    {
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    },
+    {
+      heading: {
+        text: "[DD Month YYYY]"
+    },
+      summary: {
+        text: "£[0.00]"
+    },
+      content: {
+        html: '<p class="govuk-body">You may have received payments for other funding streams on this date. <a href ="/prototype/v11/MYESF-history-18-july">View all payment lines for 18 July 2031 (opens in a new window).</a></p>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Contract number</th>
+              <th scope="col" class="govuk-table__header">Description</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Amount</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+             <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+             <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">[Contract code]</td>
+              <td class="govuk-table__cell">[Payment line description]</td>
+              <td class="govuk-table__cell">£[0.00]</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell">
+              <strong>Total paid</strong>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <strong>£[0.00]</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--MONTHLY DOWNLOAD BUTTON-->
+          <a href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-nov-2025 (DEC EXAMPLE).csv" class="govuk-button govuk-button--secondary">Download [DD Month YYYY] payments (CSV)</a>'
+    
+      }
+    }
+  ]
+}) }}
+
+  <div class="govuk-grid-row govuk-!-margin-top-8">
+  <div class="govuk-grid-column-full">
+ 
+    <h3 class="govuk-heading-m">
+      Download your payment history
+    </h3>
+
+    <div class="govuk-body">
+      <p style="margin-top: -15px;">
+        <a class="govuk-link" href="/public/files/90000000_adult_skills_fund_2025_2026_payment-history_18-aug-2025–18-dec-2025 (MOCK EXAMPLE).csv"><img src="/public/images/document-trans.png" alt="Download icon" width="32" class="govuk-!-margin-right-1" style="transform: translateY(15px); z-index: 0; position: relative;"/>Download [funding stream] [YYYY] to [YYYY] payments to date (CSV)</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

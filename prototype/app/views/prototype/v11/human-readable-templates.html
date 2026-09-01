@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Human readable templates" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }} 
+{% endblock %} 
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+     Human readable templates
+    </h1>
+    <h2 class="govuk-caption-l govuk-!-margin-bottom-6">
+      Templates of every page delivered during the comms funding project with placeholder text in place of any fluid or data driven content.
+    </h2>
+    <body></body>
+      <p>These can be used as a starting point for any future design exploration. Make a copy of the template file before you make edits and replace all text in square brackets.
+      </p>
+    </body>
+    <ul class="govuk-list govuk-list--spaced">
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="/prototype/v11/myesf-dashboard.html">MYESF home</a>
+      </li>  
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="/prototype/v11/index-triage.html">Triage page</a> 
+      </li>
+      <li>     
+        <a class="govuk-link govuk-link--no-visited-state" href="/prototype/v11/index.html">Funding index</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="/prototype/v11/hub-inactive-cards.html">Hub page (inactive cards)</a>
+      </li>
+        <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="/prototype/v11/hub-active-cards.html">Hub page (active cards)</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="/prototype/v11/allocation-statement.html">Allocation statement</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="/prototype/v11/payment-history.html">Payment histories page</a>
+      </li>
+      <li>
+        <a class="govuk-link govuk-link--no-visited-state" href="/prototype/v11/payment-schedule.html">Payment schedules page</a>
+      </li>
+    </ul>
+    
+</div>
+
+
+{% endblock %}

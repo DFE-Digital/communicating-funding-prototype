@@ -1,0 +1,116 @@
+{% extends "layouts/main.html" %} 
+{% set pageName="Hub page - active cards" %} 
+{% set fallbackPage="javascript:history.back()" %}
+
+{% block beforeContent %} 
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %} 
+{{ govukBreadcrumbs({ items: [ { text: "Home", href: "/prototype/v11/myesf-dashboard" }, { text: "Choose funding information publishing date", href: "/prototype/v11/index-triage" }, { text: "Funding information", href: "/prototype/v11/index" }  ] }) }} 
+{% endblock %} 
+
+{% block content %}
+
+
+  <!-- Heading with caption -->
+   <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">[Funding stream]: funding overview for [funding period] [YYYY] to [YYYY]</h1>
+    </div>
+    </div>
+    <div class="govuk-grid-row">
+  <!-- LEFT HAND COLUMN -->
+    <div class="govuk-grid-column-one-half">
+    <!-- Allocation amount & version -->
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-3">Total allocation</h2>
+      <p class="govuk-heading-xl govuk-!-margin-bottom-1">£[0.00]</p>
+      <p class="govuk-body">Last updated [DD Month YYYY] <strong class="govuk-secondary-text-color"> Version [#]</strong></p>
+  
+    </div>
+    <!-- RIGHT HAND COLUMN -->
+    <div class="govuk-grid-column-one-half">
+       <!-- Table 1 -->
+    {% from "govuk/components/table/macro.njk" import govukTable %}
+    {{ govukTable({
+      caption: "Summary allocation",
+      captionClasses: "govuk-table__caption--m",
+      classes: "govuk-!-margin-bottom-9",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Funding period"
+        },
+        {
+          text: "Sub-total",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "[Month YYYY] to [Month YYYY]"
+          },
+          {
+            text: "£[0.00]",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "[Month YYYY] to [Month YYYY]"
+          },
+          {
+            text: "£[0.00]",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            html: "<strong>Total</strong>"
+          },
+          {
+            html: "<strong>£[0.00]</strong>",
+            format: "numeric"
+          }
+        ],
+      [
+      ]
+      ]
+    }) }}
+    
+    </div>
+  </div>
+
+<!-- Hub cards -->
+
+<div class="dfe-grid-container">
+      <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <a href="/prototype/v11/allocation-statement" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">
+                Allocation statement
+              </a>
+            </h3>
+            <p>View and download a detailed breakdown of all allocation statements from this funding period.</p>
+          </div>
+      </div>
+            <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <a href="payment-schedule" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Payment schedule </a>
+            </h3>
+            <p>Download your planned payments for this funding period.</p>
+          </div>
+      </div>
+      <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <a href="payment-history" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">Payment history</a>
+            </h3>
+            <p>View and download payments made in this funding period.</p>
+          </div>
+          
+      </div>
+  </div>
+
+
+   
+{% endblock %}
