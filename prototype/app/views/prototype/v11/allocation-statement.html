@@ -7,7 +7,7 @@
 
 {{ govukBackLink({
   text: "Back",
-  href: "../../../index.html"
+  href: "javascript:history.back()"
 }) }} 
 {% endblock %} 
 
@@ -15,21 +15,7 @@
 
 <div class="govuk-grid-row">
 
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Note for designers
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__body">
-      This is a template please make a copy replace all text within square brackets with the relevant content. Delete this notification banner once you have done so.
-      <br>
-          <br>
-      <a class="govuk-notification-banner__link" href="#">Review pattern guidance (Figma)</a>.
-    </p>
-  </div>
-</div>
+
 
   <!-- LEFT HAND COLUMN -->
     <div class="govuk-grid-column-two-thirds">

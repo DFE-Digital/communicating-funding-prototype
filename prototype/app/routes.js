@@ -178,3 +178,20 @@ router.post('/triage-answer-v4', function (req, res) {
     res.redirect('/prototype/v8/index/allocation-index')
   }
   })
+
+  // Run this code when a form is submitted to 'triage-answer-v2'
+router.post('/triage-answer-v11', function (req, res) {
+
+  // Read the selected radio value from the form field name
+  var triageIndex = req.session.data.indexTriage || req.body.indexTriage
+
+  // Check whether the variable matches a condition
+  if (triageIndex === "From [DD Month YYYY]"){
+    // Send user to funding index page
+    res.redirect('/prototype/v11/index')
+  } else {
+    // Send user to allocation index
+    res.redirect('/prototype/v11/allocation-index')
+  }
+  })
+
